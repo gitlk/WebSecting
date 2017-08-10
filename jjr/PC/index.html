@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>镜匠人</title>
+<link rel="stylesheet" type="text/css" href="css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/jquery.Sonline.js"></script>
+<script type="text/javascript">
+//在线客服
+$(function(){
+	$("body").Sonline({
+		Position:"right",//left或right
+		Top:200,//顶部距离，默认200px
+		Effect:true, //滚动或者固定两种方式，布尔值：true或false
+		DefaultsOpen:true, //默认展开：true,默认收缩：false
+		Qqlist:"1015353206|在线QQ" //多个QQ用','隔开，QQ和客服名用'|'隔开
+	});
+	$(".contentBox").append("<div class='message'><a href='#'>在线留言</a></div>");
+})	
+</script>
+</head>
+<body>
+<div class="index-wrap">
+	<div class="index-center">
+    	<ul>
+        	<li class="index-whoami">
+            	<a href="#"><img src="images/index-whoami.jpg" /></a>
+                <div class="index-whoami-text">
+                	<img src="images/index-whoami-text.png" />
+                </div>
+            </li>
+            <li class="index-idea">
+            	<a href="#"><img src="images/index-idea.jpg" /></a>
+                <div class="index-idea-text">
+                	<img src="images/index-idea-text.png" />
+                </div>
+            </li>
+            <li class="logo">
+            	<a href="#"><img src="images/logo.png" /></a>
+                <div class="logo-text">
+                	<img src="images/index-text.png" />
+                </div>
+            </li>
+            <li class="index-eye">
+            	<a href="#"><img src="images/index-eye.jpg" /></a>
+                <div class="index-eye-text">
+                	<img src="images/index-eye-text.png" />
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+    	<div class="foot-box">
+        	<p class="p-left">2015 版权所有 蜀ICP备12006200号 </p>
+            <p class="p-center">德國鏡匠人國際眼鏡集團有限公司</p>
+            <p class="p-right">FLAT B07 FLOOR23,HOVER IND BLDG NO 26-38 KWAI CHEONG RD,NT</p>>
+        </div>
+    </div>
+</div>
+</body>
+</html>

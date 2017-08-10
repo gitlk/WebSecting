@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>镜匠人</title>
+<link rel="stylesheet" type="text/css" href="css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/jquery.Sonline.js"></script>
+<script type='text/javascript'>
+$("#nav li").hover(function(){
+	$(this).find('ul:first').css({visibility: "visible",display: "none"});
+},function(){
+	$(this).find('ul:first').css({visibility: "hidden"});
+});
+//在线客服
+$(function(){
+	$("body").Sonline({
+		Position:"right",//left或right
+		Top:200,//顶部距离，默认200px
+		Effect:true, //滚动或者固定两种方式，布尔值：true或false
+		DefaultsOpen:true, //默认展开：true,默认收缩：false
+		Qqlist:"1015353206|在线QQ" //多个QQ用','隔开，QQ和客服名用'|'隔开
+	});
+	$(".contentBox").append("<div class='message'><a href='#'>在线留言</a></div>");
+})	
+</script> 
+	
+</head>
+<body>
+<div class="whoami-wrap"><!--背景-->
+	<div class="header"><!--头部  start-->
+    	<div class="header-box">
+        	<a href="#"><img src="images/logo.png" /></a><!--logo-->
+            <div class="navwrap"><!--导航  start-->
+                <ul id="nav"> 
+                    <li class="page_item">
+                        <a href="#" >my story /我的故事<span></span></a>
+                        <ul class='children'> 
+                            <li class="page_item"><a href="#" >Brand origin  /品牌起源</a></li> 
+                            <li class="page_item"><a href="#/">Brand file   /品牌档案</a></li> 
+                            <li class="page_item"><a href="#" >Brand annotation /品牌诠释</a></li> 
+                        </ul>  
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >STechnology /工艺</a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >Information /资讯</a> 
+                    </li> 
+                </ul>                
+            </div> <!--导航  end-->
+        </div>
+    </div><!--头部  end-->
+	<div class="main">
+    	<div class="center"><!--主体内容  start-->
+            <div class="whoami2-2-center">
+            	<h1>
+                	Professional knowledge of glasses
+                    <span>配眼镜专业知识介绍</span>
+                </h1>
+                <ul class="date">
+                    <li>发布日期：2015-06-24 </li>
+                    <li>浏览量：8</li>
+                </ul>
+                <p>
+                	 配眼镜镜片要注意阿贝数，阿贝数就是用来衡量介质的色散能力，是和物质的色散能力是成反比例的，也就是说物质的色散现象越明显，阿贝数越低。
+      镜片材料的阿贝数在30到50之间，在设置过程中焦度计阿贝数一般取较高的值，也可根据实际情况做一些调整。精度的设定，数字式焦度计的精度分为0.01 D.O.12D.0.25三种，一般将其设定为O.O1D。
+      焦度计修正值的使用，定配眼镜工作人员认为经过质检部门认定合格的焦度计可以直接用来定配眼镜的检测，而忽略修正值的使用，这是不正确的认识。
+      焦度计作为一种检测仪器其本身就存在误差，又因为光学仪器容易受到温度的影响，造成的不准确程度更偏离实际情况。
+                </p>
+                <div class="whoami2-2-bottom">
+                	<ul class="ona">
+                    	<li><a href="#">ON A</a></li>
+                        <li><a href="#">NEXT ARTICLE</a></li>
+                    </ul>
+                 </div>
+                 <div class="link">
+                    <ul class="linkUl">
+                        <li class="tm"><a href="#"></a></li>
+                        <li class="jd"><a href="#"></a></li>
+                        <li class="xl"><a href="#"></a></li>
+                        <li class="wx"><a href="#"></a></li>
+                        <li class="mt"><a href="#"></a></li>
+                        <li class="sc"><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!--主体内容  end-->
+    </div>
+    <div class="footer"><!--页尾  start-->
+    	<div class="foot-box">
+        	<p class="p-left">2015 版权所有 蜀ICP备12006200号 </p>
+            <p class="p-center">德國鏡匠人國際眼鏡集團有限公司</p>
+            <p class="p-right">FLAT B07 FLOOR23,HOVER IND BLDG NO 26-38 KWAI CHEONG RD,NT</p>
+        </div>
+    </div><!--页尾  end-->
+</div>
+</body>
+</html>

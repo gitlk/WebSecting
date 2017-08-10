@@ -1,0 +1,224 @@
+{{include file="system/header.html"}}
+<body>
+{{include file="system/nav_1.html"}}
+<div class="yyt-3">
+                        
+          {{ffsql sql="select *from fangfa_atten where user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=g}}
+                {{php}}
+                $data = $this->_tpl_vars['g'];
+                foreach($data as $k=>$v){
+                   $m[$v['id']] = $v['user_id'];
+                }
+                    $this->_tpl_vars['g']=$m;
+                {{/php}} 
+    
+   <div class="wrapper clearfix">
+        <div class="left-part">
+            <div class="title clearfix">
+                <img src="__PUBLIC__/uploads/{{$xy.thumb}}" alt=""/>
+                <h1>{{$xy.title}} <span>{{$xy.etitle}}</span></h1>
+                <p>学校地址： {{$xy.city}} {{$xy.address}}</p>
+                <p>国际排名：{{$xy.gjsort}}       &nbsp; &nbsp; &nbsp; &nbsp;   国内排名： {{$xy.gnsort}}</p>
+                        <a rel="{{if $xy.cid|array_key_exists:$g}}1{{else}}0{{/if}}" href="javascript:;"  del-val="{{$xy.cid}}" class="focus-yyt-2"
+                           {{if $xy.cid|array_key_exists:$g}}style="background-color:#98a5b1"{{else}}style="background-color:#015db0"{{/if}}
+                           >{{if $xy.cid|array_key_exists:$g}}取消{{else}}加关注{{/if}}</a>
+                
+                <span class="num">{{$xy.guanzhu}}人已关注</span>
+            </div>
+            <div class="content">
+                <ul class="content-nav">
+                    {{ffcategory catid=10 to=u}}
+                    <li><a   href="{{$u.url}}{{$xy.url}}">院校介绍</a></li>
+                    {{ffcategory parentid=10 to=n}}
+                    {{foreach from=$n.child item=nx}}
+                    <li><a {{if $cat.catid==$nx.catid}}class="on"{{/if}} href="{{if ($nx.url|strpos:'.html')!=false }}{{$nx.url}}?{{else}}{{$nx.url}}index.html?{{/if}}catid={{$xy.catid}}&cid={{$xy.cid}}">{{$nx.name}}</a></li>
+                   {{/foreach}}
+                </ul>
+                <div class="content-yyt6">
+                    <div class="choose">
+                        <div class="row clearfix">
+                            <div class="row-left">
+                                <p>专业名称：</p>
+                            </div>
+                            <div class="row-right">
+                                <div class="search">
+                                    <input type="text" id="seee" placeholder="请输入您找查找的专业名称 "/>
+                                    <button class="search-btn" onclick="sea();"><img src="__PUBLIC__/images/6-1.png" alt=""/></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="row-left">
+                                <p>申请层次：</p>
+                            </div>
+                            <div class="row-right">
+                                <a href="javascript:;" class="on" onclick="shengqing(0);">全部</a>
+                                <a href="javascript:;" onclick="shengqing(1);">小学</a>
+                                <a href="javascript:;" onclick="shengqing(2);">初中</a>
+                                <a href="javascript:;" onclick="shengqing(3);">高中</a>
+                                <a href="javascript:;" onclick="shengqing(4);">本科</a>
+                                <a href="javascript:;" onclick="shengqing(5);">研究生</a>
+                                <a href="javascript:;" onclick="shengqing(6);">博士</a>
+                                <a href="javascript:;" onclick="shengqing(7);">语言</a>
+                                <a href="javascript:;" onclick="shengqing(8);">专科</a>                                
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="row-left">
+                                <p>专业领域：</p>
+                            </div>
+                            <div class="row-right clearfix">
+                                <a href="javascript:;" class="on" onclick="lingyu(0);">全部</a>
+                                {{foreach from=$ly item=y}}
+                                <a href="javascript:;" onclick="lingyu('{{$y.lingyu}}');">{{$y.lingyu}}</a>  
+                                {{/foreach}}
+                            </div>
+                        </div>
+                        <p class="num">共有 <span id="counts">{{$count}}</span>个相关专业</p>
+                    </div>
+                      
+                    <div id="zyzy">
+                        {{ffcategory catid=11 to=ks}}
+                        {{foreach from=$zy.info item=list}}
+                        <div class="card clearfix">
+                            <a class="card-left" href="{{$ks.url}}{{$list.url}}">
+                                <h1>{{$list.title}}</h1>
+                                <p>学制：{{$list.xuezhi}}年&nbsp;&nbsp;专业方向：{{$list.lingyu}}&nbsp;&nbsp;学位类型：{{$list.leixing}}</p>
+                            </a>
+                            <div class="card-right">
+        <a rel="{{if $list.cid|array_key_exists:$g}}1{{else}}0{{/if}}" href="javascript:;"  del-val="{{$list.cid}}" class="focus-yyt-11"
+        {{if $list.cid|array_key_exists:$g}}style="background-color:#98a5b1;color:#fff;border-color:#fff"{{else}}style="background-color:#fff;color: #015db0;border-color:#015db0"{{/if}}
+        >{{if $list.cid|array_key_exists:$g}}不关注{{else}}加关注{{/if}}</a>    
+                                <a href="">免费资讯专家</a>
+                            </div>
+                        </div>
+                        {{/foreach}}
+                    </div>
+                    <div class="fenye clearfix">
+                        {{$zy.pages}}
+                    </div>
+                </div>
+            </div>
+        </div>
+ {{include file="system/xyright.html"}}
+   </div>
+
+</div>
+
+
+
+
+
+{{include file="system/footer.html"}}
+<input type="hidden" id="shengqing" />
+<input type="hidden" id="lingyu" />
+<input type="hidden" id="title" />
+<script>
+    function shengqing(s){
+        $('#shengqing').val(s);
+          ajax();
+     };
+    function lingyu(s){
+        $('#lingyu').val(s);
+          ajax();
+     };  
+    function sea(){
+          var a=$('#seee').val();
+          $("#title").val(a);
+        ajax();
+      }  
+/**
+ * ajax筛选
+ * author:like 2013/8/24
+ */
+    function ajax(){
+	//获取当前筛选条件
+		var shengqing=$("#shengqing").val();
+		var lingyu=$("#lingyu").val();
+		var title=$("#title").val();
+        //获取排序条件
+		var catid = 11;
+                var xyid={{$xy.cid}};
+		var url = "__ROOT__/Fcontent/xyzy";//提交地址
+		var data = {catid:catid,shengqing:shengqing,lingyu:lingyu,title:title,xyid:xyid};
+		$.post(url, data, function(result){
+		$("#zyzy").html(result.str);//学院
+                $("#counts").html(result.count);
+            }, 'json');
+    }
+     /**
+     * ajax异步分页
+     * author:like 2013/8/24
+     */
+      function ajaxload(p){
+	//获取当前筛选条件
+		var shengqing=$("#shengqing").val();
+		var lingyu=$("#lingyu").val();
+		var title=$("#title").val();
+             //获取排序条件
+ 		var catid = 11;
+                var xyid={{$xy.cid}};
+		var url = "__ROOT__/Fcontent/xyzy";//提交地址
+		var data = {catid:catid,shengqing:shengqing,lingyu:lingyu,title:title,xyid:xyid};
+		$.post(url, data, function(result){
+		$("#school").html(result.str); 
+                $("#counts").html(result.count);
+		}, 'json');	
+
+    }   
+</script>
+<script>
+
+
+    //choose选中
+    $('.row-right a').on('click',function () {
+        $(this).siblings().removeClass('on');
+        $(this).addClass('on');
+    });  
+    
+     $('body').on("click",'.focus-yyt-11',function(){
+        var rel=$(this).attr('rel');
+        if(rel==0){
+            var obj = $(this);
+            var url = "__ROOT__/Findex/atten"; //提交地址
+            var gz=1;
+            var cid=$(this).attr("del-val");
+            var data = {cid:cid,gz:gz};
+            $.post(url, data, function(result){
+                         if(result.gz==1){
+                                    $(obj).css('background-color','#98a5b1');
+                                    $(obj).css('color','#fff');
+                                     $(obj).css('border-color','#fff');
+                                    $(obj).html('不关注');
+                                    $(obj).attr('rel','1');
+                             }else{
+                         alert("请登录后操作");
+                        window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                                 return false;
+                             }
+                       }, 'json');     
+        }if(rel==1){
+            var obj = $(this);
+            var url = "__ROOT__/Findex/atten"; //提交地址
+            var gz=0;
+            var cid=$(this).attr("del-val");
+            var data = {cid:cid,gz:gz};       
+             $.post(url, data, function(result){
+                         if(result.gz==0){
+                                $(obj).css('background-color','#fff');
+                                    $(obj).css('color','#015db0');
+                                     $(obj).css('border-color','#015db0');
+                                    $(obj).html('加关注');
+                                    $(obj).attr('rel','0');
+                             }else{
+                         alert("请登录后操作");
+                        window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                                 return false;
+                             }
+                       }, 'json');                
+        }
+    });     
+    
+</script>
+</body>
+</html>

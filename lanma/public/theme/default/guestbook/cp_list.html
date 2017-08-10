@@ -1,0 +1,191 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+    <div class="yyt-15">
+        <div class="wrapper">
+            <div class="choose clearfix">
+                <div class="title"><img src="__PUBLIC__/images/15-1.png" alt="" class="title-img"/></div>
+                <form name="biaodan" action="__ROOT__/Fguestbook/cpadd" method="post">
+                    <div class="row clearfix">
+                        <div class="row-left">
+                            <div class="card clearfix">
+                                <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+                                <input class="input" type="text" name='name' value=""/>
+                            </div>
+                            <div class="card clearfix">
+                                <label for="">自身学历：</label>
+                                <div class="select" style="z-index: 5"><span>本科</span> <b></b>
+                                    <ul class="address">   
+                                        <li onclick="xueli('大专');">大专</li>
+                                        <li onclick="xueli('本科');">本科</li>
+                                        <li onclick="xueli('硕士');">硕士</li>
+                                        <li onclick="xueli('博士');">博士</li>
+                                        <li onclick="xueli('其他');">其他</li>
+                                    </ul>
+                                   <input class="input" type="hidden" id="xueli" name='xueli' value="本科"/>  
+                                </div>
+                            </div>
+                            <div class="card clearfix">
+                                <label for="">意向专业：</label>
+                                <div class="select" style="z-index: 4">
+                                    <span>专业领域</span><b></b>
+                                    <ul class="address" id="lingyus">
+                                    </ul>
+                                    <input type="hidden" value="" id="lingyu" name="zhuanye"/>  
+                                </div>
+                            </div>
+                            <div class="card clearfix">
+                                <label for="">留学预算：</label>
+                                <div class="select select-sm" style="z-index: 3;width: 150px">
+                                    <span style="width: 130px">10000美元以下</span><b></b>
+                                    <style>
+                                        #qqq li{width:100%}
+                                        #qqq {width:150px}
+                                    </style>
+                                    <ul class="address" id="qqq">
+                                        <li onclick="yusuan('<10000')">10000美元以下</li>
+                                        <li onclick="yusuan('10000-20000')">10000-20000美元</li>
+                                        <li onclick="yusuan('20000-30000')">20000-30000美元</li>
+                                        <li onclick="yusuan('>30000')">>30000美元以上</li>
+                                    </ul>
+                           
+                                     <input type="hidden" value="" id="yusuan" name="lxys"/>   
+                                </div>
+                            </div>
+                            <div class="card clearfix">
+                                <label for="">其他成绩：</label>
+                                <input class="input" type="text" placeholder="请填写科目" name="other" value=""/>
+                                <input class="input input-sm" type="text" placeholder="请填写分数" name="othercj" value=""/>
+                            </div>
+                        </div>
+                        <div class="row-right">
+                            <div class="card clearfix">
+                                <label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+                                <input id="sex1" class="sex" type="radio" name="sex" value="1"/>
+                                <img src="__PUBLIC__/images/radio0.png" alt="" class="pic-sex pic-sex1"/>
+                                <label class="label-sex label-sex1" for="sex1">男</label>
+                                <input id="sex2" class="sex" type="radio" name="sex" value="2"/>
+                                <img src="__PUBLIC__/images/radio0.png" alt="" class="pic-sex pic-sex2"/>
+                                <label class="label-sex label-sex2" for="sex2">女</label>
+                            </div>
+                            <div class="card clearfix" >
+                                <label for="">意向国家：</label>
+                                <div class="select select-lg" style="z-index: 2;">
+                                    <span></span><b></b>
+                                    <ul class="address">
+                                        {{foreach from=$show.city item=c}}
+                                        <li onclick="ly('{{$c.city}}');">{{$c.city}}</li>
+                                        {{/foreach}}
+                                    </ul>
+                                    <input type="hidden" id="ly" name="city"/>
+                                </div>
+                            </div>
+                            <div class="card clearfix" >
+                                <label for="">出国时间：</label>
+                                <input class="input" type="text" name="cgsj" value=""/>
+                                <label class="year" for="" style="float:right;margin-right: 70px"> 年</label>
+                            </div>
+                            <div class="card clearfix">
+                                <label for="">平均成绩：</label>
+                                <input class="input input-sm noLeft" type="text" placeholder="算术平均法" name="sscj" value=""/>
+                                <input class="input input-sm" type="text" placeholder="加权平均法" name="jqcj" value=""/>
+                            </div>
+                            <div class="card clearfix">
+                                <label for="">高考成绩：</label>
+                                <div class="select select-sm">
+                                    <span>高考地区</span><b></b>
+                                    <ul class="address">
+                                        {{ffsql sql="select* from fangfa_province " to=sf}}
+                                        {{foreach from=$sf item=s}}
+                                        <li onclick="gkdq('{{$s.name}}');">{{$s.name}}</li>
+                                        {{/foreach}}
+                                    </ul>
+                                    <input type="hidden" name="gkdq" value="" id="gkdq"/>
+                                </div>
+                                <input class="input input-sm" type="text" placeholder="请填写分数" name="gkfs" value=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row2 clearfix">
+                        <div class="card clearfix">
+                            <label for="">语言成绩：</label>
+                            <div class="select select-sm" style="z-index: 1">
+                                <span>考试类型</span><b></b>
+                                <ul class="address">
+                                    <li onclick="yuyan('英语4级');">英语4级</li>
+                                    <li onclick="yuyan('英语6级');">英语6级</li>
+                                    <li onclick="yuyan('雅思');">雅思</li>
+                                    <li onclick="yuyan('托福');">托福</li>
+                                    <li onclick="yuyan('GRE');">GRE</li>
+                                    <li onclick="yuyan('GMAT');">GMAT</li>
+                                    <li onclick="yuyan('LSAT');">LSAT</li>
+                                    <li onclick="yuyan('BEC');">BEC</li>
+                                    <input type="hidden" value="" id="yuyan" name="yylx"/>      
+                                </ul>
+                            </div>
+                            <input class="input input-xs"        type="text" placeholder="听力" name="tl" value=""/>
+                            <input class="input input-xs noLeft" type="text" placeholder="口语" name="ky" value=""/>
+                            <input class="input input-xs noLeft" type="text" placeholder="阅读" name="yd" value=""/>
+                            <input class="input input-xs noLeft" type="text" placeholder="写作" name="xz" value=""/>
+                            <input class="input input-xs noLeft" type="text" placeholder="总分" name="zf" value=""/>
+                        </div>
+                        <div class="card clearfix">
+                            <label for="">联系方式：</label>
+                            <input class="input input-lg" type="text" name="lianxi" placeholder="QQ / 微信 / 电话 / 邮箱（任意一个即可）"/>
+                        </div>
+                    </div>
+                    <input type="hidden" name="title" value="极速测评" />
+                    <input type="hidden" name="catid" value="{{$cat.catid}}" />
+                    <a class="submit-btn" onclick="biaodan.submit();">生成报告</a>
+                    
+                    <p class="submit-after">提示：评测进度以及评测结果会员可以从会员中心查询。</p>
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>     
+    {{include file="system/footer.html"}}
+    <script>
+    function ly(c){
+        $('#ly').val(c);
+                var catid = 10;
+                var lingyu = c;
+                var url = "__ROOT__/Fcontent/lingyus"; //提交地址
+                var data = {catid:catid, lingyu:lingyu};
+                $.post(url, data, function(result){
+                $("#lingyus").html(result.result);
+                }, 'json');
+        }
+    function lingyu(a,obj){
+           $("#lingyu").val(a); 
+        }      
+    function xueli(a){
+          $("#xueli").val(a);
+        } 
+    function gkdq(a){
+          $("#gkdq").val(a);
+        }    
+    function yuyan(a){
+          $("#yuyan").val(a);
+        }  
+    function yusuan(a){
+          $("#yusuan").val(a);
+        }          
+        ;</script>
+    <script>
+                //男女
+                $('.label-sex1').click(function(){
+        $('.pic-sex1').attr('src', '__PUBLIC__/images/radio1.png');
+                $('.pic-sex2').attr('src', '__PUBLIC__/images/radio0.png');
+        });
+                $('.label-sex2').click(function(){
+        $('.pic-sex1').attr('src', '__PUBLIC__/images/radio0.png');
+                $('.pic-sex2').attr('src', '__PUBLIC__/images/radio1.png');
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>镜匠人</title>
+<link rel="stylesheet" type="text/css" href="css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/jquery.Sonline.js"></script>
+<script type="text/javascript" src="js/jquery.superslide.2.1.1.js"></script>
+<script type='text/javascript'>
+
+
+//导航
+    $("#nav li").hover(function() {
+        $(this).find('ul:first').css({ visibility: "visible", display: "none" });
+    }, function() {
+        $(this).find('ul:first').css({ visibility: "hidden" });
+    });
+//在线客服
+$(function(){
+	$("body").Sonline({
+		Position:"right",//left或right
+		Top:200,//顶部距离，默认200px
+		Effect:true, //滚动或者固定两种方式，布尔值：true或false
+		DefaultsOpen:true, //默认展开：true,默认收缩：false
+		Qqlist:"1015353206|在线QQ" //多个QQ用','隔开，QQ和客服名用'|'隔开
+	});
+	$(".contentBox").append("<div class='message'><a href='#'>在线留言</a></div>");
+})	
+</script>
+    <style>
+	    .Mobile li .aglass{ margin-top:10px;}
+		.Mobile li .pbg {position: absolute; z-index:10; display:none;width: 295px; height:179px;background:url(images/zc001.png) left top repeat;}
+        .alink { position: absolute; z-index:15; color: #fffacd; font-size:18px; color:#f7f6fc; margin-top:140px; margin-left:180px; }
+    </style>
+</head>
+<body>
+<div class="index-wrap"><!--背景-->
+	<div class="header"><!--头部  start-->
+    	<div class="header-box">
+        	<a href="#"><img src="images/logo.png" /></a><!--logo-->
+            <div class="navwrap"><!--导航  start-->
+                <ul id="nav"> 
+                    <li class="page_item">
+                        <a href="#" >Visval life<span></span></a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >镜匠人ATM<span></span></a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >Eye Artisans<span></span></a> 
+                        <ul class='children'> 
+                            <li class="page_item"><a href="#" >Brand introduction /品牌介绍</a></li> 
+                            <li class="page_item"><a href="#/">Series products /系列产品</a> 
+                                <ul class='children'> 
+                                    <li class="page_item"><a href="#" >A系列<span></span></a></li> 
+                                    <li class="page_item"><a href="#" >B系列<span></span></a></li>
+                                    <li class="page_item"><a href="#" >C系列<span></span></a></li>
+                                    <li class="page_item"><a href="#" >其他系列<span></span></a></li> 
+                                </ul> 
+                            </li> 
+                            <li class="page_item"><a href="#" >Brand joined /品牌加盟</a></li> 
+                        </ul> 
+                    </li> 
+                    
+                </ul>                
+            </div> <!--导航  end-->
+        </div>
+    </div><!--头部  end-->
+	<div class="eye25Main">
+    	<div class="eye25Center"><!--主体内容  start-->
+           <div class="imgCenter"><!--三排图片滚动-->
+            <div class="imgCenters">
+                <div id="San_flash">
+                    <div class="flashPg">
+                        <ul class="Mobile">
+                            <li>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp00.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp00.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp00.jpg"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp01.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp01.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp01.jpg"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp02.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp02.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp02.jpg"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp03.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp03.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp03.jpg"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp04.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp04.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp04.jpg"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp05.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp05.jpg"/>
+                                </div>
+                                <div class="aglass">
+                                    <div class="pbg"></div>
+                                    <a class="alink" href="#">产品详情  ></a>
+                                    <img src="images/eye-cp05.jpg"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="but_left prev"><img src="images/eye-img-left.png" /></div>
+                    <div class="but_right next"><img src="images/eye-img-right.png" /></div>
+                  </div>
+             </div>
+         </div>
+        </div><!--主体内容  end-->
+    </div>
+    <div class="footer"><!--页尾  start-->
+    	<div class="foot-box">
+        	<p class="p-left">2015 版权所有 蜀ICP备12006200号 </p>
+            <p class="p-center">德國鏡匠人國際眼鏡集團有限公司</p>
+            <p class="p-right">FLAT B07 FLOOR23,HOVER IND BLDG NO 26-38 KWAI CHEONG RD,NT</p>
+        </div>
+    </div><!--页尾  end-->
+</div>
+<script type="text/javascript">
+//三排图片滚动
+$("#San_flash").slide({ titCell:"" , mainCell:".Mobile", effect:"leftLoop", vis:4, delayTime:700 ,autoPlay:false,autoPage:true })
+//鼠标遮罩层
+$(function(){
+	$('.Mobile li').each(function(index, element) {
+        $(this).find('.aglass').hover(function(e) {
+            $(this).find('.pbg').stop(true,true).slideToggle();
+        });
+    });
+	/*$('.Mobile li .aglass').hover(function(){
+		$(this).find('.pbg').stop(true,true).slideToggle();*/
+		/*$('.pbg',this).stop().animate({
+			height:'179px'
+		});
+	},function(){
+		$('.pbg',this).stop().animate({
+			height:'0'
+		});*/
+
+});
+</script>
+</body>
+</html>

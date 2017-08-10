@@ -1,0 +1,213 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+
+    <div class="yyt-023">
+        <div class="wrapper">
+            <div class="title">
+                <p>选择超过三所院校，会产生额外费用，点击查看 <a href="javascript:;" class="jifei">计费标准。</a></p>
+                <div class="jifei-tc clearfix">
+                    <a href="javascript:;" class="jifei-close"></a>
+                    <div class="clearfix clear"></div>
+                    <h1>费用相关的文字说明</h1>
+                    {{$data.content}}
+                </div>
+            </div>
+            <form action="__ROOT__/Fguestbook/applyadd1" method="post" id='myform5'>
+
+                {{foreach from=$apply item=v key=k}}
+
+                <div class="card clearfix">
+                    <div class="part1">
+                        <a href="javascript:;" class="card-close"></a>
+                        <img src="__PUBLIC__/uploads/{{$v.thumb}}" alt=""/>
+                        <h1>{{$v.title}}</h1>
+                        <p>{{$v.etitle}}</p>
+
+                        <div class="row clearfix">
+                            <label for="">层次：</label>
+                            <div class="select">
+                                <span>                                  
+                                    {{if $smarty.session.apply1}}
+                                    {{if $smarty.session.apply1.$k.q_cengci==1}}小学
+                                    {{elseif $smarty.session.apply1.$k.q_cengci==2}}初中
+                                    {{elseif $smarty.session.apply1.$k.q_cengci==3}}高中
+                                    {{elseif $smarty.session.apply1.$k.q_cengci==4}}本科
+                                    {{elseif $smarty.session.apply1.$k.q_cengci==5}}研究生
+                                    {{elseif $smarty.session.apply1.$k.q_cengci==6}}博士
+                                    {{elseif $smarty.session.apply1.$k.q_cengci==7}}语言
+                                    {{elseif $smarty.session.apply1.$k.q_cengci==8}}专科
+                                    {{/if}}
+                                    {{/if}}
+                                </span><b></b>
+                                <ul class="address">
+                                    <li onclick="shengqing(this, 1);"> <a href="javascript:;">小学</a></li>
+                                    <li onclick="shengqing(this, 2);"> <a href="javascript:;">初中</a></li>
+                                    <li onclick="shengqing(this, 3);"> <a href="javascript:;">高中</a></li>
+                                    <li onclick="shengqing(this, 4);"> <a href="javascript:;">本科</a></li>
+                                    <li onclick="shengqing(this, 5);"> <a href="javascript:;">研究生</a></li>
+                                    <li onclick="shengqing(this, 6);"> <a href="javascript:;">博士</a></li>
+                                    <li onclick="shengqing(this, 7);"> <a href="javascript:;">语言</a></li>
+                                    <li onclick="shengqing(this, 8);"> <a href="javascript:;">专科</a></li>
+                                </ul>
+                                <input name="info[{{$k}}][q_cengci]" type="hidden" value="{{if $smarty.session.apply1}}{{$smarty.session.apply1.$k.q_cengci}}{{/if}}">
+                            </div>
+                            <label >领域：</label>
+                            <div class="select">
+                                <span>
+                                    {{if $smarty.session.apply1}}
+                                    {{$smarty.session.apply1.$k.q_lingyu}}
+                                    {{/if}}
+                                </span><b></b>
+                                <ul class="address">
+
+                                    {{php}}
+
+                                    $a=$this->_tpl_vars['v']['zy'];
+                                    $zy=null;
+                                    foreach($a as $k=>$v){
+                                       $zy[]=$v['lingyu'];
+                                    }
+                                    $zy=array_unique($zy);
+                                    $this->_tpl_vars['z']=$zy;
+                                    {{/php}}
+
+                                    {{foreach from=$z item=ly}}                   
+                                    <li onclick="lingyu(this,'{{$ly}}')">{{$ly}}</li>
+                                    {{/foreach}}
+                                </ul>
+                                <input name="info[{{$k}}][q_lingyu]" type="hidden" value="{{if $smarty.session.apply1}}{{$smarty.session.apply1.$k.q_lingyu}}{{/if}}">                      
+                            </div>
+                            <label >专业：</label>
+                            <div class="select select-lg">
+                                <span>
+                                                 {{if $smarty.session.apply1}}
+                                    {{$smarty.session.apply1.$k.q_zhuanye}}
+                                    {{/if}}
+                                </span><b></b>
+                                <ul class="address">
+                                    {{foreach from=$v.zy item=zy}}                   
+                                    <li onclick="zhuanye(this,'{{$zy.title}}')">{{$zy.title}}</li>
+                                    {{/foreach}}
+                                </ul>
+                                <input name="info[{{$k}}][q_zhuanye]" type="hidden" value="{{if $smarty.session.apply1}}{{$smarty.session.apply1.$k.q_zhuanye}}{{/if}}">
+                            </div>
+
+                        </div>
+                        <div class="row clearfix">
+                            <label >层次：</label>
+                            <div class="select">
+                                <span>             
+                                    {{if $smarty.session.apply1}}
+                                    {{if $smarty.session.apply1.$k.q1_cengci==1}}小学
+                                    {{elseif $smarty.session.apply1.$k.q1_cengci==2}}初中
+                                    {{elseif $smarty.session.apply1.$k.q1_cengci==3}}高中
+                                    {{elseif $smarty.session.apply1.$k.q1_cengci==4}}本科
+                                    {{elseif $smarty.session.apply1.$k.q1_cengci==5}}研究生
+                                    {{elseif $smarty.session.apply1.$k.q1_cengci==6}}博士
+                                    {{elseif $smarty.session.apply1.$k.q1_cengci==7}}语言
+                                    {{elseif $smarty.session.apply1.$k.q1_cengci==8}}专科
+                                    {{/if}}
+                                    {{/if}}
+                                </span><b></b>
+                                <ul class="address">
+                                    <li onclick="shengqing(this, 1);"> <a href="javascript:;">小学</a></li>
+                                    <li onclick="shengqing(this, 2);"> <a href="javascript:;">初中</a></li>
+                                    <li onclick="shengqing(this, 3);"> <a href="javascript:;">高中</a></li>
+                                    <li onclick="shengqing(this, 4);"> <a href="javascript:;">本科</a></li>
+                                    <li onclick="shengqing(this, 5);"> <a href="javascript:;">研究生</a></li>
+                                    <li onclick="shengqing(this, 6);"> <a href="javascript:;">博士</a></li>
+                                    <li onclick="shengqing(this, 7);"> <a href="javascript:;">语言</a></li>
+                                    <li onclick="shengqing(this, 8);"> <a href="javascript:;">专科</a></li>
+                                </ul>
+                                <input name="info[{{$k}}][q1_cengci]" type="hidden"  value="{{if $smarty.session.apply1}}{{$smarty.session.apply1.$k.q1_cengci}}{{/if}}">
+                            </div>
+                            <label >领域：</label>
+                            <div class="select">
+                                <span>
+                                        {{if $smarty.session.apply1}}
+                                    {{$smarty.session.apply1.$k.q1_lingyu}}
+                                    {{/if}}
+                                </span><b></b>
+                                <ul class="address">
+                                    {{foreach from=$z item=ly}}                   
+                                    <li onclick="lingyu(this,'{{$ly}}')">{{$ly}}</li>
+                                    {{/foreach}}
+                                </ul>
+                                <input name="info[{{$k}}][q1_lingyu]" type="hidden" value="{{if $smarty.session.apply1}}{{$smarty.session.apply1.$k.q1_lingyu}}{{/if}}">                            
+                            </div>
+                            <label >专业：</label>
+                            <div class="select select-lg">
+                                <span>
+                                                         {{if $smarty.session.apply1}}
+                                    {{$smarty.session.apply1.$k.q1_zhuanye}}
+                                    {{/if}}
+                                </span><b></b>
+                                <ul class="address">
+                                    {{foreach from=$v.zy item=zy}}                   
+                                    <li onclick="zhuanye(this,'{{$zy.title}}')">{{$zy.title}}</li>
+                                    {{/foreach}}
+                                </ul>
+                                <input name="info[{{$k}}][q1_zhuanye]" type="hidden" value="{{if $smarty.session.apply1}}{{$smarty.session.apply1.$k.q1_zhuanye}}{{/if}}">                 
+                            </div>
+                         <input name="info[{{$k}}][title]" type="hidden" value="{{$v.title}}">          
+                         <input name="info[{{$k}}][etitle]" type="hidden" value="{{$v.etitle}}">          
+                        </div>
+                    </div>
+                    <div class="part2">
+
+                        <p>申请费：<span>￥{{$v.sqf.sqf}}</span></p>
+                        <input type='hidden' value="{{$v.sqf.sqf}}" name='info[{{$k}}][price]'>
+                        <input type='hidden' value="82" name='catid'/>
+                        <input type='hidden' value="1" name='temp'/>
+                        <input type='hidden' value="{{$v.thumb}}" name='info[{{$k}}][thumb]'/>
+                        <input type='hidden' value="{{$k}}" name='info[{{$k}}][num]'/>
+                        <input type='hidden' value="{{$v.cid}}" name='info[{{$k}}][cid]'/>
+                        <input type="checkbox" name='info[{{$k}}][check]' value="1" {{if $smarty.session.apply1}}{{if $smarty.session.apply1.$k.check}}{{if $smarty.session.apply1.$k.check==1}}checked="checked"{{/if}}{{/if}}{{/if}}/><label >选择</label>
+                    </div>
+                </div>
+
+                {{/foreach}}
+            </form>
+            <div class="submit">
+                <a href="javascript:;" class="save">保存</a>
+                <a href="javascript:;" class="next">下一步</a>
+                <div class="clearfix clear"></div>
+                <p>查找保存方案进入个人中心</p>
+            </div>
+
+        </div>
+
+        {{include file="system/footer.html"}}
+        <script>
+            //弹窗
+            $('.jifei').click(function() {
+                $('.jifei-tc').show();
+            });
+            $('.jifei-close').click(function() {
+                $('.jifei-tc').hide();
+            });
+            //del  card
+            $('.card-close').click(function() {
+                $(this).parent().parent().remove();
+            });
+            function shengqing(obj, a) {
+                $(obj).parent().next().val(a);
+            }
+            function lingyu(obj, a) {
+                $(obj).parent().next().val(a);
+            }
+            function zhuanye(obj, a) {
+                $(obj).parent().next().val(a);
+            }      
+            $('.save').click(function(){
+                $("#myform5").submit();
+            })
+            $('.next').click(function(){      
+              $("#myform5").attr("action","__ROOT__/Fguestbook/stemp2");//更改属性
+              $("#myform5").submit();
+            })
+
+        </script>
+</body>
+</html>

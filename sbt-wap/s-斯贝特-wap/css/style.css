@@ -1,0 +1,296 @@
+/*内页样式*/
+#sidebanner{
+	width: 640px;
+	height: 160px;
+	margin: 0 auto;
+}
+#sidebanner img{ width: 640px; height: 160px; }
+
+#menu{ width: 640px; height: 88px; background-color: #fff; }
+#menu ul li{
+	float: left;
+	width: 206px;
+	height: 88px;
+}
+#menu ul li a{
+	display: block;
+	width: 200px;
+	height: 88px;
+	line-height: 88px;
+	color: #666;
+	font-size: 22px;
+	text-align: center;
+}
+#menu ul li a:hover, #menu ul li a.on{ background-color: #20477c; color: #fff; }
+#content{ width: 640px; background-color: #f2f2f2; padding-top: 46px; }
+/*=== 上一个/下一个 ===*/
+.switch{ text-align: center; font-size: 0; padding-top: 48px; }
+.switch a{ width: 270px; height: 60px; line-height: 60px; display: inline-block; background-color: #fff; color: #666; font-size: 22px; }
+.switch a:hover, .switch a.on{ background-color: #c13744; color: #fff; }
+.switch a.prev{ margin-right: 42px; }
+
+/*产品*/
+.product{ padding-bottom: 40px; }
+.product p.product-series {
+	padding-bottom: 28px;
+	font-size: 22px;
+	color: #666;
+}
+.product .product-list li {
+	float: left;
+	width: 180px;
+	height: 66px;
+	line-height: 66px;
+	background-color: #fff;
+	margin-right: 30px;
+	margin-bottom: 24px;
+	border-radius: 6px;
+}
+.product .product-list li a {
+	display: block;
+	width: 180px;
+	height: 66px;
+	line-height: 66px;
+	font-size: 18px;
+	color: #666;
+}
+.product .product-list li a span {
+	font-size: 18px;
+	padding-left: 16px;
+	padding-right: 10px;
+}
+.product .product-list li a:hover,
+.product .product-list li a:hover span { color: #999; }
+.product .product-wrap{ padding-bottom: 40px; }
+.product-detail{ padding-bottom: 72px; }
+.product-detail h3{
+	color: #333;
+	font-size: 22px;
+	padding-bottom: 40px;
+}
+.product-detail p{
+	color: #666;
+	font-size: 18px;
+	line-height: 36px;
+	padding-bottom: 24px;
+}
+
+
+/*关于我们*/
+#menu .aboutmenu li, #menu .aboutmenu li a { width: 120px; }
+#menu .aboutmenu li{ margin-right: 4px; }
+#menu .aboutmenu li.last{ margin-right: 0; }
+.about{ padding-bottom: 60px; }
+.about p{
+	color: #666;
+	font-size: 18px;
+	line-height: 36px;
+	padding-bottom: 20px;
+}
+.honor{ padding-bottom: 54px; }
+.honor-list a.honorimg{
+	float: left;
+	display: block;
+	width: 305px;
+	height: 214px;
+	padding: 4px;
+	background-color: #fff;
+	margin-right: 10px;
+	margin-bottom: 32px;
+}
+.honor-list a.honorimg img{ width: 297px; height: 206px; }
+.team{ padding-bottom: 56px; }
+.team-detail{ padding-bottom: 56px; }
+.team-detail .team-list{ float: none; width: 600px; }
+.team-detail .team-list a{ width: 600px; text-align: center; padding: 0; height: 360px; }
+.team-detail .team-info{ padding-bottom: 20px; }
+.team-detail .team-info p{ color: #666; font-size: 18px; line-height: 36px; padding-bottom: 12px;}
+
+/*客户中心*/
+.customer{ padding-bottom: 50px; }
+.service li{
+	position: relative;
+	height: 90px;
+	line-height: 90px;
+	border-bottom: 1px dashed #dbdbdb;	
+}
+.service li img{
+	position: absolute;
+	left: 10px;
+	top: 42px;
+}
+.service li a{
+	display: block;
+	height: 90px;
+	line-height: 90px;
+	font-size: 20px;
+	color: #666;
+	overflow: hidden;
+	width: 612px;
+	white-space:nowrap; 
+	text-overflow:ellipsis;
+	padding-left: 32px;
+}
+.service li a:hover { color: #20477c; }
+.consult{ padding-bottom: 66px; }
+.consult input.info {
+	width: 600px;
+	height: 70px;
+	line-height: 70px;
+	padding: 0 16px;
+	background-color: #fff;
+	margin-bottom: 26px;
+	color: #666;
+	font-size: 18px;
+}
+.consult textarea {
+	width: 600px;
+	height: 270px;
+	padding: 16px;
+	background-color: #fff;
+	color: #666;
+	font-size: 18px;
+}
+.consult input.submit {
+	display: block;
+	margin: 0 auto;
+	width: 420px;
+	height: 60px;
+	margin-top: 66px;
+	color: #fff;
+	font-size: 24px;
+	background-color: #bb2230;
+}
+
+/*联系我们*/
+.contact{ padding-bottom: 64px; }
+.contact-info{ padding-bottom: 50px; }
+.contact-info p{
+	color: #333;
+	font-size: 22px;
+	height: 80px;
+	line-height: 36px;
+	padding-left: 54px;
+	padding-top: 22px;
+	background: url(../images/icon0.png) no-repeat 0 25px;
+}
+.contact-info p span{
+	color: #333;
+	font-size: 22px;
+}
+.contact-info p.two{ background-position: 0 -54px; }
+.contact-info p.three{ background-position: 0 -137px; }
+.contact-info p.four{ background-position: 0 -216px; }
+.contact-info p.five{ background-position: 0 -296px; }
+.contact-info p.fix{ 
+	text-indent: -72px;
+	padding-left: 124px;
+	background-position: 0 -376px;
+}
+#dituContent{
+	width: 640px;
+	height: 496px;
+	margin: 0 auto;
+	-webkit-box-shadow: 2px 4px 28px -6px rgba(0,0,0,0.4);
+	   -moz-box-shadow: 2px 4px 28px -6px rgba(0,0,0,0.4);
+	        box-shadow: 2px 4px 28px -6px rgba(0,0,0,0.4);
+}
+
+
+/*新闻动态*/
+.news, .news-detail { padding-bottom: 54px; }
+.news-detail .news-con p{
+	line-height: 36px;
+	font-size: 18px;
+	color: #666;
+	padding-bottom: 22px;
+}
+.news-detail .news-con img{ max-width: 600px; padding-bottom: 22px; }
+.news-detail .name{ font-size: 24px; color: #333; font-weight: normal; text-align: center; }
+.news-detail p.state { font-size: 18px; color: #666; padding-top: 36px; padding-bottom: 36px; text-align: center;}
+
+
+/*业务范畴*/
+#business-menu{ width: 640px; height: 88px; background-color: #fff; margin-bottom: 10px;}
+#business-menu ul li{
+	float: left;
+	width: 124px;
+}
+#business-menu ul li a{
+	display: inline-block;
+	width: 120px;
+	color: #666;
+	font-size: 22px;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#business-menu ul li a:hover, #business-menu ul li a.on{ background-color: #20477c; color: #fff; }
+.business{ padding-bottom: 80px; }
+.business .state{ padding-bottom: 44px; }
+.business .state p{
+	font-size: 18px;
+	color: #666;
+	line-height: 36px;
+}
+.business h3{ color: #333; font-size: 24px; padding-bottom: 28px; }
+.business .lct{ text-align: center; padding-bottom: 80px;}
+.business .lct img{ max-width: 600px; }
+.business .case{ text-align: center; position: relative; }
+.case a{
+	position: absolute;
+	display: block;
+	width: 124px;
+	height: 124px;
+}
+/*case1*/
+.case1 a.one{ top: 20px; left: 240px; }
+.case1 a.two{ top: 74px; right: 64px; }
+.case1 a.three{ top: 220px; right: -6px; }
+.case1 a.four{ bottom: 56px; right: 64px; }
+.case1 a.five{ bottom: 20px; left: 240px; }
+.case1 a.six{ bottom: 56px; left: 75px; }
+.case1 a.seven{ top: 220px; left: 20px; }
+.case1 a.eight{ top: 74px; left: 74px; }
+/*case2*/
+.case2 a.one{ top: 0; left: 228px; }
+.case2 a.two{ top: 120px; right: 48px; }
+.case2 a.three{ top: 304px; right: 102px; }
+.case2 a.four{ top: 306px; left: 115px; }
+.case2 a.five{ top: 120px; left: 45px; }
+/*case3*/
+.case3{ padding-top: 78px; }
+.case3 a.one{ top: 90px; right: 80px; width: 80px; height: 134px; }
+.case3 a.two{ top: 234px; right: 80px; width: 104px; height: 90px;}
+.case3 a.three{ bottom: 18px; right: 134px; width: 163px; height: 90px;}
+.case3 a.four{ bottom: 18px; left: 128px; width: 163px; height: 90px; }
+.case3 a.five{ top: 244px; left: 82px; width: 104px; height: 90px;}
+.case3 a.six{ top: 90px; left: 85px; width: 80px; height: 134px; }
+/*case4*/
+.case4 a.one{ top: 24px; right: 192px; width: 212px; height: 70px; }
+.case4 a.two{ top: 76px; right: 52px; width: 136px; height: 180px;}
+.case4 a.three{ bottom: 60px; right: 54px; width: 126px; height: 200px;}
+.case4 a.four{ bottom: 14px; right: 192px; width: 212px; height: 70px;  }
+.case4 a.five{ bottom: 60px; left: 54px;  width: 126px; height: 200px;}
+.case4 a.six{ top: 82px; left: 44px; width: 136px; height: 180px; }
+/*case5*/
+.case5{ padding-top: 40px; }
+.case5 a{ width: 114px; height: 86px; }
+.case5 a.one{ top: 92px; right: 308px; }
+.case5 a.two{ top: 92px; right: 178px;}
+.case5 a.three{ top: 92px; right: 48px; }
+.case5 a.four{ bottom: 10px; right: 308px; }
+.case5 a.five{ bottom: 10px; left: 308px; }
+
+.business-detail{ padding-bottom: 50px; }
+.business-detail h3{
+	font-size: 24px;
+	color: #333;
+	font-weight: normal;
+	text-align: center;
+	padding-bottom: 40px;
+}
+.business-detail h3 span{ font-size: 20px; }
+.business-detail p{ color: #666; font-size: 18px; line-height: 36px; padding-bottom: 16px;}
+.business-detail img{ max-width: 600px; padding-bottom: 20px; }
+

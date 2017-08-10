@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="keywords" content="方法数码网站建设">
+	<meta name="description" content="方法数码网站建设">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=emulateie7" />
+	<!--[if lt IE 9]>
+    <script  src="js/jquery.html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+    <!--[if lt IE 7]>
+    <script src="js/jquery.fixie6.js" type="text/javascript" ></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+	<title>用户管理-添加角色</title>
+</head>
+<body>
+    <!-- header -->
+    <div id="header">
+    	<div class="header fw">
+             <a id="logo" href="index.html"><img src="images/logo.png"></a>   
+        </div>
+    </div>
+
+    <!-- nav -->
+    <div id="nav">
+        <div class="fw">
+            <ul class="nav clearfix">
+                <li class="nli">
+                    <a class="item on" href="index.html">用户管理</a>
+                    <ul class="subnav">
+                        <i></i>
+                        <li><a href="1-3.html">添加用户</a></li>
+                        <li><a href="1-4.html">用户列表</a></li>
+                        <li><a class="on" href="#">添加角色</a></li>
+                        <li><a href="#">角色列表</a></li>
+                        <li><a href="#">添加单位（部门）</a></li>
+                        <li><a href="1-2.html">单位（部门）列表</a></li>
+                        <li><a href="#">用户信息</a></li>
+                        <li><a href="#">新增作者</a></li>
+                        <li><a href="#">作者管理</a></li>
+                    </ul>
+                </li>
+                <li class="line"></li>
+                <li class="nli">
+                    <a class="item" href="2.html">信息报送管理</a>
+                    <ul class="subnav">
+                        <i></i>
+                        <li><a href="2.html">年度任务</a></li>
+                    </ul>
+                </li>
+                <li class="line"></li>
+                <li class="nli">
+                    <a class="item" href="3.html">栏目管理</a>
+                    <ul class="subnav">
+                        <i></i>
+                        <li><a href="#">添加用户</a></li>
+                    </ul>
+                </li>
+                <li class="line"></li>
+                <li class="nli">
+                    <a class="item" href="4.html">公告管理</a>
+                    <ul class="subnav">
+                        <i></i>
+                        <li><a href="#">添加用户</a></li>
+                    </ul>
+                </li>
+                <li class="line"></li>
+            </ul>
+            <div class="out-refresh">
+                <a href="login.html">[退出]</a>
+                <a href="javascript:location.reload();">[刷新]</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 内容 -->
+    <div id="container">
+        <div class="content fw clearfix">
+            <div class="sidebar fl">
+                <div class="headtitle">
+                    <h2 class="title">用户信息</h2>
+                </div>
+                <div class="side-menu">
+                    <p class="top">测试 欢迎使用信息报送系统</p>
+                    <p class="item">来自：<span>总经理（党委）办公室</span></p>
+                    <p class="item">上次登录时间：<span>2016-11-14 14:13</span></p>
+                    <p class="item">上次登录IP：<span>192.168.0.12</span></p>
+                </div>
+            </div>
+            <div class="sidecon fr">
+                <div class="headtitle">
+                    <h2 class="title">• 添加角色</h2>
+                    <p class="location">当前位置：<a href="">用户管理</a> ＞ <a href="">添加用户</a></p>
+                </div>
+                <div class="side-content">
+                    <p class="notes">“ <i>*</i> ”标示必须填写的字段</p>
+                    <div class="info info-add clearfix">
+                        <span class="fl"><i>*</i> 标题</span>
+                        <input class="name" type="text" name="" value="">
+                    </div>
+                    <div class="info clearfix">
+                        <span class="fl">&nbsp;&nbsp;&nbsp;报送栏目</span>
+                        <select>
+                            <option>内部栏目</option>
+                            <option>内部栏目</option>
+                            <option>内部栏目</option>
+                        </select>
+                        <select>
+                            <option>今日关注</option>
+                            <option>今日关注</option>
+                            <option>今日关注</option>
+                        </select>
+                    </div>
+                    <div class="info clearfix">
+                        <span class="fl">&nbsp;&nbsp;&nbsp;意愿报送栏目</span>
+                        <select>
+                            <option>意愿报送栏目</option>
+                            <option>内部栏目</option>
+                            <option>内部栏目</option>
+                        </select>
+                    </div>
+                    <div class="info clearfix">
+                        <span class="fl"><i>*</i> 报送内容</span>
+                        <div id="edit" class="fl"></div>
+                    </div>
+                    <div class="info clearfix">
+                        <span class="fl"><i>*</i> 本单位审批者</span>
+                        <input class="name" type="text" name="" value="">
+                    </div>
+                    <div class="info clearfix">
+                        <span class="fl"><i>*</i> 文字作者</span>
+                        <a id="add1" class="aa" href="javascript:;">设置作者</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a id="add2" class="aa" href="javascript:;">添加作者</a>
+                    </div>
+                    <button class="submit" style="margin-top: 40px;">提 交 保 存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mask hide">
+        <div class="add-con">
+            <!-- 添加内容一 -->
+            <div class="add1 hide">
+                <h2 class="add-title">添加内容一</h2>
+                <div class="add-detail">
+                    <p><i>*</i> 标示必须填写的字段</p>
+                    <div class="info clearfix">
+                        <span class="fl"><i>*</i> 字段一：</span>
+                        <input class="ileft fl" type="text" name="">
+                        <span class="fl">&nbsp;&nbsp;&nbsp;字段一：</span>
+                        <input class="fl" type="text" name="">
+                    </div>
+                    <div class="info clearfix">
+                        <span class="fl">&nbsp;&nbsp;&nbsp;字段三字段三：</span>
+                        <input class="fl" type="text" name="">
+                    </div>
+                    <div class="info clearfix">
+                        <span class="fl">&nbsp;&nbsp;&nbsp;字段三字段三：</span>
+                        <input class="large fl" type="text" name="">
+                    </div>
+                    <div class="check clearfix">
+                        &nbsp;&nbsp;&nbsp;<input class="cb fl" type="checkbox" name="">
+                        <span class="fl">启用</span>
+                        <input class="cb fl" type="checkbox" name="">
+                        <span class="fl">启用</span>
+                        <input class="cb fl" type="checkbox" name="">
+                        <span class="fl">启用</span>
+                    </div>
+                    <div class="submit-btn">
+                        <button class="submit" style="margin-top: 40px;">提 交</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 添加内容二 -->
+            <div class="add2 hide">
+                <h2 class="add-title">添加内容二</h2>
+                <div class="add-detail">
+                    <p><i>*</i> 标示必须填写的字段</p>
+                    <div class="info clearfix">
+                        <span class="fl"><i>*</i> 字段一：</span>
+                        <input class="ileft fl" type="text" name="">
+                        <span class="fl">&nbsp;&nbsp;&nbsp;字段一：</span>
+                        <input class="fl" type="text" name="">
+                    </div>
+                    <div class="info clearfix">
+                        <span class="fl">&nbsp;&nbsp;&nbsp;字段三字段三：</span>
+                        <input class="ileft fl" type="text" name="">
+                        <span class="fl">&nbsp;&nbsp;&nbsp;选择：</span>
+                        <select class="fl">
+                            <option>选项一</option>
+                            <option>选项一</option>
+                            <option>选项一</option>
+                        </select>
+                    </div>
+                    <div class="info clearfix">
+                        <span class="fl">&nbsp;&nbsp;&nbsp;字段三字段三：</span>
+                        <input class="large fl" type="text" name="">
+                    </div>
+                    <div class="check clearfix">
+                        &nbsp;&nbsp;&nbsp;<input class="cb fl" type="checkbox" name="">
+                        <span class="fl">启用</span>
+                        <input class="cb fl" type="checkbox" name="">
+                        <span class="fl">启用</span>
+                        <input class="cb fl" type="checkbox" name="">
+                        <span class="fl">启用</span>
+                    </div>
+                    <div class="info">
+                        <span class="fl">&nbsp;&nbsp;&nbsp;选择：</span>
+                        <select class="fl">
+                            <option>选项一</option>
+                            <option>选项一</option>
+                            <option>选项一</option>
+                        </select>
+                    </div>
+                    <div class="submit-btn">
+                        <button class="submit" style="margin-top: 40px;">提 交</button>
+                    </div>
+                </div>
+            </div>
+            <a id="add-close" href="javascript:;"></a>
+        </div>
+        <div class="bg"></div>
+    </div>
+    
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="fw">
+            <p>
+                版权所有 : <a href="">四川省交通投资集团公司</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="">蜀ICP备10204640号-1</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $('#add1').click(function(){
+            $('.mask').removeClass('hide');
+            $('.add-con .add1').removeClass('hide');
+        });
+        $('#add2').click(function(){
+            $('.mask').removeClass('hide');
+            $('.add-con .add2').removeClass('hide');
+        });
+        $('#add-close').click(function(){
+            $('.mask').addClass('hide');
+            $('.add-con .add1').addClass('hide');
+            $('.add-con .add2').addClass('hide');
+        });
+        $('.submit-btn .submit').click(function(){
+            $('.mask').addClass('hide');
+            $('.add-con .add1').addClass('hide');
+            $('.add-con .add2').addClass('hide');
+        })
+    </script>
+</body>
+</html>

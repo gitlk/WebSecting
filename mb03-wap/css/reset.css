@@ -1,0 +1,38 @@
+/*初始化*/
+@charset "utf-8";
+@font-face {
+	font-family: 'HelveticaNeueLTPro-ThEx';
+	src: url('fonts/HelveticaNeueLTPro-ThEx.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+body, h1, h2, h3, h4, h5, h6, p, span, strong, img, form, ul, li{ margin: 0; padding: 0; } 
+ul li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+img {
+	border: none;
+	float: left;
+}
+input {
+	border:none;
+	background:none;
+	outline: 0;
+}
+textarea{ outline: 0; }
+input, textarea {
+	font-family: Arial, "微软雅黑";
+	font-size: 14px;
+	-webkit-appearance: none;
+}
+
+/*IE7下去除点击虚框*/
+a { blr: expression(this.onFocus=this.close()); blr: expression(this.onFocus=this.blur()); }
+/*去除点击虚框*/
+a:focus {   
+	outline:none;    
+	-moz-outline:none; 
+}

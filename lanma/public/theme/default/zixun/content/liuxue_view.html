@@ -1,0 +1,50 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="zixun/sys/znav3.html"}}
+<div class="yyt-100">
+            {{ffcategory catid=$cat.parentid to=a}}
+            {{ffcategory catid=$a.parentid to=b}}
+    <div class="wrapper">
+        <div class="top-nav"><img src="__PUBLIC__/images/13-1.png" alt=""/><p><a href="{{$b.url}}">首页</a> > <a href="{{$a.url}}">{{$a.name}}</a></p></div>
+    </div>
+    <div class="wrapper clearfix">
+        <div class="part-left">
+            <h1><img src="__PUBLIC__/images/100-1.png" alt=""/>{{$a.name}}</h1>
+            <ul class="nav-zhuanti">
+                <li {{if $smarty.get.leibie==""||$smarty.get.leibie==1}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=1" leibie="1">基础知识</a><b></b></li>
+                <li {{if $smarty.get.leibie==2}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=2" >学校介绍</a><b></b></li>
+                <li {{if $smarty.get.leibie==3}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=3" >专业介绍</a><b></b></li>
+                <li {{if $smarty.get.leibie==4}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=4">费用清单</a><b></b></li>
+                <li {{if $smarty.get.leibie==5}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=5">递交申请</a><b></b></li>
+                <li {{if $smarty.get.leibie==6}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=6">获取offer</a><b></b></li>
+                <li {{if $smarty.get.leibie==7}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=7">换取coe</a><b></b></li>
+                <li {{if $smarty.get.leibie==8}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=8">签证递交</a><b></b></li>
+                <li {{if $smarty.get.leibie==9}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=9">行前准备</a><b></b></li>
+                <li {{if $smarty.get.leibie==10}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=10">懒马服务</a><b></b></li>
+                <li {{if $smarty.get.leibie==11}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=11">其他事项</a></li>
+            </ul>
+        </div>
+        <div class="part-right">
+            <div class="top">
+                {{ffcategory catid=$cat.parentid to=d}}
+                {{foreach from=$d.child item=s}}
+                <a {{if $s.catid==$cat.catid}}class="on"{{/if}} href="{{$s.url}}">{{$s.name}}</a>
+               {{/foreach}}
+            </div>
+          <div class="content100-1 clearfix">
+                <h1>{{$data.title}}</h1>
+                <p class="time">{{"Y . m . d "|date:$data.create_time}}     |      <span>查看： 2013</span></p>
+                <div class="article">
+                  {{$data.content}}
+                </div>
+                <a href="javascript:history.back(-1);" class="back">返回上一级</a>
+                 <a href="{{$data.next_url}}?leibie={{$smarty.get.leibie}}" class="fenye-prev">上一动态：<span>{{$data.next_title}}</span></a>
+                <a href="{{$data.pre_url}}?leibie={{$smarty.get.leibie}}" class="fenye-next">下一动态：<span>{{$data.pre_title}}</span></a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{{include file="system/footer.html"}}

@@ -1,0 +1,247 @@
+#login{
+	width: 100%;
+	height: auto;
+	padding-top: 1.5rem;
+	padding-left: 6.25%;
+	padding-right: 6.25%;
+}
+#login form{ width: 87.5%; margin: 0 auto; }
+#login form p.info input{
+	display: inline-block;
+	width: 87%;
+	height: 1.35rem;
+	line-height: 1.35rem;
+	font-size: 0.6rem;
+	color: #848486;
+	padding-left: 0.55rem;
+	border-bottom: 1px solid #ccc;
+	vertical-align: middle;
+}
+#login form p.info+p.info{ padding-top: 1rem;}
+#login form p.info span{
+	display: inline-block;
+	height: 1.35rem;
+	width: 10.7%;
+	padding-right: 0.4rem;
+}
+#login form p.info span img{ width: 1.1rem; height: 1.1rem;}
+#login form .auto{
+	margin-top: 1.25rem;
+	height: 0.75rem;
+	line-height: 0.75rem;
+	padding-left: 11.78%;
+	margin-bottom: 1.25rem;
+}
+#login form .auto .check{ position: relative;}
+#login form .auto .check img{
+	position: absolute;
+	left: 0.175rem;
+	top: 0.22rem;
+	height: 0.325rem;
+	width: 0.425rem;
+}
+#login form .auto .check a, 
+#login form .xy a.k{
+	position: relative;
+	display: inline-block;
+	border: 1px solid #999;
+	width: 0.75rem;
+	height: 0.75rem;
+	position: relative;
+	z-index: 99;
+}
+#login form .xy{ padding-top: 1.25rem; padding-bottom: 1.25rem; text-align: center;}
+#login form .xy a.k img{
+	position: absolute;
+	left: 0.15rem;
+	top: 0.2rem;
+	height: 0.325rem;
+	width: 0.425rem;
+}
+#login form .auto .check span, 
+#login form .xy a.xycon{ font-size: 0.5rem; color: #666; vertical-align: middle; line-height: 0.5rem; height: 0.75rem; display: inline-block;}
+#login form .auto a.forget{ color: #015daf; font-size: 0.5rem;}
+#login form .btn{ width: 7.5rem; margin: 0 auto;}
+#login form .btn+.btn{ padding-top: 0.5rem;}
+#login form .btn input{
+	width: 7.5rem;
+	height: 1.5rem;
+	font-size: 0.75rem;
+	border-radius: 1.5rem;
+}
+#login form .btn a.zc{
+	display: inline-block;
+	width: 7.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	text-align: center;
+	font-size: 0.75rem;
+	border-radius: 1.5rem;
+	border: 1px solid #015daf; 
+	color: #015daf; 
+}
+#login form .btn a.dlbtn{ background: #015daf; color: #fff; }
+#login form .dl input{ background: #015daf; color: #fff;}
+#login .shortcut{ padding-top: 1.4rem; text-align: center; }
+#login .shortcut p{ text-align: center; color: #666; font-size: 0.6rem; padding-bottom: 0.9rem;}
+#login .shortcut .logo-icon{ text-align: center; font-size: 0;}
+#login .shortcut .logo-icon a{
+	display: inline-block;
+	width: 1.45rem;
+	height: 1.8rem;
+	margin: 0 8.2%;
+}
+#login .shortcut .logo-icon a img{ width: 100%; height: auto; vertical-align: middle;}
+#step{
+	padding-top: 2.25rem;
+	width: 75%;
+	margin: 0 auto;
+}
+.step-list{ font-size: 0; height: 0.35rem; width: 100%; background: #fff0ef; position: relative; }
+.step-list a{
+	position: absolute;
+	top: -0.35rem;
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	border-radius: 1rem;
+	background: #fff0ef;
+}
+.step-list a.one{ left: 0; }
+.step-list a.two{ left: 30%; }
+.step-list a.three{ right: 30%; }
+.step-list a.four{ right: 0; }
+.step-list a span{
+	display: inline-block;
+	width: 0.65rem;
+	height: 0.65rem;
+	line-height: 0.65rem;
+	text-align: center;
+	border-radius: 0.65rem;
+	color: #000;
+	font-size: 0.5rem;
+	background: #fff0ef;
+	vertical-align: middle;
+}
+.step-list a.on span{
+	background: #da251d;
+	color: #fff;
+}
+#step p{
+	text-align: center;
+	color: #515153;
+	font-size: 0.65rem;
+	padding-top: 1rem;
+	padding-bottom: 0.65rem;
+}
+#login.login .btn{ margin-top: 2.5rem; }
+#login.login .btn a{
+	display: inline-block;
+	background: #015daf;
+    color: #fff;
+    width: 7.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 0.75rem;
+    border-radius: 1.5rem;
+    text-align: center;
+}
+#login.login .test{ position: relative;}
+#login.login .test img.testimg{
+	position: absolute;
+	right: 23.2%;
+	top: 0.95rem;
+	width: 3.125rem;
+	height: 1.1rem;
+}
+#login.login .testbtn{
+	position: absolute;
+	right: 0;
+	top: 1.2rem;
+	width: 17.85%;
+	height: 0.85rem;
+	line-height: 0.85rem;
+	border-radius: 0.85rem;
+	background: #015daf;
+	color: #fff;
+	font-size: 0.45rem;
+	text-align: center;
+	display: inline-block;
+}
+.stepimg{
+	height: auto;
+	width: 100%;
+}
+#login .finish{ text-align: center;}
+#login .finish img{ width: 5rem; height: 5rem; }
+#login .finish p.sucess{ 
+	text-align: center; 
+	color: #586170; 
+	font-size: 0.6rem; 
+	padding-top: 0.9rem; 
+	line-height: 1rem;
+}
+#login .finish p.one{ 
+	color: #586170; 
+	text-align: center; 
+	font-size: 0.6rem;
+	line-height: 1rem;
+	padding-bottom: 1rem;
+}
+#login .finish p.two{
+	color: #7687a3;
+	font-size: 0.5rem;
+	text-align: center;
+	padding-bottom: 2rem;
+	line-height: 1rem;
+}
+#login .yz { width: 100%; }
+#login .cz{ padding-top: 1.1rem;}
+
+/*注册协议*/
+.register-xy{ width: 100%; height: auto; padding: 1.4rem 0.5rem;}
+.register-xy h3{
+	color: #333;
+	font-size: 0.6rem;
+	text-align: center;
+	padding-bottom: 1rem;
+}
+.register-xy h4{
+	color: #626262; 
+	font-size: 0.45rem;
+	padding-bottom: 0.25rem;
+}
+.register-xy p{
+	color: #626262;
+	font-size: 0.45rem;
+	line-height: 1.5;
+	padding-bottom: 0.75rem;
+	text-indent: 0.9rem;
+}
+.register-xy a.agree{
+	display: block;
+	text-align: center;
+	width: 7.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	text-align: center;
+	font-size: 0.75rem;
+	border-radius: 1.5rem;
+	background: #015daf;
+	color: #fff; 
+	margin: 0 auto;
+	margin-top: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+

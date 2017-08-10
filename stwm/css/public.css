@@ -1,0 +1,220 @@
+﻿@charset "utf-8";
+/*************************************
+*样式主文件
+*@LIJIN
+*2016-10-28
+*************************************/
+/* CSS Document */
+/*NA-UI功能样式及布局系统*/
+body { box-sizing: content-box; font: normal 12px/1.5 \5fae\8f6f\96c5\9ed1, arial, \5b8b\4f53 ; min-width: 1000px; background-color: white; }
+img { display: inline; border: none; -ms-interpolation-mode: bicubic; }
+ul li { list-style-type: none; border: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+input,
+textarea { border: none; font: normal 12px/1.5 \5fae\8f6f\96c5\9ed1, arial, \5b8b\4f53; }
+/*在谷歌和火狐下不能拖拽*/
+textarea { resize: none; }
+/*去掉默认边框*/
+input,
+button,
+select,
+textarea,
+a { outline: none; background-color: transparent;}
+/* 只支持IE，过多使用效率低 */
+a { blr: expression(this.onFocus=this.close()); blr: expression(this.onFocus=this.blur()); color: #363b36}
+/* IE不支持 */
+a:focus { -moz-outline-style: none; outline: none; }
+a:hover { color: #00923f; }
+/*浮动*/
+.fl { float: left; }
+.fr { float: right; }
+/*清除浮动*/
+.clearfix:after { height: 0; content: ""; display: block; clear: both; visibility: hidden; font-size: 0; }
+.clearfix { zoom: 1; }
+* html .clearfix { zoom: 1; }
+/* IE6 */
+*:first-child + html .clearfix { zoom: 1; }
+/* IE7 */
+.clear { clear: both; height: 0; font-size: 0; }
+/*字体样式*/
+/*a { color: #3c3c3c; }*/
+.yahei { font-family: 'Microsoft YaHei'; }
+.wrapper{width: 1000px; margin:0 auto;}
+
+/*导航*/
+nav .banner{width: 100%;height:280px;position: relative;overflow: hidden;z-index: 1}
+
+nav .banner .logo{position: absolute;display: block;left: 0;top: 200px;z-index: 3}
+nav .banner .flashcon{width: 1920px;height: 280px;position: relative;left: 50%;margin-left: -960px;}
+
+
+nav .nav{height: 70px;}
+nav .nav .l{width: 70px;height: 70px;float: left;background-color: #00923f}
+nav .nav .l a{display: block;width: 100%;height: 32px;padding-top: 38px;color: #fff;font-size: 16px;text-align: center;background: url("../images/icon01.png") center 16px no-repeat}
+nav .nav .r{width: 930px;height: 63px;float: right;padding-top: 7px;background-color: #f3fff8}
+nav .nav .r li{float: left;width: 65px;margin-left: 60px;}
+nav .nav .r a{font-size: 16px;line-height: 28px;color: #363b36;}
+nav .nav .r a:hover{color: #00923f}
+nav .nav .r a.on{color: #00923f}
+
+
+.imgcon{height: 100px;overflow: hidden;position: relative;padding-bottom: 20px;}
+.imgcon img{display: block;}
+.imgslide .bd img{width: 100%;height: 100px;}
+.imgslide .hd{position: absolute;right: 0;bottom: 30px;z-index: 99}
+.imgslide .hd li{float: left;margin-right: 9px;cursor: pointer;background: url("../images/radius.png");width: 20px;height: 20px;text-align: center;line-height: 20px;font-size: 12px;color: #00923f}
+.imgslide .hd li.on{background: url("../images/radiuson.png");color: #ffffff}
+
+.commertitle{width: 100%;height: 35px;border-bottom: 2px solid #24ba65;background-color: #f6f6f7}
+.commertitle h1{float: left;font-size: 16px;color: #00923f;border-left: 2px solid #00923f;margin-left: 15px;padding-left: 5px;margin-top: 7px;height: 21px;line-height: 21px;}
+.commertitle a{float: right;font-size: 12px;color: #999999;line-height: 35px;margin-right: 20px;}
+.commertitle a:hover{color: #00923f}
+.commertitletwo{width: 100%;height: 35px;border-bottom: 2px solid #24ba65;background-color: #f3fff8}
+.commertitletwo h1{float: left;font-size: 16px;color: #ffffff;background-color: #00923f;height: 37px;padding: 0 15px;line-height: 35px;}
+.commertitletwo a{float: right;font-size: 12px;color: #999999;line-height: 35px;margin-right: 20px;}
+.commertitletwo a:hover{color: #00923f}
+
+footer{text-align: center;background-color: #f4f4f4;height: 69px;padding-top: 8px;}
+footer span{font-size: 12px;line-height: 30px;color: #333333;margin: 0 15px;}
+footer a{font-size: 12px;line-height: 30px;color: #666666;margin: 0 15px;}
+
+.inside{margin-top: 10px;margin-bottom: 30px;}
+.inside .leftcon{float: left;width: 683px;border: 1px solid #f8f8f8;padding-bottom: 25px;overflow: hidden}
+.inside .leftcon .heade{line-height: 43px;border-bottom: 2px solid #00923f}
+.inside .leftcon .heade h1{font-size: 16px;color: #00923f;margin-left: 15px;}
+.inside .leftcon .heade div{margin-right: 15px;}
+.inside .leftcon .heade div .indexaddress{background: url("../images/icon02.png") left center no-repeat;padding-left: 20px;}
+.inside .leftcon .heade div a{font-size: 12px;color: #666666}
+.inside .leftcon .heade div a:hover{color: #00923f}
+.inside .leftcon .divlistcon .containt{width: 655px;margin: 0 auto;padding-bottom: 30px;}
+.divlistcon .containt .headetwo{height: 36px;background-color: #f3fff8;line-height: 36px;}
+.divlistcon .containt .headetwo h1{font-size: 14px;color: #00923f;float: left;margin-left: 10px;}
+.divlistcon .containt .headetwo a{float: right;margin-right: 10px;color: #999999}
+.divlistcon .containt .headetwo a:hover{color: #00923f}
+.divlistcon .containt ul li{border-bottom: 1px dashed #b0b0b0;line-height: 40px;height: 40px;padding-left: 10px;}
+.divlistcon .containt ul li span{float: right;margin-right: 10px;color: #666666;font-size: 14px;}
+.divlistcon .containt ul li a{float: left;color: #666666;font-size: 14px;}
+.divlistcon .containt ul li a b{padding-right: 5px;color: #00923f}
+.divlistcon .containt ul li a:hover{color: #00923f}
+.divlistcon .containt ul li a:hover b{color: #666666}
+
+.inside .insidenav{border:1px solid #f8f8f8;}
+
+.inside .insidenav{float: right;width: 300px;border: 1px solid #f8f8f8;overflow: hidden}
+
+.inside .insidenav h2{letter-spacing: 2px;border-bottom: 2px solid #00923f;text-align: center;height: 42px;line-height: 42px;font-size: 16px;color: #00923f;}
+
+.inside .insidenav ul{padding-top: 10px;width: 290px;margin: 0 auto}
+
+.inside .insidenav ul li{border-bottom: 1px dashed #dcdcdc;padding: 10px 0}
+
+.inside .insidenav ul li a{font-size: 14px;line-height: 22px;color: #666666;background: url(../images/dian.png) 7px 10px no-repeat;padding-left: 15px;display: block}
+
+.inside .insidenav ul li a b{padding-right: 5px;color: #00923f}
+
+.inside .insidenav ul li a:hover{color: #00923f}
+
+.subtitle{text-align: center;border-bottom: 1px solid #e3e3e3;padding: 20px 0}
+
+.subtitle a{font-size: 14px;color: #333333;padding:0 10px;border-right: 1px solid #d1d1d1 }
+
+.subtitle a:hover{color: #00923f}
+
+.subtitle a.on{color: #00923f}
+
+.pagechange{text-align: center;font-size: 12px;}
+.pagechange .select{margin-right: 5px;position: relative;display: inline-block;border: 1px solid #e0e0ed;width: 78px;height: 26px;background: url("../images/angle.png") 60px center no-repeat}
+.pagechange .select span{margin-left: -15px;display: inline-block;width: 60px;height: 26px;line-height: 26px;}
+.pagechange .select select{position: absolute;top: 0;left: 0;width: 100%;height: 100%;opacity: 0;filter:alpha(opacity=00)}
+.pagechange  a{display: inline-block;border: 1px solid #e0e0ed;text-align: center;line-height: 26px;}
+.pagechange .change{width: 58px;}
+.pagechange .num{width: 26px;margin: 0 5px}
+.pagechange  a:hover{background-color: #00923f;color: #ffffff;}
+.pagechange  a.on{background-color: #00923f;color: #ffffff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

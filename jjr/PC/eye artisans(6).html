@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>镜匠人</title>
+<link rel="stylesheet" type="text/css" href="css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/jquery.Sonline.js"></script>
+<script type='text/javascript'>
+//导航
+$("#nav li").hover(function(){
+	$(this).find('ul:first').css({visibility: "visible",display: "none"});
+},function(){
+	$(this).find('ul:first').css({visibility: "hidden"});
+});
+//在线客服
+$(function(){
+	$("body").Sonline({
+		Position:"right",//left或right
+		Top:200,//顶部距离，默认200px
+		Effect:true, //滚动或者固定两种方式，布尔值：true或false
+		DefaultsOpen:true, //默认展开：true,默认收缩：false
+		Qqlist:"1015353206|在线QQ" //多个QQ用','隔开，QQ和客服名用'|'隔开
+	});
+	$(".contentBox").append("<div class='message'><a href='#'>在线留言</a></div>");
+})	
+</script> 
+</head>
+<body>
+<div class="eye-wrap"><!--背景-->
+	<div class="header"><!--头部  start-->
+    	<div class="header-box">
+        	<a href="#"><img src="images/logo.png" /></a><!--logo-->
+            <div class="navwrap"><!--导航  start-->
+                <ul id="nav"> 
+                    <li class="page_item">
+                        <a href="#" >Visval life<span></span></a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >镜匠人ATM<span></span></a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >Eye Artisans<span></span></a> 
+                        <ul class='children'> 
+                            <li class="page_item"><a href="#" >Brand introduction /品牌介绍</a></li> 
+                            <li class="page_item"><a href="#/">Series products /系列产品</a> 
+                                <ul class='children'> 
+                                    <li class="page_item"><a href="#" >A系列<span></span></a></li> 
+                                    <li class="page_item"><a href="#" >B系列<span></span></a></li>
+                                    <li class="page_item"><a href="#" >C系列<span></span></a></li>
+                                    <li class="page_item"><a href="#" >其他系列<span></span></a></li> 
+                                </ul> 
+                            </li> 
+                            <li class="page_item"><a href="#" >Brand joined /品牌加盟</a></li> 
+                        </ul> 
+                    </li> 
+                    
+                </ul>                
+            </div> <!--导航  end-->
+        </div>
+    </div><!--头部  end-->
+	<div class="main">
+    	<div class="center"><!--主体内容  start-->
+            <div class="eye-center">
+            	<h1>EYE ARTISANS</h1>
+                <p>
+                  <span>
+                    German mirror builders group, ambitions, the mentality to smooth the static overflow, rigorous, patient, professional craftsman's spirit, for product and process excellence, unique to create a miracle, to provide the most rigorous and meticulous professional optometry products and service for customers
+German mirror builders group with its perfect quality, strong research and development capabilities, a number of international ...
+                  </span>
+                  德国镜匠人集团，志存高远，以平稳静溢的心态，严谨、耐心、专业的工匠精神，对产品工艺精益求精，独树一帜创造奇迹，为客户提供最严谨细致的专业视光产品与服务
+德国镜匠人集团凭借其完美的品质，强大的研发能力，获得多项国际大奖，并不断吸收现代先进科技，工艺不断创新...
+                </p>
+                <div class="readmore">
+                    <a href="#">read&nbsp;&nbsp;more</a>
+                </div>
+                <div class="link">
+                    <ul class="linkUl">
+                        <li class="tm"><a href="#"></a></li>
+                        <li class="jd"><a href="#"></a></li>
+                        <li class="xl"><a href="#"></a></li>
+                        <li class="wx"><a href="#"></a></li>
+                        <li class="mt"><a href="#"></a></li>
+                        <li class="sc"><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!--主体内容  end-->
+    </div>
+    <div class="footer"><!--页尾  start-->
+    	<div class="foot-box">
+        	<p class="p-left">2015 版权所有 蜀ICP备12006200号 </p>
+            <p class="p-center">德國鏡匠人國際眼鏡集團有限公司</p>
+            <p class="p-right">FLAT B07 FLOOR23,HOVER IND BLDG NO 26-38 KWAI CHEONG RD,NT</p>
+        </div>
+    </div><!--页尾  end-->
+</div>
+</body>
+</html>

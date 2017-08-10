@@ -1,0 +1,52 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+
+<div class="yyt-29">
+    <div class="top-nav">
+        <div class="wrapper">
+            <img src="__PUBLIC__/images/13-1.png" alt=""/>
+            <p>   {{ffcategory catid=$cat.parentid to=n}}
+                <a href="__ROOT__/">首页</a> > 
+                <a href="{{$n.url}}">留学专题</a>
+            </p>
+        </div>
+    </div>
+    <div class="zhongjie"></div><!--背景大图-->
+    <div class="wrapper clearfix">
+        <div class="part-left">
+            <h1>各国留学专题</h1>
+            <ul class="nav-zhuanti">
+                {{foreach from=$n.child item=nv}}
+                <li {{if $nv.catid==$cat.catid}}class="on" {{/if}}><a href="{{$nv.url}}">{{$nv.name}}</a><b></b></li>
+                {{/foreach }}
+            </ul>
+        </div>
+        <div class="part-right2">
+            <div class="content100-1 clearfix">
+                <h1>{{$data.title}}</h1>
+                <p class="time">{{"Y-m-d"|date:$data.create_time}}     |      查看： <span id="num"></span></p>
+                <div class="article">
+                  {{$data.content}}
+                </div>
+                <a href="javascript:history.back(-1);" class="back">返回上一级</a>
+     
+                <a href="{{$data.next_url}}" class="fenye-pre">上一动态：<span>{{$data.next_title}}</span></a>
+                <a href="{{$data.pre_url}}" class="fenye-next">下一动态：<span>{{$data.pre_title}}</span></a>
+        </div>
+    </div>
+
+</div>
+
+{{include file="system/footer.html"}}
+<script type="text/javascript">
+    $(function() {
+        var data = "{{$data.cid}}";
+         var url = "__ROOT__/count?cid=" + data + "&type=hits";
+        $.getJSON(url, function(data) {
+            var ghtml = data;
+            $('#num').html("");
+            $('#num').html(ghtml);
+        });
+    })
+</script>

@@ -1,0 +1,159 @@
+@charset "utf-8";
+/*************************************
+*样式主文件
+*@yyt
+*604311189
+*2017-1-5
+*************************************/
+/* CSS Document */
+body { box-sizing: content-box; font: normal 14px/1.5 \5fae\8f6f\96c5\9ed1, Microsoft YaHei, \5b8b\4f53 ; min-width: 900px; background-color: #fff; }
+/*解决：滚动条有无产生的跳动*/
+html {overflow-y: scroll;}
+:root {overflow-y: auto;overflow-x: hidden;}
+:root body {position: absolute;}
+body {width: 100vw;overflow: hidden;}
+/*合并表格的border*/
+table { border-collapse: collapse; border-spacing: 0; }
+img {-ms-interpolation-mode: bicubic; }
+ul li { list-style-type: none;}
+input, textarea {color: inherit;font-size: inherit; font-family: inherit;}
+/*打印*/
+@media print {
+	img { max-width: 100% !important; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+}
+/*不能拖拽*/
+textarea { resize: none; }
+/*去掉默认边框*/
+input,
+button,
+select,
+textarea,
+a { outline: none;color: #666666;}
+/* 只支持IE，过多使用效率低 */
+a { blr: expression(this.onFocus=this.close()); blr: expression(this.onFocus=this.blur()); }
+/* IE不支持 */
+a:focus { -moz-outline-style: none; outline: none; }
+/*清除浮动*/
+/*父级*/
+.clearfix:after { height: 0; content: ""; display: block; clear: both; visibility: hidden; font-size: 0; }
+.clearfix { zoom: 1; }
+/* 子级 */
+.clear { clear: both; height: 0; font-size: 0; }
+/* IE6 */
+/** html .clearfix { zoom: 1; }*/
+/**:first-child + html .clearfix { zoom: 1; }*/
+
+/* Backgrounds */
+.bg-navy { background-color: #001F3F; }
+.bg-blue { background-color: #0074D9; }
+.bg-aqua { background-color: #7FDBFF; }
+.bg-teal { background-color: #39CCCC; }
+.bg-olive { background-color: #3D9970; }
+.bg-green { background-color: #2ECC40; }
+.bg-lime { background-color: #01FF70; }
+.bg-yellow { background-color: #FFDC00; }
+.bg-orange { background-color: #FF851B; }
+.bg-red { background-color: #FF4136; }
+.bg-fuchsia { background-color: #F012BE; }
+.bg-purple { background-color: #B10DC9; }
+.bg-maroon { background-color: #85144B; }
+.bg-white { background-color: #FFFFFF; }
+.bg-gray { background-color: #AAAAAA; }
+.bg-silver { background-color: #DDDDDD; }
+.bg-black { background-color: #111111; }
+/* Colors */
+.navy { color: #001F3F; }
+.blue { color: #0074D9; }
+.aqua { color: #7FDBFF; }
+.teal { color: #39CCCC; }
+.olive { color: #3D9970; }
+.green { color: #2ECC40; }
+.lime { color: #01FF70; }
+.yellow { color: #FFDC00; }
+.orange { color: #FF851B; }
+.red { color: #FF4136; }
+.fuchsia { color: #F012BE; }
+.purple { color: #B10DC9; }
+.maroon { color: #85144B; }
+.white { color: #FFFFFF; }
+.silver { color: #DDDDDD; }
+.gray { color: #AAAAAA; }
+.black { color: #111111; }
+/* Border colors */
+.border--navy { border-color: #001F3F; }
+.border--blue { border-color: #0074D9; }
+.border--aqua { border-color: #7FDBFF; }
+.border--teal { border-color: #39CCCC; }
+.border--olive { border-color: #3D9970; }
+.border--green { border-color: #2ECC40; }
+.border--lime { border-color: #01FF70; }
+.border--yellow { border-color: #FFDC00; }
+.border--orange { border-color: #FF851B; }
+.border--red { border-color: #FF4136; }
+.border--fuchsia { border-color: #F012BE; }
+.border--purple { border-color: #B10DC9; }
+.border--maroon { border-color: #85144B; }
+.border--white { border-color: #FFFFFF; }
+.border--gray { border-color: #AAAAAA; }
+.border--silver { border-color: #DDDDDD; }
+.border--black { border-color: #111111; }
+/*常用快捷*/
+.yahei { font-family: 'Microsoft YaHei'; }
+.songti { font-family: 'Arial'; }
+.fl { float: left; }
+.fr { float: right; }
+.nmr{margin-right: 0!important;}
+.nml{margin-left: 0!important;}
+.nmb{margin-bottom: 0!important;}
+.nmt{margin-top: 0!important;}
+.nomore{white-space: nowrap;text-overflow:ellipsis; overflow:hidden;}
+.trans{  -webkit-transition:all .3s linear;  transition:all .3s linear;  }
+/* 大小不定元素垂直居中 让子inline-block化，再在后面添加一个隐藏的垂直居中的inline-block元素实现*/
+.dib-vm{display:inline-block;*display:inline;*zoom:1;width:0; height:100%; vertical-align:middle;}
+
+
+.wrapper{width: 1200px; margin:0 auto;}
+a:hover{color: #f9802f!important;}
+/*字体选中颜色*/
+::selection{background: #f9802f;color: #fff;}
+::-moz-selection{background: #f9802f;color: #fff;}
+
+
+
+/*头部*/
+.header-index{margin-bottom: 30px;}
+.header-index .header-top{background: url("../images/i-1.png") no-repeat;height: 42px;line-height: 42px;color: #666;}
+.header-index .header-top .name{margin-right: 25px;}
+.header-index .header-top .back{margin-left: 40px;}
+.header-index .header-body{width: 100%;height: 180px;background: url("../images/i-2.png") no-repeat;margin: 15px 0 0 0;position: relative;overflow: hidden}
+.header-index .header-body .ie{display: none;position: absolute;left: -500px;top: 0;width: 500px;height: 180px;overflow: hidden;}
+.header-index .header-body .study{margin: 0 0 0 630px;padding: 75px 0 0 0;width: 300px;}
+.header-index .header-body .study .xiala + .xiala{margin-left: 60px;}
+.header-index .header-body .study .xialaBtn{font-size: 16px;color: #333;font-weight: 600;cursor: pointer;}
+.header-index .header-body .study .xialaBox{display: none;background: #fff;text-align: center;margin: 10px 0 0 0;}
+.header-index .header-body .study .xialaBox li{padding: 5px 0;color: #666;}
+.header-index .header-body .study .xiala:hover .xialaBox{display: block;}
+.header-index .header-body .search-box{width: 224px;height: 37px;background:#fff url("../images/i-3.png") 190px 8px no-repeat;border: 1px solid #f0f0f0;margin: 68px 20px 0 0;}
+.header-index .header-body .search-box input{width: 160px;height: 35px; border: 0;padding:0 0 0 15px;line-height: 35px; }
+.header-index .header-body .search-box button{  opacity: 0;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);cursor: pointer;}
+/*chrome头部logo动画*/
+.header-index .header-body .clip[style] {  opacity: 0;  }
+.header-index .header-body .active .clip:not([style]) {  opacity: 0;  animation: fadeIn .1s .4s both;  }
+.header-index .header-body .active .clip[style] {  will-change: transform;  animation: noTransform .5s both;  }
+.header-index .header-body .box { height: 190px; position: absolute;}
+.header-index .header-body .text { position: absolute; width: 300px; }
+.header-index .header-body .image { position: absolute; }
+@keyframes noTransform {
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0) rotate(0);
+	}
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+/*hack*/
+:root .index .ad .img-box .description { filter: none; }
+

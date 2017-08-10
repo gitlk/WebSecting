@@ -1,0 +1,67 @@
+<div class="indexGj-header">
+    <div class="nav-top">
+        <div class="wrapper clearfix">
+            <div class="navTop-left clearfix">
+                <img src="__PUBLIC__/images/99-0.png" alt=""/><a href="__ROOT__/">懒马主站</a>
+                {{ffcategory catid=3 to=gj}}    
+                {{foreach from=$gj.child item=g}}
+                <img src="{{$g.thumb}}" alt=""/><a href="{{$g.url}}">{{$g.name}}</a>
+                    {{/foreach}}
+            </div>
+            {{ffcategory catid=$cat.parentid to=a}}
+            {{ffcategory catid=$a.parentid to=b}}
+            <div class="navTop-right clearfix">
+                <p> <a class="fangan" href="023.html">我的方案</a><span>|</span><a class="center" href="48.html">个人中心</a></p>
+                <img src="__PUBLIC__/images/index-header-phone.png" alt=""/>
+                <h1 class="phone">{{ffset var="companytel"}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="nav-content">
+        <div class="wrapper clearfix">
+            <div class="part1"><img src="{{$b.thumb}}" alt=""/><p>{{$b.name}}</p></div>
+            <div class="part2">
+                <div class="part2-top clearfix">
+                    <ul class="clearfix">
+                        <li><a  href="{{$b.url}}">首页</a></li>
+                        {{foreach from=$b.child item=z}}
+                        <li><a href="{{$z.url}}" {{if $z.catid==$a.catid}}class="on"{{/if}}>{{$z.name}}</a></li>
+                       {{/foreach}}
+                    </ul>
+                    <div class="search-group clearfix">
+                        <div class="select-search">
+                            <span>院校</span><b></b>
+                            <ul class="address">
+                                <li onclick="tiaojian(1)">院校</li>
+                                <li onclick="tiaojian(2)">资讯</li>
+                                <li onclick="tiaojian(3)">专业</li>
+                            </ul>
+                        </div>
+                        <form action="__ROOT__/Findex/searcha" id='myform' method="post">
+                            <input type="text" class="search-input" name='title' id='search' placeholder="院校关键词"/>
+                            <input type="hidden" value="1" id='tiaojian' name='term'/>
+                            <a href="javascript:;" class="search-btn" onclick='searcha()'></a>
+                        </form>
+                    </div>
+                </div>
+            {{include file="zixun/sys/biaoqian.html"}}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function tiaojian(a){
+        $("#tiaojian").val(a)
+    }
+    function searcha(){
+        var a=$("#search").val();
+        var b=$("#tiaojian").val();
+        if(a!=''&&a!=" "){
+            $("#myform").submit();
+            
+        }else{
+            alert('请填写搜索条件')
+            return false;
+        }
+    }
+</script>

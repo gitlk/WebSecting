@@ -1,0 +1,105 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+    <div class="yyt-6">
+        <div class="wrapper clearfix">
+            <div class="left-part">
+                <div class="title clearfix">
+                    <div class="part1"><h1>{{$data.title}}</h1><p>{{$xy.title}}</p><p>{{$xy.city}}&nbsp;&nbsp;&nbsp;&nbsp;申请费：{{$xy.sqf}}美元 </p></div>
+                    <div class="part2 clearfix">
+                        <div class="row"><p>录取率</p><img class="line" src="__PUBLIC__/images/6.1-2.png" alt=""/><p><span>{{$xy.luqulv}}%</span></p></div>
+                        <div class="row"><p>关注数</p><img class="line" src="__PUBLIC__/images/6.1-2.png" alt=""/><p><span>{{$xy.guanzhu}}</span></p></div>
+                        <div class="row"><p>申请数</p><img class="line" src="__PUBLIC__/images/6.1-2.png" alt=""/><p><span>265</span></p></div>
+                        <div class="row"><p>OFFER</p><img class="line" src="__PUBLIC__/images/6.1-2.png" alt=""/><p><span>44</span></p></div>
+                    </div>
+                </div>
+                <ul class="content-nav clearfix">
+                    <li  onclick="choose(1);"><a  class="on" href="javascript:;" >专业介绍</a></li>
+                    <li  onclick="choose(2);"><a   href="javascript:;">录取要求</a></li>
+                    <li  onclick="choose(3);"><a href="javascript:;">课程设置</a></li>
+                    <li  onclick="choose(4);"><a href="javascript:;">工作前景</a></li>
+                    <li  onclick="choose(5);"><a href="javascript:;">职业认证</a></li>
+                </ul>
+                <div class="content-yyt6-1 c1">
+                    <table>
+                        <tr>
+                            <td>学制：<span>{{$data.xuezhi}}年</span></td>
+                            <td>学费：<span>{{$data.xuefei}} 美元/年</span></td>
+                            <td>入学时间：<span>{{$data.ruxue}}</span></td>
+                        </tr>
+                        <tr>
+                            <td>授课语言：<span>{{$data.yuyan}}</span></td>
+                            <td>授课校区：<span>{{$data.xiaoqu}}</span></td>
+                            <td>领域：<span>{{$data.lingyu}}</span></td>
+                        </tr>
+                    </table>
+                    <h1 class="zyjj"><span>专业简介</span></h1>
+                    <div class="zyjj-text">
+                        {{$data.content}}
+                    </div>
+                </div>
+                <div class="content-yyt6-3 c2" style="display: none;">
+                    {{$data.yaoqiu}}
+                </div>
+                <div class="content-yyt6-3 c3" style="display: none;">
+                    <p>{{$data.gzqj}}</p>
+                </div>
+                <div class="content-yyt6-3 c4" style="display: none;">
+                    <p>{{$data.kcsz}}</p>
+                </div>
+                <div class="content-yyt6-3 c5" style="display: none;">
+                    <p>{{$data.zyrz}}</p>
+                </div>
+            </div>
+
+
+            <div class="right-part">
+                <img src="images/3-7.png" alt="" class="banner-small"/>
+                <div class="hot clearfix">
+                    <h1><span><img src="images/3-8.png" alt=""/>本校热门专业</span></h1>
+               {{fflist catid=11 ext_sql=" AND xyid="|cat:$data.xyid|cat:" " order="sort asc,cid desc" attr="hot" to=zy}}
+  
+               {{foreach from=$zy item=z}}
+               <a href="{{$z.url}}">{{$z.title}}</a> 
+                {{/foreach}}
+                </div>
+                <div class="week clearfix">
+                    <h1><span><img src="images/3-9.png" alt=""/>近一周申请该学校的同学（26人）</span></h1>
+                    <div class="row clearfix">
+                        <div class="person"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+                        <div class="person"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+                        <div class="person"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+                        <div class="person noRight"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+                    </div>
+                <a target="_blank" href="{{$data.qurl}}">
+                  {{$data.qtitle}}
+                </a> 
+                </div>
+                <div class="and">
+                    <h1><span><img src="images/3-11.png" alt=""/>申请该校的同学还申请了</span></h1>
+                    <a href="">澳大利亚新南威尔士大学</a>   <a href="">澳大利亚新南威尔士大学</a>   <a href="">澳大利亚新南威尔士大学</a>   <a href="">澳大利亚新南威尔士大学</a>   <a href="">澳大利亚新南威尔士大学</a>
+                </div>
+                <div class="help">
+                    <h1><span><img src="images/3-12.png" alt=""/>顾问推荐</span></h1>
+                    <div class="person clearfix"><img src="images/3-13.png" alt=""/><h1>孟厚泽老师</h1><p>高级英欧留学规划师</p><a href="">立即咨询</a></div>
+                    <div class="person clearfix"><img src="images/3-13.png" alt=""/><h1>孟厚泽老师</h1><p>高级英欧留学规划师</p><a href="">立即咨询</a></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {{include file="system/footer.html"}}
+    <script>
+     $('.content-nav li').on('click', function () {
+                $(this).siblings().children().removeClass('on');
+                        $(this).children().addClass('on');
+                });
+                function choose(p){
+                    var a=".c"+p; 
+                        $(a).css({"display":"block"});
+                        $(a).siblings("div").css({"display":"none"});
+                       $(".title").css({"display":"block"});
+               
+                }
+    </script>

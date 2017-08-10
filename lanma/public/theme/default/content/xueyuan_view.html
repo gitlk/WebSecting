@@ -1,0 +1,176 @@
+{{include file="system/header.html"}}
+<body>
+{{include file="system/nav_1.html"}}
+<div class="yyt-3">
+          {{ffsql sql="select *from fangfa_atten where user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=g}}
+                {{php}}
+                $data = $this->_tpl_vars['g'];
+                foreach($data as $k=>$v){
+                   $m[$v['id']] = $v['user_id'];
+                }
+                    $this->_tpl_vars['g']=$m;
+                {{/php}}    
+    
+   <div class="wrapper clearfix">
+       <div class="left-part">
+           <div class="title clearfix">
+               <img src="{{$data.thumb}}" alt=""/>
+               <h1>{{$data.title}} <span>{{$data.etitle}}</span></h1>
+               <p>学校地址： {{$data.city}} {{$data.address}} </p>
+               <p>国际排名： {{$data.gjsort}}       &nbsp; &nbsp; &nbsp; &nbsp;   国内排名： {{$data.gnsort}}</p>
+                        <a rel="{{if $data.cid|array_key_exists:$g}}1{{else}}0{{/if}}" href="javascript:;"  del-val="{{$data.cid}}" class="focus-yyt-2"
+                           {{if $data.cid|array_key_exists:$g}}style="background-color:#98a5b1"{{else}}style="background-color:#015db0"{{/if}}
+                           >{{if $data.cid|array_key_exists:$g}}取消{{else}}加关注{{/if}}</a>
+               
+               <span class="num">{{$data.guanzhu}}人已关注</span>
+           </div>
+           <div class="clear"></div>
+           <div class="content">
+                <ul class="content-nav clearfix">
+                    {{ffcategory catid=10 to=h}}
+                    <li><a id='xy' class="on" href="{{$cat.url}}{{$data.url}}">院校介绍</a></li>
+                    {{ffcategory parentid=10 to=n}}
+                    {{foreach from=$n.child item=nx}}
+                    <li><a href="{{if ($nx.url|strpos:'.html')!=false }}{{$nx.url}}?{{else}}{{$nx.url}}index.html?{{/if}}catid=10&cid={{$data.cid}}">{{$nx.name}}</a></li>
+                   {{/foreach}}
+                </ul>
+               <div class="content-yyt3">
+                   <div class="content-title clearfix">
+                       <div class="title-left">
+                           <img class="img-show" src="{{$data.pic.0.image}}" alt=""/>
+                       </div>
+
+                       <div class="title-right clearfix">
+                           <div class="txt clearfix"><div class="txt-l"><p>建校时间：<span>{{$data.cschool}}年</span></p></div><div class="txt-r"><p>授课语言：<span>{{$data.language}}</span></p></div></div>
+                           <div class="txt clearfix"><div class="txt-l"><p>教师人数：<span>{{$data.teacher}}</span></p></div><div class="txt-r"><p>师生比例：<span>{{$data.bili}}</span></p></div></div>
+                           <div class="txt clearfix"><div class="txt-l"><p>学生人数：<span>{{$data.student}}</span></p></div><div class="txt-r"><p>国际学生：<span>{{$data.gjstudent}}</span></p></div></div>
+                           <div class="txt clearfix"><div class="txt-l"><p>住宿费：<span>&nbsp;&nbsp;&nbsp;{{$data.zhushu}}美元/年</span></p></div><div class="txt-r"><p>学费：<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$data.xuefei}}美元/年</span></p></div></div>
+
+                           <div class="picScroll-left">
+                               <div class="bd">
+                                   <a class="next"></a>
+                                   <a class="prev"></a>
+                                   <ul class="picList">
+                                       {{foreach from=$data.pic item=i}}
+                                       <li><div class="pic"><a href="javascript:;"><img class="img-slider on" src="{{$i.image}}" /></a></div></li>
+                                       {{/foreach}}
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="article">
+                       <p>{{$data.content}}</p>
+                   </div>
+                   <div class="bottom">
+                       <h1>联系方式</h1>
+                       <p>学校官网： {{$data.guanwang}}</p>
+                       <p>学校地址： {{$data.xyaddress}} </p>
+                       <p>传真：     {{$data.chuanzheng}} &nbsp; &nbsp; &nbsp; &nbsp; 电话： {{$data.phone}}　</p>
+                       <p>Email：    {{$data.email}}　</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="right-part">
+             {{ffsql sql="select *from fangfa_apply where user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=aly}}
+                  {{php}}
+
+                $data1 = $this->_tpl_vars['aly'];
+
+                foreach($data1 as $k=>$v){
+
+                   $ms[$v['cid']] = $v['user_id'];
+
+                }
+
+                    $this->_tpl_vars['aly']=$ms;
+
+                {{/php}} 
+          <div class="join">
+              <p>376人申请 &nbsp; &nbsp;| &nbsp; &nbsp;342人拿到offer</p>
+                {{if $data.cid|array_key_exists:$aly}}
+                    <a href="javascript:;" class="join-btn" dav="{{$data.cid}}" dal="{{$data.catid}}" style="background-color:#98a5b1" rtitle="{{$data.title}}" rthumb="{{$data.thumb}}" rel="1">取消</a>
+                   
+                    {{else}}
+                   <a href="javascript:;" class="join-btn" dav="{{$data.cid}}" dal="{{$data.catid}}" rtitle="{{$data.title}}" rthumb="{{$data.thumb}}" rel="0">加入申请单</a>   
+                    {{/if}}
+          </div>
+                {{ffad aid=4 to=a4}}
+                <a href="{{$a4.setting.link}}">
+                    <img src="__PUBLIC__/uploads/{{$a4.setting.image}}" alt="" class="banner-small"/>
+                </a>
+           <div class="hot clearfix">
+               <h1><span><img src="__PUBLIC__/images/3-8.png" alt=""/>本校热门专业</span></h1>
+               {{fflist catid=11 ext_sql=" AND xyid="|cat:$data.cid|cat:" " order="sort asc,cid desc" attr="hot" to=zy}}
+  
+               {{foreach from=$zy item=z}}
+               <a href="{{$z.url}}">{{$z.title}}</a> 
+                {{/foreach}}
+           </div>
+           <div class="week clearfix">
+               <h1><span><img src="__PUBLIC__/images/3-9.png" alt=""/>近一周申请该学校的同学（26人）</span></h1>
+               <div class="row clearfix">
+                   <div class="person"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+                   <div class="person"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+                   <div class="person"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+                   <div class="person noRight"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+               </div>
+                <a target="_blank" href="{{$data.qurl}}">
+                  {{$data.qtitle}}
+                </a> 
+           </div>
+           <div class="and">
+               <h1><span><img src="__PUBLIC__/images/3-11.png" alt=""/>申请该校的同学还申请了</span></h1>
+               <a href="">澳大利亚新南威尔士大学</a>  
+               <a href="">澳大利亚新南威尔士大学</a>  
+               <a href="">澳大利亚新南威尔士大学</a> 
+               <a href="">澳大利亚新南威尔士大学</a> 
+               <a href="">澳大利亚新南威尔士大学</a>
+           </div>
+           <div class="help">
+               <h1><span><img src="__PUBLIC__/images/3-12.png" alt=""/>顾问推荐</span></h1>
+        {{fflist catid=36 to=gw  order="sort asc,cid desc" field="zhiwei,qq" pagesize=2 attr="hot"}}
+        {{foreach from=$gw item=v}}
+        <div class="person clearfix">
+            <img src="{{$v.thumb}}" alt=""/><h1>{{$v.title}}</h1><p>{{$v.zhiwei}}</p><a href="tencent://message/?uin={{$v.qq}}&Site=sc.chinaz.com&Menu=yes">立即咨询</a>
+        </div>
+        {{/foreach}}
+           </div>
+       </div>
+   </div>
+
+</div>
+
+
+
+
+
+{{include file="system/footer.html"}}
+<script>
+    //focus加关注
+    $('.focus-yyt-3').click(function(){
+        var rel=$(this).attr('rel');
+        if(rel==0){
+            $(this).css('background-color','#98a5b1');
+            $(this).html('取消');
+            $(this).attr('rel','1');
+        }if(rel==1){
+            $(this).css('background-color','#015db0');
+            $(this).html('加关注');
+            $(this).attr('rel','0');
+        }
+    });
+
+    //轮播
+    jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",vis:3,trigger:"click"});
+    //轮播选中图片，更换
+    $('.img-slider').click(function(){
+        $('.img-slider').removeClass('on');
+        $(this).addClass('on');
+        var src=$(this).attr('src');
+        $('.img-show').attr('src',src);
+    })
+</script>
+</body>
+</html>

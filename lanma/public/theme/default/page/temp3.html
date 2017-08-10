@@ -1,0 +1,307 @@
+{{include file="system/header.html"}}
+<body >
+{{include file="system/nav_1.html"}}
+<form action="__ROOT__/Fguestbook/applyadd" method="post" id="myformx">
+<div class="yyt-25">
+    <div class="wrapper">
+        <div class="content">
+            <ul class="nav">
+                <li><a class="lis on" href="javascript:;">个人信息</a></li>
+                <li><a class="lis" href="javascript:;">学术背景</a></li>
+                <li><a class="lis" href="javascript:;">选择顾问</a></li>
+            </ul>
+            <div class="box box-1">
+                <div class="self clearfix">
+                    <div class="left">
+                        <div class="row clearfix">
+                            <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+                            <input type="text" name="info[username]" value="{{$user.realname}}"/>
+                            <i>*</i>
+                        </div>
+                        <div class="row clearfix">
+                            <label for="">出生日期：</label>
+                            <div class="select" style="z-index: 1;">
+                                <span class="datehtml">{{if $user.byear}}{{$user.byear}}{{else}}出生年份{{/if}}</span><b></b>
+                                <ul class="address datetime">
+
+                                </ul>
+                                <input type="hidden" name="info[byear]" value="{{if $user.byear}}{{$user.byear}}{{/if}}"/>
+                            </div>
+                            <div class="select noRight" style="z-index: 1;">
+                                <span>{{if $user.bmonth}}{{$user.bmonth}}{{else}}出生月份{{/if}}</span><b></b>
+                                <ul class="address">
+                                    <li onclick="date(this,1)">1</li>
+                                    <li onclick="date(this,2)">2</li>
+                                    <li onclick="date(this,3)">3</li>
+                                    <li onclick="date(this,4)">4</li>
+                                    <li onclick="date(this,5)">5</li>
+                                    <li onclick="date(this,6)">6</li>
+                                    <li onclick="date(this,7)">7</li>
+                                    <li onclick="date(this,8)">8</li>
+                                    <li onclick="date(this,9)">9</li>
+                                    <li onclick="date(this,10)">10</li>
+                                    <li onclick="date(this,11)">11</li>
+                                    <li onclick="date(this,12)">12</li>
+                                </ul>
+                               <input type="hidden" name="info[bmonth]" value="{{if $user.bmonth}}{{$user.bmonth}}{{/if}}"/>
+                            </div>
+                            <i>*</i>
+                        </div>
+                                      
+                        <div class="row clearfix">
+                            <label style="margin-bottom: 40px;" for="">家庭住址：</label>                 
+                            <input style="width:123px;margin-right: 15px" placeholder="国家" type="text" name="info[city]" value="{{$user.city}}"/>
+                            <input style="width:123px" type="text" placeholder="城市" name="info[chengshi]" value="{{$user.chengshi}}"/>       
+                            <input style="margin-top: 10px;" type="text" placeholder="请填写详细地址" value="{{$user.address}}" name="info[address]"/>
+                            <i style="margin-top: 15px;">*</i>
+                        </div>
+                        <div class="row clearfix">
+                            <label for="">邮政编码：</label>
+                            <input type="text" name="info[code]" value="{{$user.code}}"/>
+                        </div>
+                        <div class="row clearfix">
+                            <label for="">是否小于18岁：</label>
+                            <input id="year1" class="sex" type="radio" name="info[choose]" value="2" {{if $user.choose==2}}checked="checked"{{/if}}/><img src="__PUBLIC__/images/radio0.png" alt="" class="pic-sex pic-sex1"/><label class="label-sex label-sex1 label-18" for="year1">是</label>
+                            <input id="year2" class="sex" type="radio" value="1" name="info[choose]" {{if $user.choose==1}}checked="checked"{{/if}}/><img src="__PUBLIC__/images/radio1.png" alt="" class="pic-sex pic-sex2"/><label class="label-sex label-sex2 label-17" for="year2">否</label>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="row clearfix">
+                            <label for="">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+                            <input id="sex1" class="sex" type="radio" name="info[sex]" value="1" {{if $user.sex==1}}checked="checked"{{/if}}/><img src="__PUBLIC__/images/radio{{if $user.sex==1}}1{{else}}0{{/if}}.png" alt="" class="pic-sex pic-sex1"/><label class="label-sex label-sex1" for="sex1">男</label>
+                            <input id="sex2" class="sex" type="radio" name="info[sex]" value="2" {{if $user.sex==2}}checked="checked"{{/if}}/><img src="__PUBLIC__/images/radio{{if $user.sex==2}}1{{else}}0{{/if}}.png" alt="" class="pic-sex pic-sex2"/><label class="label-sex label-sex2" for="sex2">女</label>
+                        </div>
+                        <div class="row clearfix" style="margin-top: 70px;">
+                            <label style="margin-bottom: 40px;" for="">手机号码：</label>
+                            <input style="margin-top: 10px;" type="text" placeholder="手机号" value="{{$user.telphone}}" name="info[telphone]" />
+                        </div>
+                        <div class="row clearfix">
+                            <label for="">电子邮箱：</label><input type="text" value="{{$user.email}}" name="info[email]"/><i>*</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix clear"></div>
+                <div class="submit clearfix">
+                    <a href="javascript:history.go(-1);" class="prev">上一步</a>
+                    <a href="javascript:;" class="next">下一步</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="yyt-25" style="display: none">
+    <div class="wrapper">
+        <div class="content">
+            <ul class="nav">
+                <li><a class="lis" href="javascript:;">个人信息</a></li>
+                <li><a class="lis on" href="javascript:;">学术背景</a></li>
+                <li><a class="lis" href="javascript:;">选择顾问</a></li>
+            </ul>
+            <div class="box box-1">
+                <div class="self clearfix">
+                    <div class="left left-27">
+                        <div class="row clearfix">
+                            <label for="">最高学历院校：</label>
+                            <input type="text" name="info[xueliyx]" value="{{$user.xueliyx}}"/>
+                            <i>*</i>
+                        </div>
+                        <div class="row clearfix" style="margin-left: 28px;">
+                            <label for="">学院类型：</label>
+                            <div class="select noRight" style="z-index: 1;">
+                                <span>{{$user.tyoe}}</span><b></b>
+                                <ul class="address">
+                                    <li  onclick="date(this,'公立')">公立</li>
+                                    <li  onclick="date(this,'私立')">私立</li>
+                                    <li  onclick="date(this,'宗教')">宗教</li>
+                                </ul>
+                                <input type="hidden" name="info[tyoe]" value="{{$user.tyoe}}">
+                            </div>
+                            <i>*</i>
+                        </div>
+                        <div class="row clearfix" style="margin-left: -33px;">
+                            <label for="">毕业/预计毕业时间：</label>
+                            <div class="select">
+                                <span>{{if $user.eyear}}{{$user.eyear}}{{else}}年{{/if}}</span><b></b>
+                                <ul class="address datetime">
+    
+                                </ul>
+                                             <input type="hidden" name="info[eyear]" value="{{if $user.eyear}}{{$user.eyear}}{{/if}}"/>
+                            </div>
+                            <div class="select noRight">
+                                <span>{{if $user.emonth}}{{$user.emonth}}{{else}}月{{/if}}</span><b></b>
+                                <ul class="address">
+                                    <li onclick="date(this,1)">1</li>
+                                    <li onclick="date(this,2)">2</li>
+                                    <li onclick="date(this,3)">3</li>
+                                    <li onclick="date(this,4)">4</li>
+                                    <li onclick="date(this,5)">5</li>
+                                    <li onclick="date(this,6)">6</li>
+                                    <li onclick="date(this,7)">7</li>
+                                    <li onclick="date(this,8)">8</li>
+                                    <li onclick="date(this,9)">9</li>
+                                    <li onclick="date(this,10)">10</li>
+                                    <li onclick="date(this,11)">11</li>
+                                    <li onclick="date(this,12)">12</li>
+                                </ul>
+                                <input type="hidden" name="info[emonth]" value="{{if $user.emonth}}{{$user.emonth}}{{/if}}">
+                            </div>
+                            <i>*</i>
+                        </div>
+                    </div>
+                    <div class="right right-27">
+                        <div class="row clearfix">
+                            <label for="">毕业/在读专业名：</label>
+                            <input type="text" name="info[jdzy]" value="{{$user.jdzy}}"/>
+                            <i>*</i>
+                        </div>
+                        <div class="row clearfix" style="margin-left: 47px;">
+                            <label for="">最高学历：</label>
+                            <div class="select noRight">
+                                <span>{{$user.xueli}}</span><b></b>
+                                <ul class="address">
+                                       <li onclick="date(this,'大专');">大专</li>
+                                        <li onclick="date(this,'本科');">本科</li>
+                                        <li onclick="date(this,'硕士');">硕士</li>
+                                        <li onclick="date(this,'博士');">博士</li>
+                                        <li onclick="date(this,'其他');">其他</li>
+                                </ul>
+                                 <input type="hidden" name="info[xueli]" value="{{$user.xueli}}"/>
+                            </div>
+                            <i>*</i>
+                        </div>
+                        <div class="row clearfix" style="margin-left: 32px;">
+                            <label for="">算术平均分：</label>
+                            <input class="input-sm" type="text" name="info[sscj]" value="{{$user.sscj}}"/>
+                            <i>*</i>
+                        </div>
+                        <a href="http://baike.baidu.com/link?url=nHJzXhm8YH4j3sUQm9CXDQ667KaVyld0Hkj3ytQIKEKT14_PSj4vUgkWWJayKBr1AdJQ0wQXNLDxBD2IEwRcLP5Cbi3npdOiUXCJSJA7n4n6G-hu1E74xnfwI5HarMGPoScRrIpIf_kOkb-sOlLFyFL-wlH_Btckjt7zmzTIUu4d72xdc8L5re_NeisNhT-E"
+                           target="_blank" class="ruhe">点击： 如何计算算术平均分？</a>
+                    </div>
+                    <div class="clearfix clear"></div>
+                    <h1 class="yuyan">语言成绩</h1>
+                    <div class="left left-27">
+                        <div class="row clearfix">
+                            <label for="">雅思成绩：</label>
+                            <input type="text" name="info[gkfs]" value="{{$user.gkfs}}"/>
+                        </div>
+                        <div class="row clearfix">
+                            <label for="">GRE成绩：</label>
+                            <input type="text" name="info[ky]" value="{{$user.ky}}"/>
+                        </div>
+                        <div class="row clearfix" style="margin-left: -13px;">
+                            <label for="">GMAT成绩：</label>
+                     <input type="text" name="info[xz]" value="{{$user.xz}}"/>
+                        </div>
+                    </div>
+                    <div class="right right-27">
+                        <div class="row clearfix">
+                            <label for="">托福成绩：</label>
+                                   <input type="text" name="info[tl]" value="{{$user.tl}}"/>
+                        </div>
+                        <div class="row clearfix">
+                            <label for="">SAT成绩：</label>
+                            <input type="text" name="info[yd]" value="{{$user.yd}}"/>
+                        </div>
+                        <div class="row clearfix" style="margin-left: -13px;">
+                            <label for="">LSAT成绩：</label>
+                          <input type="text" name="info[zf]" value="{{$user.zf}}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix clear"></div>
+                <div class="submit clearfix">
+                    <a href="javascript:;" class="prev">上一步</a>
+                    <a href="javascript:;" class="next">下一步</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="yyt-25" style="display: none">
+    <div class="wrapper">
+        <div class="content">
+            <ul class="nav">
+                <li><a class="lis" href="javascript:;">个人信息</a></li>
+                <li><a class="lis" href="javascript:;">学术背景</a></li>
+                <li><a class="lis on" href="javascript:;">选择顾问</a></li>
+            </ul>
+            <div class="box box-2">
+                <h1 class="title">根据您的信息，懒马为您推荐以下顾问供您选择，顾问选择完成后，您所选择的顾问将在24小时内与您取得联系。</h1>
+                <div class="card-group">
+                    {{fflist catid=36 order="sort asc,cid desc" attr="hot" pagesize=4 to=gw field="tel,qq,changxiang,zhiwei"}}
+                    {{foreach from=$gw item=v}}
+                    <div class="card clearfix">
+                        <img src="{{$v.thumb}}" alt="" class="person"/>
+                        <div class="part1"><p>{{$v.title}} <span class="xia"> _ </span><span class="chenghao">{{$v.zhiwei}}</span></p></div>
+                        <div class="part2"><p>电话：<span>{{$v.tel}}</span></p><p>QQ：<span>{{$v.qq}}</span></p></div>
+                        <div class="part3"><p>长项：<span>{{$v.changxiang}}</span></p></div>
+                        <div class="part4"><input type="radio" name="tearch" value="{{$v.cid}}"/><label for="">我的咨询老师</label></div>
+                    </div>
+                    {{/foreach}}
+                </div>
+                <div class="clearfix clear"></div>
+                <div class="submit clearfix">
+                     <a href="javascript:;" class="prev">上一步</a>
+                    <a href="javascript:;" class="next" id="submitt">提交申请</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <input type="hidden" name="catid" value="82" />
+</form>
+{{include file="system/footer.html"}}
+    <script>
+        //男女
+        $('.label-sex1').click(function(){
+            $(this).parent().find('.pic-sex1').attr('src','__PUBLIC__/images/radio1.png');
+            $(this).parent().find('.pic-sex2').attr('src','__PUBLIC__/images/radio0.png');
+        });
+        $('.label-sex2').click(function(){
+            $(this).parent().find('.pic-sex1').attr('src','__PUBLIC__/images/radio0.png');
+            $(this).parent().find('.pic-sex2').attr('src','__PUBLIC__/images/radio1.png');
+        });
+        //18禁
+        $('.label-18').click(function(){
+           $('.father').show();
+            $('.mother').show();
+        });
+        $('.label-17').click(function(){
+            $('.father').hide();
+            $('.mother').hide();
+        });
+//下一步
+ $(".next").click(function(){
+     $(this).parent().parent().parent().parent().parent().css("display","none");
+     $(this).parent().parent().parent().parent().parent().next().css("display","block");
+ })
+ //上一步
+ $(".prev").click(function(){
+     $(this).parent().parent().parent().parent().parent().css("display","none");
+     $(this).parent().parent().parent().parent().parent().prev().css("display","block");
+ })
+ //年份生成
+ $(function(){
+        var d=new Date();
+        var i=d.getFullYear();
+        var j=100;
+        var str="";
+        for(var m=1965;m<=i;m++){
+         str +="<li onclick='date(this,"+m+")'>"+m+"</li>";
+     };
+    $('.datetime').html(str);
+ })
+ function date(obj,m){
+    $(obj).parent().next().val(m);
+ }
+ $("#submitt").click(function(){
+     $("#myformx").submit();
+ })
+    </script>
+
+</body>
+</html>

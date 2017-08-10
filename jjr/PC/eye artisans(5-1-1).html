@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>镜匠人</title>
+<link rel="stylesheet" type="text/css" href="css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/jquery.Sonline.js"></script>
+<script src="js/slides-1.1.1-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+//图片上下滚动
+$(function() {
+	$('.succesny').olvSlides({
+		thumb: true,
+		thumbPage: true,
+		thumbDirection: "Y",
+		effect: 'fade'
+
+	});
+})
+//导航
+$("#nav li").hover(function(){
+	$(this).find('ul:first').css({visibility: "visible",display: "none"});
+},function(){
+	$(this).find('ul:first').css({visibility: "hidden"});
+});
+//在线客服
+$(function(){
+	$("body").Sonline({
+		Position:"right",//left或right
+		Top:200,//顶部距离，默认200px
+		Effect:true, //滚动或者固定两种方式，布尔值：true或false
+		DefaultsOpen:true, //默认展开：true,默认收缩：false
+		Qqlist:"1015353206|在线QQ" //多个QQ用','隔开，QQ和客服名用'|'隔开
+	});
+	$(".contentBox").append("<div class='message'><a href='#'>在线留言</a></div>");
+})	
+</script>
+</head>
+<body>
+<div class="eye-wrap"><!--背景-->
+	<div class="header"><!--头部  start-->
+    	<div class="header-box">
+        	<a href="#"><img src="images/logo.png" /></a><!--logo-->
+            <div class="navwrap"><!--导航  start-->
+                <ul id="nav"> 
+                    <li class="page_item">
+                        <a href="#" >Visval life<span></span></a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >镜匠人ATM<span></span></a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >Eye Artisans<span></span></a> 
+                        <ul class='children'> 
+                            <li class="page_item"><a href="#" >Brand introduction /品牌介绍</a></li> 
+                            <li class="page_item"><a href="#/">Series products /系列产品</a> 
+                                <ul class='children'> 
+                                    <li class="page_item"><a href="#" >A系列<span></span></a></li> 
+                                    <li class="page_item"><a href="#" >B系列<span></span></a></li>
+                                    <li class="page_item"><a href="#" >C系列<span></span></a></li>
+                                    <li class="page_item"><a href="#" >其他系列<span></span></a></li> 
+                                </ul> 
+                            </li> 
+                            <li class="page_item"><a href="#" >Brand joined /品牌加盟</a></li> 
+                        </ul> 
+                    </li> 
+                    
+                </ul>                
+            </div> <!--导航  end-->
+        </div>
+    </div><!--头部  end-->
+	<div class="main">
+    	<div class="eye3center"><!--主体内容  start-->
+            <div class="eye-center">
+            	<h1>Store introduction   /   门店介绍</h1>
+                 	    <div class="successlunbo">
+        <div class="succesny">
+            <div class="control">
+                <ul class="change">
+                </ul>
+            </div>
+            <div class="thumbWrap">
+                <div class="thumbCont">
+                    <ul>
+                        <!-- img属性, url=url, text=描述, bigimg=大图, alt=标题  -->
+                        <li>
+                            <div><img src="images/s1.jpg" url="url" bigImg="images/1.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s2.jpg" url="url"  bigImg="images/2.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s3.jpg" url="url"  bigImg="images/3.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s4.jpg" url="url"  bigImg="images/4.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s5.jpg" url="url"  bigImg="images/5.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s1.jpg" url="url" bigImg="images/1.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s2.jpg" url="url"  bigImg="images/2.jpg"/></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s3.jpg" url="url"  bigImg="images/3.jpg"  /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s4.jpg" url="url"  bigImg="images/4.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s5.jpg" url="url"  bigImg="images/5.jpg" /></div>
+                        </li>
+                      </ul>
+                    </div>
+                 </div>
+               </div>
+             </div>
+             <div class="eye5Bottom">
+             	<h3>门店介绍：</h3>
+                <p>
+                	Eye Artisans品牌 中文翻译 眼睛的工匠，英文简称，EA 大写字母E代表着视力表的E字表体现行业标志，E字平放好比一把尺子的刻度，代表这工匠精神的标准严谨。A代表着二十六个英文字母的首位，代表第一，只做最好.匠心营造，为品质而生 的品牌理念。
+                </p>
+             </div>   
+
+            </div>
+        </div><!--主体内容  end-->
+    </div>
+    <div class="footer"><!--页尾  start-->
+    	<div class="foot-box">
+        	<p class="p-left">2015 版权所有 蜀ICP备12006200号 </p>
+            <p class="p-center">德國鏡匠人國際眼鏡集團有限公司</p>
+            <p class="p-right">FLAT B07 FLOOR23,HOVER IND BLDG NO 26-38 KWAI CHEONG RD,NT</p>
+        </div>
+    </div><!--页尾  end-->
+</div>
+</body>
+</html>

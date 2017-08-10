@@ -1,0 +1,9 @@
+                <div class="part2-down clearfix">
+                    <ul class="clearfix">
+                        <li><a href="javscript:;">热门标签：</a></li>
+                        {{fflist catid=30 to=b order="sort asc,cid desc" field="burl"}}
+                        {{foreach from=$b item=q}}
+                        <li><a href="{{$q.burl}}" target="_blank">{{$q.title}}</a></li>
+                        {{/foreach}}
+                    </ul>
+                </div>

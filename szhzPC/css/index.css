@@ -1,0 +1,72 @@
+
+/**************首页主体开始**************/
+/* 公告 */
+.notice{ width:1200px; height:40px; border:1px solid #e5e5e5; overflow:hidden; margin-top:50px; line-height:40px;}
+.notice b{ float:left; margin:0 10px; line-height:42px;}
+.notice p{ float:left; color:#666;}
+.notice time{ color:#666; float:right; margin-right:10px;}
+/* 菜单 */
+.menubar{ width:1200px; height:230px; box-shadow:0px 5px 5px #f8f8f8;}
+.menubar ul{ padding-top:45px;}
+.menubar ul li{ float:left; width:250px; height:150px; text-align:center; margin-left:66px;}
+.menubar ul li:first-child{ margin-left:0;}
+.menubar ul li h5{ line-height:60px; font-weight:400; transition: all 0.3s linear;}
+.menubar ul li:hover h5{ color:#00aaff;}
+.menubar ul li img{transition: all 0.3s linear; -ms-transition: all 0.3s linear; -moz-transition: all 0.3s linear; -webkit-transition: all 0.3s linear; -o-transition: all 0.3s linear;}
+.menubar ul li:hover img{ transform:scale(0.95); -ms-transform:scale(0.95); /*代表ie内核识别码*/ -moz-transform:scale(0.95);/*火狐内核识别码*/ -webkit-transform:scale(0.95); /*谷歌内核识别码*/ -o-transform:scale(0.95); /*欧朋【opera】内核识别码*/ }
+
+/* 中缝图片广告 */
+.center_banner{ width:1200px; margin-top:40px;}
+.center_banner img{ margin-top:10px;}
+
+/* 展馆周围指南 */
+.content{ width:1200px; margin:0 auto;}
+.content .content_title{ width:100%; height:100px; text-align:center; padding-top:60px;}
+.content .content_title h1{ line-height:50px;}
+.content .content_title small{ line-height:25px;}
+.content .mian_content{ width:1200px; height:380px;}
+.content .mian_content ul li{ float:left; width:285px; height:380px; margin-left:20px; position:relative; cursor:pointer; overflow:hidden;}
+.content .mian_content ul li:first-child{ margin-left:0;}
+.content .mian_content ul li img{ width:300px; height:400px; opacity:0.9; filter:alpha(opacity=90);transition: all 0.4s linear; position:absolute; left:-8px; top:-10px;}
+.content .mian_content ul li:hover img{ opacity:1; filter:alpha(opacity=100); transform:scale(0.98);}
+.content .mian_content ul li .pic_bg{ position:absolute; bottom:0; left:0; z-index:1; background:url(../images/pic_bg.png) center bottom no-repeat; width:285px; height:380px; transition:all linear 0.2s;}
+.content .mian_content ul li .mian_content_tit{ position:absolute; bottom:15px; z-index:2; color:#FFF; text-align:right; right:15px; width:255px; height:50px;}
+.content .mian_content ul li .mian_content_tit h4{ color:#FFF; line-height:30px; height:30px; overflow:hidden;}
+.content .mian_content ul li .mian_content_tit p{ line-height:20px; color:#FFF;}
+
+.content .mian_content ul li:hover .pic_bg{ opacity:0; filter:alpha(opacity=0);}
+.content .content_more {  text-align:center; height:35px; margin-top:35px; line-height:35px;}
+.content .content_more a{ letter-spacing:1px; color:#30baff;}
+/* 会展服务商 */
+.content .content_one{ width:1200px; height:500px; margin:0 auto; }
+.content .content_one ul li{ float:left; width:285px; height:240px; margin-left:20px; margin-bottom:20px; overflow:hidden;}
+.content .content_one ul li:hover{ box-shadow:0px 0px 10px #BBB;}
+.content .content_one ul li:hover img{ transform:scaleX(1.02);}
+.content .content_one ul li .mian_content_tit{ height:69px; width:263px; border:1px solid #e5e5e5; border-top:0; padding:0 10px;}
+.content .content_one ul li img{ display:block; transition:all linear 0.3s;}
+.content .content_one ul li:first-child{ width:590px; height:240px; margin-left:0;}
+.content .content_one ul li:first-child .mian_content_tit{ height:69px; width:568px; border:1px solid #e5e5e5; border-top:0; padding:0 10px;}
+.content .content_one ul li .mian_content_tit h6{ line-height:38px;}
+.content .content_one .left0{ margin-left:0;}
+.content .content_one ul li h6:hover,.content .content_one ul li small:hover{color:#30baff;}
+.content .content_one ul li:hover .mian_content_tit{ border:1px solid #00aaff\9; border-top:0;}
+/* 观看展会排期 */
+.content .content_two{ width:1200px; height:300px; margin:0 auto; overflow:hidden;}
+.content .content_two div{ float:left; width:130px; height:140px; margin-left:20px; margin-bottom:20px; position:relative; display:block;}
+.content .content_two div img{ width:100%; height:auto;}
+.content .content_two div img:hover{ opacity:0.8; filter:alpha(opacity=80);}
+.content .content_two div:first-child{ margin-left:0;}
+.content .content_two .li1{ width:160px; height:300px;}
+.content .content_two .li2{ width:230px; height:140px; margin-left:0;}
+.content .content_two .li3{ width:290px; height:140px;}
+.content .content_two .li4{ width:135px; height:140px;}
+.content .content_two .content_two_box{ width:230px; display: block; height:300px; float:left; margin-left:20px;}
+.content .content_two div h6{ position:absolute; bottom:20px; left:20px; font-weight:bold; color:#FFF;}
+.content .content_two div h6:hover{ color:#00aaff;}
+
+
+
+
+
+
+

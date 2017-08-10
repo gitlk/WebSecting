@@ -1,0 +1,258 @@
+<div class="index-footer">
+    <div class="wrapper">
+        <div class="content clearfix">
+            <div class="part1">
+                <img src="__PUBLIC__/images/footer-1.png" alt=""/>
+                <p>全国免费咨询热线：</p>
+                <h1>{{ffset var="companytel"}}</h1>
+            </div>
+            <div class="part2">
+                 {{ffcategory parentid=41 to=v}}
+                <h1>{{$v.name}}</h1>
+                {{foreach from=$v.child item=a}}
+                <a href="{{$a.url}}">{{$a.name}}</a>
+               {{/foreach}}
+            </div>
+            <div class="part2">
+                 {{ffcategory parentid=42 to=v}}
+                <h1>{{$v.name}}</h1>
+                {{foreach from=$v.child item=a}}
+                <a href="{{$a.url}}">{{$a.name}}</a>
+               {{/foreach}}
+            </div>
+            <div class="part3">
+                <div class="rq1">
+                    {{ffad aid=2 to=wx}}
+                    <img src="__PUBLIC__/uploads/{{$wx.setting.image}}" alt=""/>
+                    <p>关注懒马微信</p>
+                </div>
+                <div class="rq1">
+                     {{ffad aid=3 to=wb}}
+                    <img src="__PUBLIC__/uploads/{{$wb.setting.image}}" alt=""/>
+                    <p>关注懒马微博</p>
+                </div>
+                <div class="rq2">
+                    <p><a href="http://www.miibeian.gov.cn" target="_blank">Copyright © 2014 {{ffset var="icpno"}}</a></p>
+                    <p>{{ffset var="companyname"}} © 2015 All rights reserved</p>
+                    <p><a href="http://www.fangfa.net" target="_blank">技术支持：方法数码</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="toTop">
+    <a target="_blank" href="tencent://message/?uin={{ffset var='companyqq'}}&amp;Site=sc.chinaz.com&amp;Menu=yes">
+        <img src="__PUBLIC__/images/to-top.png" align="absmiddle">
+    </a>
+</div>
+<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+<script>
+        /*关注按钮*/
+    $('.focus').click(function(){
+        var obj = $(this);
+         var cid=$(this).attr("del-val");
+         var   gz=1;
+         var url = "__ROOT__/Findex/atten"; //提交地址
+         var data = {cid:cid,gz:gz};
+         $.post(url, data, function(result){
+             if(result.gz==1){
+                $(obj).hide();
+                $(obj).next().show();  
+             }else{
+                  alert("请登录后操作");
+                  window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                 return false;
+             }
+             
+           }, 'json');
+
+    });
+    $('.focusNo').click(function(){
+                var obj = $(this);
+                    var cid=$(this).attr("del-val");
+                    var   gz=0;
+                    var url = "__ROOT__/Findex/atten"; //提交地址
+                    var data = {cid:cid,gz:gz};
+                    $.post(url, data, function(result){
+                         if(result.gz==0){
+                                $(obj).hide();
+                                $(obj).prev().show(); 
+                             }else{
+                         alert("请登录后操作");
+                        window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                                 return false;
+                             }
+                             
+                       }, 'json');
+  
+    });
+    
+     //focus
+    $('body').on("click",'.focus-yyt-2',function(){
+        var rel=$(this).attr('rel');
+        if(rel==0){
+            var obj = $(this);
+            var url = "__ROOT__/Findex/atten"; //提交地址
+            var gz=1;
+            var cid=$(this).attr("del-val");
+            var data = {cid:cid,gz:gz};
+            $.post(url, data, function(result){
+                         if(result.gz==1){
+                                    $(obj).css('background-color','#98a5b1');
+                                    $(obj).html('取消');
+                                    $(obj).attr('rel','1');
+                             }else{
+                         alert("请登录后操作");
+                        window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                                 return false;
+                             }
+                       }, 'json');     
+        }if(rel==1){
+            var obj = $(this);
+            var url = "__ROOT__/Findex/atten"; //提交地址
+            var gz=0;
+            var cid=$(this).attr("del-val");
+            var data = {cid:cid,gz:gz};       
+             $.post(url, data, function(result){
+                         if(result.gz==0){
+                                    $(obj).css('background-color','#015db0');
+                                    $(obj).html('加关注');
+                                    $(obj).attr('rel','0');
+                             }else{
+                         alert("请登录后操作");
+                        window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                                 return false;
+                             }
+                       }, 'json');                
+        }
+    });   
+    
+      //join加申请单
+
+       $('body').on("click",'.join-btn',function(){
+
+        var rel=$(this).attr('rel');
+        var catid=$(this).attr('dal');    //获取catid
+        var cid=$(this).attr('dav');    //获取cid
+        var title=$(this).attr('rtitle');    //获取title
+        var thumb='__PUBLIC__/uploads/'+$(this).attr('rthumb');//获取图片
+        //统计申请数
+        if(rel==0){
+                 ghtml =parseInt($("#much").attr('dev'))+1;   
+        }else{
+                 ghtml =parseInt($("#much").attr('dev'))-1;
+        }
+        var data={catid:catid,cid:cid,title:title,thumb:thumb,rel:rel};
+        var url="__ROOT__/findex/apply";
+         $.post(url, data, function(result){ 
+                            if(result.c==1){
+                                   $('.show-school').html($('.show-school').html()+result.str);    
+                                  $('#much').html(result.count);   
+                            }else if(result.c==2){
+                                              var a="#del_"+cid;
+                                            $(a).parent().remove();//移除申请  
+                                  $('#much').html(result.count); 
+                            }else{
+                               window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                            }
+
+                }, 'json');
+
+        if(rel==0){
+             var pdcatid = 0;
+             {{if $cat.catid}}
+                pdcatid = {{$cat.catid}};
+             {{/if}}
+            if(pdcatid==31){
+                    $(this).css('background-color','#98a5b1');
+                     $(this).css('color','#fff')
+                    $(this).html('已加入申请单');
+                    $(this).attr('rel','1');   
+            }else{
+                    $(this).css('background-color','#98a5b1');
+                    $(this).html('取消');
+                    $(this).attr('rel','1');
+            }
+
+        }if(rel==1){
+            var a="#del"+cid;
+             $(a).parent().remove();//移除申请
+           var pdcatid = 0;
+             {{if $cat.catid}}
+                pdcatid = {{$cat.catid}};
+             {{/if}}
+            if(pdcatid==31){
+                    $(this).html('');
+                    $(this).css('background-color','transparent');
+                    $(this).css('color','#015db0');
+                    $(this).html('<img src="__PUBLIC__/images/16-3.png"/>加入申请单');
+                    $(this).attr('rel','0');   
+            }else{
+                    $(this).css('background-color','#015db0');
+                     
+                    $(this).html('加入申请单');
+                    $(this).attr('rel','0');
+            }
+        }
+
+    });
+    //删除弹框内的申请
+    function del(a,b,obj){
+        var cid=a;
+        var catid=b;
+        var rel=1;
+        var data={catid:catid,cid:cid,rel:rel};
+        var url="__ROOT__/findex/apply";
+         $.post(url, data, function(result){ 
+                            if(result.c==1){
+                                  $('.show-school').html($('.show-school').html()+result.str);    
+                                  $('#much').html(result.count);   
+                            }else if(result.c==2){
+                                  var a="#del_"+cid;
+                                  $(a).parent().remove();//移除申请  
+                                  $('#much').html(result.count); 
+                                  window.location.reload();
+                               
+                            }
+
+                }, 'json');
+    }
+
+
+//显示弹框
+    $('.fangan').click(function(e){
+
+        e.stopPropagation();
+
+        $('.tanchuang').show();
+
+    });
+
+   //点击空白关闭
+
+    $(document).click(function() {
+
+        $(".tanchuang").hide();
+
+    });
+
+    //点击内部不会关闭
+
+    $(".tanchuang").click(function(e) {
+
+        $(this).show();
+
+        e.stopPropagation();
+
+    });    
+
+
+
+    
+    
+    
+</script>
+</body>
+
+</html>

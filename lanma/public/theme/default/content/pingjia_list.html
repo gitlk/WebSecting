@@ -1,0 +1,125 @@
+{{include file="system/header.html"}}
+<body>
+{{include file="system/nav_1.html"}}
+<div class="yyt-3">
+   <div class="wrapper clearfix">
+    {{ffsql sql="select *from fangfa_atten where user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=g}}
+        {{php}}
+                $data = $this->_tpl_vars['g'];
+                foreach($data as $k=>$v){
+                   $m[$v['id']] = $v['user_id'];
+                }
+                    $this->_tpl_vars['g']=$m;
+        {{/php}}  
+        <div class="left-part">
+            <div class="title clearfix">
+                <img src="__PUBLIC__/uploads/{{$xy.thumb}}" alt=""/>
+                <h1>{{$xy.title}} <span>{{$xy.etitle}}</span></h1>
+                <p>学校地址： {{$xy.city}} {{$xy.address}}</p>
+                <p>国际排名：{{$xy.gjsort}}       &nbsp; &nbsp; &nbsp; &nbsp;   国内排名： {{$xy.gnsort}}</p>
+                     <a rel="{{if $xy.cid|array_key_exists:$g}}1{{else}}0{{/if}}" href="javascript:;"  del-val="{{$xy.cid}}" class="focus-yyt-2"
+                           {{if $xy.cid|array_key_exists:$g}}style="background-color:#98a5b1"{{else}}style="background-color:#015db0"{{/if}}
+                           >{{if $xy.cid|array_key_exists:$g}}取消{{else}}加关注{{/if}}</a>
+                
+                <span class="num">{{$xy.guanzhu}}人已关注</span>
+            </div>
+            <div class="content">
+                <ul class="content-nav">
+                    {{ffcategory catid=10 to=u}}
+                    <li><a   href="{{$u.url}}{{$xy.url}}">院校介绍</a></li>
+                    {{ffcategory parentid=10 to=n}}
+                    {{foreach from=$n.child item=nx}}
+                    <li><a {{if $cat.catid==$nx.catid}}class="on"{{/if}} href="{{if ($nx.url|strpos:'.html')!=false }}{{$nx.url}}?{{else}}{{$nx.url}}index.html?{{/if}}catid={{$xy.catid}}&cid={{$xy.cid}}">{{$nx.name}}</a></li>
+                   {{/foreach}}
+                </ul>
+                <div class="content-yyt7">
+                    {{foreach from=$show.info item=list}}
+                    <a class="card clearfix">
+                        <div class="card-left">
+                            <img src="__PUBLIC__/images/xk.png" alt="" class="xq"/>
+                            {{if $list.thumb!=""}}
+                              <img src="__PUBLIC__/uploads/{{$list.thumb}}" class="tu" alt=""/>
+                              {{else}}
+                            <img src="__PUBLIC__/images/sec2-l-2.png" class="tu" alt=""/>
+                            {{/if}}
+                        </div>
+                        <h1>{{$list.zhanghu}}/{{$list.nicheng}} <span>[{{"Y-m-d"|date:$list.create_time}}]</span></h1>
+
+                        <p class="text-pinlun">{{$list.contents}}</p>
+                        
+                        <span rel="0" class="zhankai" href="javascript:;">[展开]</span>
+                    </a>
+                    {{/foreach}}
+
+                    <div class="fenye clearfix">
+                       {{$show.pages}}
+                    </div>
+                </div>
+            </div>
+        </div>
+ {{include file="system/xyright.html"}}
+   </div>
+
+</div>
+
+
+
+
+
+{{include file="system/footer.html"}}
+<script>
+    //focus加关注
+    $('.focus-yyt-3').click(function(){
+        var rel=$(this).attr('rel');
+        if(rel==0){
+            $(this).css('background-color','#98a5b1');
+            $(this).html('取消');
+            $(this).attr('rel','1');
+        }if(rel==1){
+            $(this).css('background-color','#015db0');
+            $(this).html('加关注');
+            $(this).attr('rel','0');
+        }
+    });
+
+    //choose选中
+    $('.row-right a').on('click',function () {
+        $(this).siblings().removeClass('on');
+        $(this).addClass('on');
+    });    
+    //专业关注
+    $('.focus-yyt-6').click(function(){
+        var rel=$(this).attr('rel');
+        if(rel==0){
+            $(this).css('background-color','#98a5b1');
+            $(this).css('color','#fff');
+            $(this).css('border-color','#fff');
+            $(this).html('不关注');
+            $(this).attr('rel','1');
+        }if(rel==1){
+            $(this).css('background-color','#fff');
+            $(this).css('color','#015db0');
+            $(this).css('border-color','#015db0');
+            $(this).html('加关注');
+            $(this).attr('rel','0');
+        }
+    });
+
+    //评论展开
+    $('.zhankai').click(function(){
+        var rel=$(this).attr('rel');
+        if(rel==0){
+            $(this).prev().css('height','auto');
+            $(this).html('[收起]');
+            $(this).attr('rel','1');
+        }if(rel==1){
+            $(this).prev().css('height','42px');
+            $(this).html('[展开]');
+            $(this).attr('rel','0');
+        }
+    });
+
+
+</script>
+</body>
+</html>

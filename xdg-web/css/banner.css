@@ -1,0 +1,9 @@
+/* CSS Document */
+.banner .swiper-container .swiper-wrapper img{width: 100%}
+.swiper-pagination{bottom: 4% !important;left: 50%;width: 100px;z-index: 1000;margin-left: -50px;  color:#FFF;}
+.swiper-pagination-current{ font-size:1.5em; color:#FFF;}
+.swiper-pagination-total{ font-size:1.3em; color:#FFF;}
+
+.swiper-button-prev{ background:url(../images/left.png) no-repeat left center !important; z-index: 9999 !important; left:45% !important; bottom:5%; top:auto !important; height:18px !important; width:13px !important;}
+.swiper-button-next{ background:url(../images/right.png) no-repeat right center !important; z-index: 9999 !important; right:45% !important; bottom:5%; top:auto !important; height:18px !important; width:13px !important;}
+/*=======banner切换图======*/

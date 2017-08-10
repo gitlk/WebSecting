@@ -1,0 +1,172 @@
+{{include file="system/header.html"}}
+<body>
+{{include file="system/nav_1.html"}}
+<div class="yyt-3">
+   <div class="wrapper clearfix">
+          {{ffsql sql="select *from fangfa_atten where user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=g}}
+                {{php}}
+                        $data = $this->_tpl_vars['g'];
+                        foreach($data as $k=>$v){
+                           $m[$v['id']] = $v['user_id'];
+                        }
+                            $this->_tpl_vars['g']=$m;
+                {{/php}}    
+        <div class="left-part">
+            <div class="title clearfix">
+                <img src="__PUBLIC__/uploads/{{$xy.thumb}}" alt=""/>
+                <h1>{{$xy.title}} <span>{{$xy.etitle}}</span></h1>
+                <p>学校地址： {{$xy.city}} {{$xy.address}}</p>
+                <p>国际排名：{{$xy.gjsort}}       &nbsp; &nbsp; &nbsp; &nbsp;   国内排名： {{$xy.gnsort}}</p>
+                        <a rel="{{if $xy.cid|array_key_exists:$g}}1{{else}}0{{/if}}" href="javascript:;"  del-val="{{$xy.cid}}" class="focus-yyt-2"
+                           {{if $xy.cid|array_key_exists:$g}}style="background-color:#98a5b1"{{else}}style="background-color:#015db0"{{/if}}
+                           >{{if $xy.cid|array_key_exists:$g}}取消{{else}}加关注{{/if}}</a>
+                
+                <span class="num">{{$xy.guanzhu}}人已关注</span>
+            </div>
+            <div class="content">
+                <ul class="content-nav">
+                    {{ffcategory catid=10 to=u}}
+                    <li><a   href="{{$u.url}}{{$xy.url}}">院校介绍</a></li>
+                    {{ffcategory parentid=10 to=n}}
+                    {{foreach from=$n.child item=nx}}
+                    <li><a {{if $cat.catid==$nx.catid}}class="on"{{/if}} href="{{if ($nx.url|strpos:'.html')!=false }}{{$nx.url}}?{{else}}{{$nx.url}}index.html?{{/if}}catid={{$xy.catid}}&cid={{$xy.cid}}">{{$nx.name}}</a></li>
+                   {{/foreach}}
+                </ul>
+                <div class="content-yyt9">
+                    <div class="sideMenu">
+                        {{foreach from=$show.info item=list}}
+                        <h3 class="on"><em></em>{{$list.title}}</h3>
+                        <ul>
+                          <p><span>答：</span>{{$list.contents}}</p>
+                        </ul>
+                        {{/foreach}}
+                    </div>
+
+                    <div class="fenye clearfix">
+                       {{$show.pages}}
+                    </div>
+                </div>
+            </div>
+        </div>
+ {{include file="system/xyright.html"}}
+   </div>
+
+</div>
+
+
+
+
+
+{{include file="system/footer.html"}}
+<input type="hidden" id="shengqing" />
+<input type="hidden" id="lingyu" />
+<input type="hidden" id="title" />
+<script>
+    function shengqing(s){
+        $('#shengqing').val(s);
+          ajax();
+     };
+    function lingyu(s){
+        $('#lingyu').val(s);
+          ajax();
+     };  
+    function sea(){
+          var a=$('#seee').val();
+          $("#title").val(a);
+        ajax();
+      }  
+/**
+ * ajax筛选
+ * author:like 2013/8/24
+ */
+    function ajax(){
+	//获取当前筛选条件
+		var shengqing=$("#shengqing").val();
+		var lingyu=$("#lingyu").val();
+		var title=$("#title").val();
+        //获取排序条件
+		var catid = 11;
+                var xyid={{$xy.cid}};
+		var url = "__ROOT__/Fcontent/xyzy";//提交地址
+		var data = {catid:catid,shengqing:shengqing,lingyu:lingyu,title:title,xyid:xyid};
+		$.post(url, data, function(result){
+		$("#zyzy").html(result.str);//学院
+                $("#counts").html(result.count);
+            }, 'json');
+    }
+     /**
+     * ajax异步分页
+     * author:like 2013/8/24
+     */
+      function ajaxload(p){
+	//获取当前筛选条件
+		var shengqing=$("#shengqing").val();
+		var lingyu=$("#lingyu").val();
+		var title=$("#title").val();
+             //获取排序条件
+ 		var catid = 11;
+                var xyid={{$xy.cid}};
+		var url = "__ROOT__/Fcontent/xyzy";//提交地址
+		var data = {catid:catid,shengqing:shengqing,lingyu:lingyu,title:title,xyid:xyid};
+		$.post(url, data, function(result){
+		$("#school").html(result.str); 
+                $("#counts").html(result.count);
+		}, 'json');	
+
+    }   
+</script>
+<script>
+    //focus加关注
+    $('.focus-yyt-3').click(function(){
+        var rel=$(this).attr('rel');
+        if(rel==0){
+            $(this).css('background-color','#98a5b1');
+            $(this).html('取消');
+            $(this).attr('rel','1');
+        }if(rel==1){
+            $(this).css('background-color','#015db0');
+            $(this).html('加关注');
+            $(this).attr('rel','0');
+        }
+    });
+
+    //choose选中
+    $('.row-right a').on('click',function () {
+        $(this).siblings().removeClass('on');
+        $(this).addClass('on');
+    });    
+    //专业关注
+    $('.focus-yyt-6').click(function(){
+        var rel=$(this).attr('rel');
+        if(rel==0){
+            $(this).css('background-color','#98a5b1');
+            $(this).css('color','#fff');
+            $(this).css('border-color','#fff');
+            $(this).html('不关注');
+            $(this).attr('rel','1');
+        }if(rel==1){
+            $(this).css('background-color','#fff');
+            $(this).css('color','#015db0');
+            $(this).css('border-color','#015db0');
+            $(this).html('加关注');
+            $(this).attr('rel','0');
+        }
+    });
+    //手风琴
+    jQuery(".sideMenu").slide({
+        titCell:"h3", //鼠标触发对象
+        targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+        effect:"slideDown", //targetCell下拉效果
+        delayTime:300 , //效果时间
+        triggerTime:150, //鼠标延迟触发时间（默认150）
+        defaultPlay:true,//默认是否执行效果（默认true）
+        trigger:"click",
+        returnDefault:false //鼠标从.sideMen移走后返回默认状态（默认false）
+    });
+
+
+
+
+</script>
+</body>
+</html>

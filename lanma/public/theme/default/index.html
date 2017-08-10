@@ -1,0 +1,896 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav.html"}}
+    <div class="index">
+        <div class="banner">
+            <div id="slideBox" class="slideBox">
+                <div class="hd">
+                    <ul class="clearfix">
+                        <li></li><div class="li-line"></div>
+                        <li></li><div class="li-line"></div>
+                        <li></li><div class="li-line"></div>
+                        <li></li><div class="li-line"></div>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul>
+                        {{ffad aid=1 to=ban}}
+                        {{foreach from=$ban.setting.bimage item=br key=k}}
+                        <li><a href="{{$ban.setting.blink.$k}}" ><img src="__PUBLIC__/uploads/{{$br}}" /></a></li>
+                        {{/foreach}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="choose8 clearfix">
+            <div class="wrapper">
+                {{ffad aid=6 to=zb}}
+                  <a class="choose8-card choose8-card1" href="{{$zb.setting.link}}">
+                    <img src="__PUBLIC__/uploads/{{$zb.setting.image}}" alt=""/>
+                    <h1><span class="h1-l">{{$zb.setting.alt|mb_substr:0:2:'utf8'}}</span><span class="h1-r">{{$zb.setting.alt|mb_substr:2:200:'utf8'}}</span></h1>
+                </a>
+                {{ffad aid=7 to=zb}}
+                  <a class="choose8-card choose8-card2" href="{{$zb.setting.link}}">
+                    <img src="__PUBLIC__/uploads/{{$zb.setting.image}}" alt=""/>
+                    <h1><span class="h1-l">{{$zb.setting.alt|mb_substr:0:2:'utf8'}}</span><span class="h1-r">{{$zb.setting.alt|mb_substr:2:200:'utf8'}}</span></h1>
+                </a>
+                {{ffad aid=8 to=zb}}
+                  <a class="choose8-card choose8-card3" href="{{$zb.setting.link}}">
+                    <img src="__PUBLIC__/uploads/{{$zb.setting.image}}" alt=""/>
+                    <h1><span class="h1-l">{{$zb.setting.alt|mb_substr:0:2:'utf8'}}</span><span class="h1-r">{{$zb.setting.alt|mb_substr:2:200:'utf8'}}</span></h1>
+                </a>
+                {{ffad aid=9 to=zb}}
+                  <a class="choose8-card choose8-card4" href="{{$zb.setting.link}}">
+                    <img src="__PUBLIC__/uploads/{{$zb.setting.image}}" alt=""/>
+                    <h1><span class="h1-l">{{$zb.setting.alt|mb_substr:0:2:'utf8'}}</span><span class="h1-r">{{$zb.setting.alt|mb_substr:2:200:'utf8'}}</span></h1>
+                </a>
+                {{ffad aid=10 to=zb}}
+                  <a class="choose8-card choose8-card1" href="{{$zb.setting.link}}">
+                    <img src="__PUBLIC__/uploads/{{$zb.setting.image}}" alt=""/>
+                    <h1><span class="h1-l">{{$zb.setting.alt|mb_substr:0:2:'utf8'}}</span><span class="h1-r">{{$zb.setting.alt|mb_substr:2:200:'utf8'}}</span></h1>
+                </a>
+                {{ffad aid=11 to=zb}}
+                  <a class="choose8-card choose8-card2" href="{{$zb.setting.link}}">
+                    <img src="__PUBLIC__/uploads/{{$zb.setting.image}}" alt=""/>
+                    <h1><span class="h1-l">{{$zb.setting.alt|mb_substr:0:2:'utf8'}}</span><span class="h1-r">{{$zb.setting.alt|mb_substr:2:200:'utf8'}}</span></h1>
+                </a>
+                {{ffad aid=12 to=zb}}
+                  <a class="choose8-card choose8-card3" href="{{$zb.setting.link}}">
+                    <img src="__PUBLIC__/uploads/{{$zb.setting.image}}" alt=""/>
+                    <h1><span class="h1-l">{{$zb.setting.alt|mb_substr:0:2:'utf8'}}</span><span class="h1-r">{{$zb.setting.alt|mb_substr:2:200:'utf8'}}</span></h1>
+                </a>
+                {{ffad aid=13 to=zb}}
+                  <a class="choose8-card choose8-card4" href="{{$zb.setting.link}}">
+                    <img src="__PUBLIC__/uploads/{{$zb.setting.image}}" alt=""/>
+                    <h1><span class="h1-l">{{$zb.setting.alt|mb_substr:0:2:'utf8'}}</span><span class="h1-r">{{$zb.setting.alt|mb_substr:2:200:'utf8'}}</span></h1>
+                </a>
+
+            </div>
+        </div>
+        <div class="liucheng">
+            <div class="wrapper clearfix">
+                <div class="liucheng-lfet">
+                    <img src="__PUBLIC__/images/liucheng.png" alt=""/>
+                </div>
+                <div class="liucheng-right">
+                    <div class="slideTxtBox1 tab2">
+                        <div class="hd">
+                            <ul>
+                                <li class="first">确定专业 <img src="__PUBLIC__/images/liucheng-san.png" alt=""/></li>
+                                <li>选择院校<img src="__PUBLIC__/images/liucheng-san.png" alt=""/></li>
+                                <li>费用测算<img src="__PUBLIC__/images/liucheng-san.png" alt=""/></li>
+                                <li>培训考试<img src="__PUBLIC__/images/liucheng-san.png" alt=""/></li>
+                                <li>递交申请<img src="__PUBLIC__/images/liucheng-san.png" alt=""/></li>
+                                <li>获得offer<img src="__PUBLIC__/images/liucheng-san.png" alt=""/></li>
+                                <li>办理签证<img src="__PUBLIC__/images/liucheng-san.png" alt=""/></li>
+                                <li>行前准备<img src="__PUBLIC__/images/liucheng-san.png" alt=""/></li>
+                                <li>成功留学<img src="__PUBLIC__/images/liucheng-san.png" alt=""/></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix clear"></div>
+                        <div class="bd">
+                            <ul class="fenlei-1">
+                                {{fflist catid=33 to=lx order="sort asc,cid desc" field="type,uu"}}
+                                <ul class="fenlei-2 clearfix">  
+                                    {{foreach from=$lx item=x1}}
+                                    {{if $x1.type==1}}
+                                    <li><a href="{{$x1.uu}}">· {{$x1.title}}</a></li>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>  
+                            </ul>
+                            <ul class="fenlei-1">
+                                <ul class="fenlei-2 clearfix">  
+                                    {{foreach from=$lx item=x2}}
+                                    {{if $x2.type==2}}
+                                    <li><a href="{{$x2.uu}}">· {{$x2.title}}</a></li>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>  
+                            </ul>
+                            <ul class="fenlei-1">
+                                <ul class="fenlei-2 clearfix">  
+                                    {{foreach from=$lx item=x3}}
+                                    {{if $x3.type==3}}
+                                    <li><a href="{{$x3.uu}}">· {{$x3.title}}</a></li>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>
+                            </ul>
+                            <ul class="fenlei-1">
+                                <ul class="fenlei-2 clearfix">  
+                                    {{foreach from=$lx item=x4}}
+                                    {{if $x4.type==4}}
+                                    <li><a href="{{$x4.uu}}">· {{$x4.title}}</a></li>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>  
+                            </ul>
+                            <ul class="fenlei-1">
+                                <ul class="fenlei-2 clearfix">  
+                                    {{foreach from=$lx item=x5}}
+                                    {{if $x5.type==5}}
+                                    <li><a href="{{$x5.uu}}">· {{$x5.title}}</a></li>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>  
+                            </ul>
+                            <ul class="fenlei-1">
+                                <ul class="fenlei-2 clearfix">  
+                                    {{foreach from=$lx item=x6}}
+                                    {{if $x6.type==6}}
+                                    <li><a href="{{$x6.uu}}">· {{$x6.title}}</a></li>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>
+                            </ul>
+                            <ul class="fenlei-1">
+                                <ul class="fenlei-2 clearfix">  
+                                    {{foreach from=$lx item=x7}}
+                                    {{if $x7.type==7}}
+                                    <li><a href="{{$x7.uu}}">· {{$x7.title}}</a></li>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul> 
+                            </ul>
+                            <ul class="fenlei-1">
+                                <ul class="fenlei-2 clearfix">  
+                                    {{foreach from=$lx item=x8}}
+                                    {{if $x8.type==8}}
+                                    <li><a href="{{$x8.uu}}">· {{$x8.title}}</a></li>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>  
+                            </ul>
+                            <ul class="fenlei-1">
+                                <ul class="fenlei-2 clearfix">  
+                                    {{foreach from=$lx item=x9}}
+                                    {{if $x9.type==9}}
+                                    <li><a href="{{$x9.uu}}">· {{$x9.title}}</a></li>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section1 ">
+            <div class="wrapper clearfix">
+                <div class="left">
+                    <div class="top clearfix">
+                        <h1><img src="__PUBLIC__/images/tab3-l-1.png" alt=""/>院校直通车</h1>
+                        <div class="slideTxtBox tab3-l">
+                            <div class="hd">
+                                <ul>
+                                    <li>全球</li>
+                                    <li>澳大利亚</li>
+                                    <li>英国</li>
+                                    <li>新西兰</li>
+                                    <li>加拿大</li>
+                                </ul>
+                                {{ffcategory catid=10 to=x}}
+                                <a class="more" herf="{{$x.url}}">MORE</a>
+                            </div>
+                            <div class="bd">
+                                <ul class="bd-box">
+                                 {{ffsql sql="select *from fangfa_atten where user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=g}}
+                                            {{php}}
+                                            $data = $this->_tpl_vars['g'];
+                                            foreach($data as $k=>$v){
+                                               $m[$v['id']] = $v['user_id'];
+                                            }
+                                                $this->_tpl_vars['g']=$m;
+                                            {{/php}}
+                                    
+                                    {{fflist catid=10 order="sort asc,cid desc" field="pic" to=xx attr="top" pagesize=6}}
+                                    {{foreach from=$xx item=h name=ff}}
+                                    {{if $smarty.foreach.ff.iteration%3 ==1}}
+                                    <div class="school-big no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                        
+                                        <span class="num-sq">123人已申请</span>
+                                        
+                                    </div>
+                                    {{elseif $smarty.foreach.ff.iteration%3 ==2}}
+                                    <div class="school-small no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <div class="clearfix clear"></div>
+                                        <div class="focus-group">
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        </div>
+                                        <span class="num-sq">2600人已申请</span>
+                                    </div>
+                                    {{elseif $smarty.foreach.ff.iteration%3 ==0}}
+                                    <div class="school-small no-left no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <div class="clearfix clear"></div>
+                                        <div class="focus-group">
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        </div>
+                                        <span class="num-sq" >2600人已申请</span>
+                                    </div>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>
+
+                                <ul class="bd-box">
+                                    {{fflist catid=10 order="sort asc,cid desc" field="pic" ext_sql=" AND city='澳大利亚'" to=xx attr="top" pagesize=6}}
+                                    {{foreach from=$xx item=h name=ff}}
+                                    {{if $smarty.foreach.ff.iteration%3 ==1}}
+                                    <div class="school-big no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        <span class="num-sq">123人已申请</span>
+                                    </div>
+                                    {{elseif $smarty.foreach.ff.iteration%3 ==2}}
+                                    <div class="school-small no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <div class="clearfix clear"></div>
+                                        <div class="focus-group">
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        </div>
+                                        <span class="num-sq">2600人已申请</span>
+                                    </div>
+                                    {{elseif $smarty.foreach.ff.iteration%3 ==0}}
+                                    <div class="school-small no-left no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <div class="clearfix clear"></div>
+                                        <div class="focus-group">
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        </div>
+                                        <span class="num-sq">2600人已申请</span>
+                                    </div>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>
+
+                                <ul class="bd-box">
+                                    {{fflist catid=10 order="sort asc,cid desc" field="pic" ext_sql=" AND city='英国'" to=xx attr="top" pagesize=6}}
+                                    {{foreach from=$xx item=h name=ff}}
+                                    {{if $smarty.foreach.ff.iteration%3 ==1}}
+                                    <div class="school-big no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        <span class="num-sq">123人已申请</span>
+                                    </div>
+                                    {{elseif $smarty.foreach.ff.iteration%3 ==2}}
+                                    <div class="school-small no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <div class="clearfix clear"></div>
+                                        <div class="focus-group">
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        </div>
+                                        <span class="num-sq">2600人已申请</span>
+                                    </div>
+                                    {{elseif $smarty.foreach.ff.iteration%3 ==0}}
+                                    <div class="school-small no-left no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <div class="clearfix clear"></div>
+                                        <div class="focus-group">
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        </div>
+                                        <span class="num-sq">2600人已申请</span>
+                                    </div>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>
+                                <ul class="bd-box">
+                                    {{fflist catid=10 order="sort asc,cid desc" field="pic" ext_sql=" AND city='新西兰'" to=xx attr="top" pagesize=6}}
+                                    {{foreach from=$xx item=h name=ff}}
+                                    {{if $smarty.foreach.ff.iteration%3 ==1}}
+                                    <div class="school-big no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        <span class="num-sq">123人已申请</span>
+                                    </div>
+                                    {{elseif $smarty.foreach.ff.iteration%3 ==2}}
+                                    <div class="school-small no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <div class="clearfix clear"></div>
+                                        <div class="focus-group">
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        </div>
+                                        <span class="num-sq" del-val='{{$h.cid}}'>2600人已申请</span>
+                                    </div>
+                                    {{elseif $smarty.foreach.ff.iteration%3 ==0}}
+                                    <div class="school-small no-left no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <div class="clearfix clear"></div>
+                                        <div class="focus-group">
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        </div>
+                                        <span class="num-sq">2600人已申请</span>
+                                    </div>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul> 
+                                <ul class="bd-box">
+                                    {{fflist catid=10 order="sort asc,cid desc" field="pic" ext_sql=" AND city='加拿大'" to=xx attr="top" pagesize=6}}
+                                    {{foreach from=$xx item=h name=ff}}
+                                    {{if $smarty.foreach.ff.iteration%3 ==1}}
+                                    <div class="school-big no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        <span class="num-sq">123人已申请</span>
+                                    </div>
+                                    {{elseif $smarty.foreach.ff.iteration%3 ==2}}
+                                    <div class="school-small no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <div class="clearfix clear"></div>
+                                        <div class="focus-group">
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        </div>
+                                        <span class="num-sq">2600人已申请</span>
+                                    </div>
+                                    {{elseif $smarty.foreach.ff.iteration%3 ==0}}
+                                    <div class="school-small no-left no-bottom">
+                                        <a href="{{$h.url}}"> <img src="{{$h.pic.0.image}}" alt=""/><h1 class="school-name">{{$h.title}}</h1></a>
+                                        <div class="clearfix clear"></div>
+                                        <div class="focus-group">
+                                        <a class="focus" del-val='{{$h.cid}}' {{if $h.cid|array_key_exists:$g}}style='display: none'{{/if}}>
+                                        <img src="__PUBLIC__/images/tab3-l-4.png" alt=""/>关注</a>                            
+                                        <a class="focusNo" del-val='{{$h.cid}}'{{if $h.cid|array_key_exists:$g}}style='display: block'{{/if}}>取消关注</a>
+                                   
+                                        </div>
+                                        <span class="num-sq">2600人已申请</span>
+                                    </div>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <div class="top clearfix">
+                        {{ffcategory catid=11 to=z}}
+                        <h1>院校排名 <img src="__PUBLIC__/images/rank3.png" alt=""/><a href="{{$z.url}}" class="more">MORE</a></h1>
+                    </div>
+                    <div class="down">
+                        <div class="slideTxtBox tab3-r">
+                            <div class="hd">
+                                <ul>
+                                    <li>全球</li>
+                                    <li>澳大利亚</li>
+                                    <li>英国</li>
+                                    <li>新西兰</li>
+                                    <li class="last">加拿大</li>
+                                </ul>
+                            </div>
+                            <div class="bd">
+                                <ul class="bd-box clearfix">
+                                    <div class="box-left">
+                                        <img class="img123" src="__PUBLIC__/images/tab3-r-1.png" alt=""/>
+                                        <img src="__PUBLIC__/images/tab3-r-0.png" alt=""/>
+                                    </div>
+                                    <div class="box-right">
+                                        <div class="inBox">
+                                            <div class="inHd">
+                                                <ul>
+                                                    <li rel="1"></li>
+                                                    <li rel="2"></li>
+                                                    <li rel="3"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="inBd">
+                                                {{fflist catid=10 order="gnsort" to=yx field="pic" attr="top" pagesize=10}}
+                                                {{foreach from=$yx item=y key=k}}
+                                                {{if $k<3}}
+                                                <ul>
+                                                    <img src="{{$y.pic.0.image}}" alt="" width="290" height="120"/>
+                                                    <div class="img-after"><p>{{$y.title}}</p></div>
+                                                </ul>
+                                                {{/if}}
+                                                {{/foreach}}
+                                            </div>
+                                        </div>
+                                        <div class="rank">
+                                            {{foreach from=$yx item=y1 key=k}}
+                                            {{if $k>2}}
+                                            <a>{{$y1.title}} {{$y1.etitle}}</a>
+                                            {{/if}}
+                                            {{/foreach}}
+                                        </div>
+                                    </div>
+                                </ul>
+                                <ul class="bd-box clearfix">
+                                    <div class="box-left">
+                                        <img class="img123" src="__PUBLIC__/images/tab3-r-1.png" alt=""/>
+                                        <img src="__PUBLIC__/images/tab3-r-0.png" alt=""/>
+                                    </div>
+                                    <div class="box-right">
+                                        <div class="inBox">
+                                            <div class="inHd">
+                                                <ul>
+                                                    <li rel="1"></li>
+                                                    <li rel="2"></li>
+                                                    <li rel="3"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="inBd">
+                                                {{fflist catid=10 order="gnsort" to=yx field="pic" ext_sql=" AND city='澳大利亚'" attr="top" pagesize=10}}
+                                                {{foreach from=$yx item=y key=k}}
+                                                {{if $k<3}}
+                                                <ul>
+                                                    <img src="{{$y.pic.0.image}}" alt="" width="290" height="120"/>
+                                                    <div class="img-after"><p>{{$y.title}}</p></div>
+                                                </ul>
+                                                {{/if}}
+                                                {{/foreach}}
+                                            </div>
+                                        </div>
+                                        <div class="rank">
+                                            {{foreach from=$yx item=y1 key=k}}
+                                            {{if $k>2}}
+                                            <a>{{$y1.title}} {{$y1.etitle}}</a>
+                                            {{/if}}
+                                            {{/foreach}}
+                                        </div>
+                                    </div>
+                                </ul>
+                                <ul class="bd-box clearfix">
+                                    <div class="box-left">
+                                        <img class="img123" src="__PUBLIC__/images/tab3-r-1.png" alt=""/>
+                                        <img src="__PUBLIC__/images/tab3-r-0.png" alt=""/>
+                                    </div>
+                                    <div class="box-right">
+                                        <div class="inBox">
+                                            <div class="inHd">
+                                                <ul>
+                                                    <li rel="1"></li>
+                                                    <li rel="2"></li>
+                                                    <li rel="3"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="inBd">
+                                                {{fflist catid=10 order="gnsort" to=yx field="pic" ext_sql=" AND city='英国'"  attr="top" pagesize=10}}
+                                                {{foreach from=$yx item=y key=k}}
+                                                {{if $k<3}}
+                                                <ul>
+                                                    <img src="{{$y.pic.0.image}}" alt="" width="290" height="120"/>
+                                                    <div class="img-after"><p>{{$y.title}}</p></div>
+                                                </ul>
+                                                {{/if}}
+                                                {{/foreach}}
+                                            </div>
+                                        </div>
+                                        <div class="rank">
+                                            {{foreach from=$yx item=y1 key=k}}
+                                            {{if $k>2}}
+                                            <a>{{$y1.title}} {{$y1.etitle}}</a>
+                                            {{/if}}
+                                            {{/foreach}}
+                                        </div>
+                                    </div>
+                                </ul>
+                                <ul class="bd-box clearfix">
+                                    <div class="box-left">
+                                        <img class="img123" src="__PUBLIC__/images/tab3-r-1.png" alt=""/>
+                                        <img src="__PUBLIC__/images/tab3-r-0.png" alt=""/>
+                                    </div>
+                                    <div class="box-right">
+                                        <div class="inBox">
+                                            <div class="inHd">
+                                                <ul>
+                                                    <li rel="1"></li>
+                                                    <li rel="2"></li>
+                                                    <li rel="3"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="inBd">
+                                                {{fflist catid=10 order="gnsort" to=yx field="pic" ext_sql=" AND city='新西兰'" attr="top" pagesize=10}}
+                                                {{foreach from=$yx item=y key=k}}
+                                                {{if $k<3}}
+                                                <ul>
+                                                    <img src="{{$y.pic.0.image}}" alt="" width="290" height="120"/>
+                                                    <div class="img-after"><p>{{$y.title}}</p></div>
+                                                </ul>
+                                                {{/if}}
+                                                {{/foreach}}
+                                            </div>
+                                        </div>
+                                        <div class="rank">
+                                            {{foreach from=$yx item=y1 key=k}}
+                                            {{if $k>2}}
+                                            <a>{{$y1.title}} {{$y1.etitle}}</a>
+                                            {{/if}}
+                                            {{/foreach}}
+                                        </div>
+                                    </div>
+                                </ul>
+                                <ul class="bd-box clearfix">
+                                    <div class="box-left">
+                                        <img class="img123" src="__PUBLIC__/images/tab3-r-1.png" alt=""/>
+                                        <img src="__PUBLIC__/images/tab3-r-0.png" alt=""/>
+                                    </div>
+                                    <div class="box-right">
+                                        <div class="inBox">
+                                            <div class="inHd">
+                                                <ul>
+                                                    <li rel="1"></li>
+                                                    <li rel="2"></li>
+                                                    <li rel="3"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="inBd">
+                                                {{fflist catid=10 order="gnsort" to=yx field="pic" ext_sql=" AND city='加拿大'" attr="top" pagesize=10}}
+                                                {{foreach from=$yx item=y key=k}}
+                                                {{if $k<3}}
+                                                <ul>
+                                                    <img src="{{$y.pic.0.image}}" alt="" width="290" height="120"/>
+                                                    <div class="img-after"><p>{{$y.title}}</p></div>
+                                                </ul>
+                                                {{/if}}
+                                                {{/foreach}}
+                                            </div>
+                                        </div>
+                                        <div class="rank">
+                                            {{foreach from=$yx item=y1 key=k}}
+                                            {{if $k>2}}
+                                            <a>{{$y1.title}} {{$y1.etitle}}</a>
+                                            {{/if}}
+                                            {{/foreach}}
+                                        </div>
+                                    </div>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="banner-small"></div>
+        </div>
+        <div class="section section2 ">
+            <div class="wrapper clearfix">
+                <div class="left">
+                    <div class="top clearfix">
+                        <h1><img src="__PUBLIC__/images/tab3-l-11.png" alt=""/>留学资讯</h1>
+                        <div class="slideTxtBox tab3-l">
+                            <div class="hd">
+                                <ul>
+                                    {{ffcategory catid=3 to=c}}
+                                    {{foreach from=$c.child item=v key=k}}
+                                    {{if $k<4}}
+                                    <li>{{$v.name}}</li>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </ul>
+                                <a class="more" href="{{$c.url}}">MORE</a>
+                            </div>
+                            <div class="bd">
+                                {{foreach from=$c.child item=v1 key=k1}}
+                                         {{if $k1<4}}
+                                <ul class="bd-box">
+                                    <div class="inBox">
+                                        <div class="inHd">
+                                            <ul><li></li><li></li><li></li></ul>
+                                        </div>
+                                        {{fflist catid=$v1.child.0.childrenids order="sort asc,cid desc" to=lx pagesize=16 field="leibie"}}
+                                        <div class="inBd">
+                                            {{foreach from=$lx item=x key=k}}
+                                                    {{if $k<3}}
+                                                    <ul>
+                                                        <img src="{{$x.thumb}}" alt=""/>
+                                                        <a class="img-after" href="{{$x.url}}?leibie={{$x.leibie}}">
+                                                            <h1>{{$x.title}}</h1>
+                                                            <p>{{$x.description}}</p>
+                                                        </a>
+                                                    </ul>
+                                                    {{/if}}
+                                            {{/foreach}}
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="bd-box-right">
+                                        <div class="row-group">
+                                            {{foreach from=$lx name=d item=f key=k1}}
+                                            {{if $k1>2&&$k1<=12}}
+                                                {{if $smarty.foreach.d.iteration%2 ==0}}
+                                               <div class="row clearfix">
+                                                   <div class="list"><span></span><a href="{{$f.url}}?leibie={{$f.leibie}}">{{$f.title}}</a></div>
+                                                 {{elseif $smarty.foreach.d.iteration%2 ==1}}
+                                                   <div class="list"><span></span><a href="{{$f.url}}?leibie={{$f.leibie}}">{{$f.title}}</a></div>
+                                               </div>
+                                               {{/if}}
+                                            {{/if}}
+                                            {{/foreach}}
+                                        </div>
+                                        <div class="card-box clearfix">
+                                            {{foreach from=$lx item=t key=k2}}
+                                            {{if $k2>12}}
+                                            <a class="card {{if $k2==15}}noRight{{/if}}" href="{{$t.url}}?leibie={{$t.leibie}}"><img src="{{$t.thumb}}" alt=""/><p>{{$t.title}}</p></a>
+                                            {{/if}}
+                                            {{/foreach}}
+                                        </div>
+                                    </div>
+                                </ul>
+                                 {{/if}}
+                                {{/foreach}}
+
+                            </div>
+                        </div>
+
+                    </div>
+      <!--知名顾问-->              
+                    <div class="down clearfix">
+                        <h1>知名顾问</h1>
+                        <div class="slideTxtBox tab3-l">
+                            <div class="hd">
+                                {{ffcategory catid=36 to=gw}}
+                                <ul>
+                                    <li>澳新</li>
+                                    <li>美加</li>
+                                    <li>英欧</li>
+                                </ul>
+                                <a href="{{$gw.url}}" class="more">MORE</a>
+                            </div>
+                            <div class="bd">
+                                {{fflist catid=$gw.catid to=q order="sort asc,cid desc" ext_sql=" AND fenlei='1'" pagesize=3 field="qq"}}
+                                <ul class="bd-box clearfix">
+                                    {{foreach from=$q item=i key=k}}
+                                    <a class="card-guwen {{if $k==2}}noRight{{/if}}" href="{{$i.url}}">
+                                        <img src="{{$i.thumb}}" alt=""/>
+<!--                                        <a herf="tencent://message/?uin={{$i.qq}}&amp;Site=sc.chinaz.com&amp;Menu=yes"></a>-->
+                                        <p>{{$i.title}}</p>
+                                        <h1>立即咨询</h1>
+                                    </a>
+                                    {{/foreach}}
+                                </ul>
+                                {{fflist catid=$gw.catid to=q order="sort asc,cid desc" ext_sql=" AND fenlei='2'" pagesize=3 field="qq"}}
+                                <ul class="bd-box clearfix">
+                                    {{foreach from=$q item=i key=k}}
+                                    <a class="card-guwen {{if $k==2}}noRight{{/if}}" href="{{$i.url}}">
+                                        <img src="{{$i.thumb}}" alt=""/>
+<!--                                        <a herf="tencent://message/?uin={{$i.qq}}&amp;Site=sc.chinaz.com&amp;Menu=yes"></a>-->
+                                        <p>{{$i.title}}</p>
+                                        <h1>立即咨询</h1>
+                                    </a>
+                                    {{/foreach}}
+                                </ul>
+                                {{fflist catid=$gw.catid to=q order="sort asc,cid desc" ext_sql=" AND fenlei='3'" pagesize=3 field="qq"}}
+                                <ul class="bd-box clearfix">
+                                    {{foreach from=$q item=i key=k}}
+                                    <a class="card-guwen {{if $k==2}}noRight{{/if}}" href="{{$i.url}}">
+                                        <img src="{{$i.thumb}}" alt=""/>
+<!--                                        <a herf="tencent://message/?uin={{$i.qq}}&amp;Site=sc.chinaz.com&amp;Menu=yes"></a>-->
+                                        <p>{{$i.title}}</p>
+                                        <h1>立即咨询</h1>
+                                    </a>
+                                    {{/foreach}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ <!--学员感言-->
+                <div class="right">
+                    <div class="top clearfix">
+                        {{ffcategory catid=34 to=gy}}
+                        <h1>学员感言 <img src="__PUBLIC__/images/rank3.png" alt=""/><a href="{{$gy.url}}" class="more">MORE</a></h1>
+                    </div>
+                    <div class="down">
+                        <div class="inBox">
+                            <div class="inHd">
+                                <ul><li></li><li></li><li></li></ul>
+                            </div>
+                            <div class="inBd">
+                                {{fflist catid=$gy.catid order="sort asc,cid desc" field="luqu" attr="top" to=g}}
+                                {{foreach from=$g item=b key=k}}
+                                {{if $k<3}}
+                                <ul>
+                                    <img src="{{$b.thumb}}" alt=""/>
+                                    <a href="{{$gy.url}}" class="img-after">
+                                        <h1>{{$b.luqu}}</h1>
+                                        <p>{{$b.description}}</p>
+                                    </a>
+                                </ul>
+                                {{/if}}
+                                {{/foreach}}
+                            </div>
+                        </div>
+                        {{foreach from=$g item=w key=e}}
+                        {{if $e>=3&&$e<=7}}
+                        <a href="{{$gy.url}}" class="word">
+                            <div class="word-left">
+                                <img src="__PUBLIC__/images/xk.png" alt="" class="xq"/>
+                                <img src="{{$w.thumb}}" class="tu" alt=""/>
+                            </div>
+                            <div class="word-right">
+                                <h1>{{$w.luqu}}</h1>
+                                <p>{{$w.description}}</p>
+                            </div>
+                        </a>
+                        {{/if}}
+                        {{/foreach}}
+           
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="banner-small"></div>
+        </div>
+        <!--留学专题-->
+        <div class="section section3 ">
+            <div class="wrapper clearfix">
+                <div class="left">
+                    <div class="top clearfix">
+                        {{ffcategory catid=6 to=lx}}
+                        <h1><img src="__PUBLIC__/images/tab3-l-111.png" alt=""/>留学专题</h1>
+                        <div class="slideTxtBox tab3-l">
+                            <div class="hd">
+                                <ul>
+                                    {{foreach from=$lx.child item=v}}
+                                    <li>{{$v.name}}</li>
+                                   {{/foreach}}
+                                </ul>
+                                <a class="more" href="{{$lx.url}}">MORE</a>
+                            </div>
+                            <div class="bd">
+
+                                {{foreach from=$lx.child item=z}}
+
+                                <ul class="bd-box clearfix">
+                                  {{fflist catid=$z.catid order="sort asc,cid desc" pagesize=5 to=c}}
+                                    <a class="zhuanti-left" href="{{$c.0.url}}">
+                                        <img src="{{$c.0.thumb}}" alt=""/>
+                                        <div class="text">
+                                            <p>{{$c.0.title|mb_substr:0:20:'utf8'}}</p>
+                                        </div>
+                                    </a>
+                                    <div class="zhuanti-right">
+                                  {{foreach from=$c item=r}}
+                                        <a href="{{$r.url}}" class="zhuanti-card">
+                                            <img src="{{$r.thumb}}" alt=""/>
+                                            <div class="text">
+                                                <p>{{$r.title|mb_substr:0:10:'utf8'}}</p>
+                                            </div>
+                                        </a>
+                                   {{/foreach}}
+                                    </div>
+                                </ul>
+                                {{/foreach}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         <!--留学问答-->      
+                <div class="right">
+                    <div class="top clearfix">
+                        {{ffcategory catid=35 to=wd}}
+                        <h1>留学问答 <img src="__PUBLIC__/images/rank3.png" alt=""/>
+                            <a href="{{$wd.url}}" class="more">MORE</a>
+                        </h1>
+                    </div>
+                    {{fflist catid=$wd.catid order="sort asc,cid desc" pagesize=7 to=w field="wurl"}}
+                    <div class="down">
+                        <a class="title clearfix" herf="{{if $w.0.wurl!=""}}{{$w.0.wurl}}{{else}}{{$w.0.url}}{{/if}}">
+                            <div class="title-left">
+                                <img src="{{$w.0.thumb}}" alt=""/>
+                            </div>
+                            <div class="title-right">
+                                <h1>{{$w.0.title}}</h1>
+                                <p>{{$w.0.description|mb_substr:0:20:'utf8'}}</p>
+                                <p>{{"Y-m-d"|date:$w.0.create_time}}</p>
+                            </div>
+                        </a>
+                        {{foreach from=$w item=d key=k}}
+                        {{if $k>0}}
+                        <div class="row clearfix">
+                            <span class="san"></span>
+                            <a href="{{if $d.wurl!=""}}{{$d.wurl}}{{else}}{{$d.url}}{{/if}}" class="list">{{$d.title|mb_substr:0:15:'utf8'}}</a>
+                            <span class="time">{{"Y-m-d"|date:$d.create_time}}</span>
+                        </div>
+                        {{/if}}
+                        {{/foreach}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="friend">
+                <img src="__PUBLIC__/images/friend.png" alt="" class="title"/>
+                <div class="txtScroll-left">
+                    <div class="hd">
+                        <a class="next"></a>
+                        <a class="prev"></a>
+                    </div>
+                    <div class="bd">
+                        <ul class="infoList">
+                            {{fflink to=lk}}
+                            {{foreach from=$lk item=l}}
+                            <li><a href="{{$l.url}}" target="_blank">{{$l.name}}</a></li>
+                           {{/foreach}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{include file="system/footer.html"}}
+    <script>
+        //排名
+            $('.inHd li').mouseenter(function(){
+        var rel=$(this).attr('rel');
+        if(rel==1){
+            $(this).parent().parent().parent().parent().parent().find('.img123').attr('src','__PUBLIC__/images/tab3-r-1.png')
+        }if(rel==2){
+            $(this).parent().parent().parent().parent().parent().find('.img123').attr('src','__PUBLIC__/images/tab3-r-1-2.png')
+        }if(rel==3){
+            $(this).parent().parent().parent().parent().parent().find('.img123').attr('src','__PUBLIC__/images/tab3-r-1-3.png')
+        }
+    });
+    </script>

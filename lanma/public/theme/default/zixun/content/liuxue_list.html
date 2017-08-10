@@ -1,0 +1,58 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="zixun/sys/znav3.html"}}
+<div class="yyt-100">        
+             {{ffcategory catid=$cat.parentid to=a}}
+            {{ffcategory catid=$a.parentid to=b}}
+    <div class="wrapper">
+        <div class="top-nav"><img src="__PUBLIC__/images/13-1.png" alt=""/><p><a href="{{$b.url}}">首页</a> > <a href="{{$a.url}}">{{$a.name}}</a></p></div>
+    </div>
+    <div class="wrapper clearfix">
+        <div class="part-left">
+            <h1><img src="__PUBLIC__/images/100-1.png" alt=""/>{{$a.name}}</h1>
+            <ul class="nav-zhuanti">
+                <li {{if $smarty.get.leibie==""||$smarty.get.leibie==1}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=1" leibie="1">基础知识</a><b></b></li>
+                <li {{if $smarty.get.leibie==2}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=2" >学校介绍</a><b></b></li>
+                <li {{if $smarty.get.leibie==3}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=3" >专业介绍</a><b></b></li>
+                <li {{if $smarty.get.leibie==4}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=4">费用清单</a><b></b></li>
+                <li {{if $smarty.get.leibie==5}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=5">递交申请</a><b></b></li>
+                <li {{if $smarty.get.leibie==6}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=6">获取offer</a><b></b></li>
+                <li {{if $smarty.get.leibie==7}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=7">换取coe</a><b></b></li>
+                <li {{if $smarty.get.leibie==8}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=8">签证递交</a><b></b></li>
+                <li {{if $smarty.get.leibie==9}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=9">行前准备</a><b></b></li>
+                <li {{if $smarty.get.leibie==10}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=10">懒马服务</a><b></b></li>
+                <li {{if $smarty.get.leibie==11}}class="on"{{/if}}><a href="{{$cat.url}}index.html?leibie=11">其他事项</a></li>
+            </ul>
+        </div>
+        <div class="part-right">
+            <div class="top">
+                {{ffcategory catid=$cat.parentid to=d}}
+                {{foreach from=$d.child item=s}}
+                <a {{if $s.catid==$cat.catid}}class="on"{{/if}} href="{{$s.url}}">{{$s.name}}</a>
+               {{/foreach}}
+            </div>
+            <ul class="liuxue">
+               {{php}} $this->assign('sql',' AND leibie = '.$_GET['leibie']);{{/php}}
+
+            {{if $smarty.get.leibie!=""}}
+                {{ffpagelist catid=$cat.catid ext_sql=$sql to=show order="sort asc,cid desc" pagesize=13}}
+            {{else}}
+                 {{ffpagelist catid=$cat.catid ext_sql=" AND leibie = 1" to=show order="sort asc,cid desc" pagesize=13}}
+            {{/if}}
+                {{foreach from=$show.info item=list}}
+                <li class="clearfix"><b></b>
+                    <a href="{{$list.url}}?leibie={{$smarty.get.leibie}}">{{$list.title}}</a>
+                    <span>{{"Y.m.d"|date:$list.create_time}}</span>
+                </li>
+                {{/foreach}}
+            </ul>
+
+            <div class="fenye clearfix">
+               {{$show.pages}}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{{include file="system/footer.html"}}

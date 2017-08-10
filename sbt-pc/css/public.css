@@ -1,0 +1,226 @@
+/*浮动*/
+.fl { float: left; }
+.fr { float: right; }
+
+/*清除浮动*/
+.clearfix:after {
+    height: 0;
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+}
+.clearfix { zoom: 1; }
+* html .clearfix { zoom: 1; }
+
+
+.fw {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+/*=== header ===*/
+#header {
+	width: 100%;
+	height: 94px;
+	padding-bottom: 34px;
+	background: url(../images/header-bg.png) repeat-x;
+}
+#logo { padding-top: 16px; }
+#logo a img { width: 417px; height: 78px; }
+#search {
+	position: relative;
+	width: 213px;
+	height: 30px;
+	padding-left: 36px;
+	margin-top: 62px;
+	margin-left: 190px;
+	background: url(../images/search-bg.png) no-repeat;
+}
+#search input {
+	height: 30px;
+	line-height: 30px;
+	width: 196px;
+	*position: absolute;
+	*left:40px;
+}
+#search span.search-btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 28px;
+	height: 30px;
+	cursor: pointer;
+	background: url(../images/search.png) no-repeat 12px center;
+}
+#shares {
+	padding-top: 10px;
+	width: 252px;
+	font-size: 0;
+	text-align: right;
+}
+#shares a {
+	display: inline-block;
+	width: 30px;
+	height: 26px;
+	padding-top: 4px;
+	margin: 0 12px;
+	text-align: center;
+	background: url(../images/shares-bg.png);
+}
+#shares p {
+	margin-top: 26px;
+	padding-left: 26px;
+	font-weight: bold;
+	background: url(../images/tel.png) no-repeat left center;
+}
+#shares p span+span { padding-left: 18px; }
+
+
+/*=== nav ===*/
+#nav {
+	width: 100%;
+	height: 64px;
+	background-color: #20477c;
+}
+#nav .nav .navitem {
+	height: 64px;
+	float: left;
+	text-align: center;
+	font-size: 0;
+}
+#nav .nav .navitem+.navitem { margin-left: 10px; }
+#nav .nav .navitem a {
+	height: 54px;
+	display: inline-block;
+	padding: 10px 42px 0 42px;
+}
+#nav .nav .navitem a span {
+	display: block;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+}
+#nav .nav .navitem a span.en { font-size: 14px; }
+#nav .nav .navitem a:hover, 
+#nav .nav .navitem a.active { background-color: #bb2230; }
+
+
+/*=== footer ===*/
+#footer {
+	width: 100%;
+	height: 154px;
+	padding-top: 36px;
+	background-color: #1e2e44;
+}
+#footer .foot-nav {
+	font-size: 0;
+	text-align: center;
+	height: 22px;
+	line-height: 22px;
+}
+#footer .foot-nav a.f {
+	padding: 0 12px;
+	color: #fff;
+	vertical-align: top;
+}
+#footer .foot-nav a.fg{
+	display: inline-block;
+	height: 14px;
+	vertical-align: middle;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #555e6c;
+}
+#footer .foot-nav a:hover { color: #bfc5ce; }
+#footer p {
+	padding-top: 18px;
+	text-align: center;
+	color: #bfc5ce;
+	font-size: 12px;
+}
+#footer p span,
+#footer p a {
+	color: #bfc5ce;
+	font-size: 12px;
+}
+#footer p a:hover { color: #d3d9e2; }
+
+
+/*团队team*/
+.team li {
+	position: relative;
+	float: left;
+	width: 280px;
+	height: 444px;
+	text-align: center;
+	margin-right: 26px;
+}
+.team li a {
+	display: inline-block;
+	width: 280px;
+	height: 410px;
+	padding-top: 34px;
+}
+.team li a .img-wrapper {
+	position: absolute;
+	top: 34px;
+	left: 30px;
+	display: block;
+	width: 220px;
+	height: 220px;
+	background: url(../images/timg-wrap0.png) no-repeat;
+}
+.team li a img {
+	width: 220px;
+	height: 220px;
+}
+.team li a p.name {
+	color: #333;
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 16px;
+	padding-bottom: 10px;
+}
+.team li a p.zc {
+	color: #333;
+	font-size: 16px;
+}
+.team li a p.ms {
+	color: #666;
+	font-size: 12px;
+	line-height: 26px;
+	padding: 14px 30px 0 30px;
+}
+.team li a:hover {
+	background-color: #fff;
+	-webkit-box-shadow: 2px 4px 28px -6px rgba(0,0,0,0.4);
+	   -moz-box-shadow: 2px 4px 28px -6px rgba(0,0,0,0.4);
+	        box-shadow: 2px 4px 28px -6px rgba(0,0,0,0.4);
+}
+.team li a:hover .img-wrapper {
+	background: url(../images/timg-wrap.png) no-repeat;
+}
+
+
+/*分页*/
+.pages {
+	padding-top: 80px;
+	text-align: center;
+}
+.pages a {
+	display: inline-block;
+	padding: 0 12px;
+	height: 32px;
+	line-height: 32px;
+	background-color: #fff;
+}
+.pages a+a { margin-left: 4px; }
+.pages a:hover, .pages a.on { color: #fff; background-color: #bb2230; }
+
+/*上一个/下一个*/
+.switch p+p { padding-top: 18px; }
+.switch p,
+.switch p a { color: #333; }
+.switch p a:hover { color: #20477c; }
+

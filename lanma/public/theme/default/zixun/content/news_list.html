@@ -1,0 +1,52 @@
+{{include file="system/header.html"}}
+<body>
+{{include file="zixun/sys/znav2.html"}}
+<div class="yyt-101">
+        {{ffcategory catid=$cat.parentid to=a}}
+      <div class="wrapper">
+        <div class="top-nav"><img src="__PUBLIC__/images/13-1.png" alt=""/>
+            <p><a href="{{$a.url}}">首页</a> > <a href="{{$cat.url}}">{{$cat.name}}</a></p>
+        </div>
+    </div>
+    <div class="wrapper clearfix">
+        <div class="part-left">
+            {{ffpagelist catid=$cat.catid to=show order="sort asc,cid desc" pagesize=6 field="resource"}}
+            {{foreach from=$show.info item=list}}
+            <a href="{{$list.url}}" class="card clearfix">
+                <div class="card-left"><img src="{{$list.thumb}}" alt=""/></div>
+                <div class="card-right">
+                    <h1>{{$list.title}}</h1>
+                    <p class="time">{{"Y-m-d"|date:$list.create_time}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;发布者: {{$list.resource}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;查看: <span>10885</span>   </p>
+                    <p class="title">
+                        {{$list.description}}
+                    </p>
+                </div>
+            </a>
+            {{/foreach}}
+            <div class="fenye clearfix">
+                {{$show.pages}}
+            </div>
+        </div>
+        <div class="part-right">
+            <div class="inBox">
+                <div class="inHd">
+                    <ul><li></li><li></li><li></li></ul>
+                </div>
+                <div class="inBd">
+                    {{fflist catid=$cat.catid to=y order="sort asc,cid desc" pagesize=3 attr="hot"}}
+                    {{foreach from=$y item=u}}
+                    <ul>
+                        <img src="{{$u.thumb}}" alt=""/>
+                        <div class="img-after"><p>{{$u.title}}</p></div>
+                    </ul>
+                    {{/foreach}}
+
+                </div>
+            </div>
+            <img src="__PUBLIC__/images/3-7.png" alt="" class="banner-small"/>
+        </div>
+    </div>
+
+</div>
+
+{{include file="system/footer.html"}}

@@ -1,0 +1,32 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+
+<div class="yyt-33">
+    <div class="top-nav"><div class="wrapper"><img src="__PUBLIC__/images/13-1.png" alt=""/><p>
+                <a href="__ROOT__/">首页</a> > <a href="{{$cat.url}}">知名顾问</a></p></div></div>
+    <div class="wrapper clearfix">
+        <div class="left-part">
+            <h1>{{$data.title}}</h1>
+            <p class="time">2015-11-26&nbsp;&nbsp;|&nbsp;&nbsp;发布者: {{$data.resource}}&nbsp;&nbsp;|&nbsp;&nbsp;查看: <span></span>  </p>
+            <p>{{$data.zhiwei}}   </p>
+            <p>电话: {{$data.tel}} </p>
+            <p>Email：{{$data.email}}  </p>
+            <p>新浪微博：<a href="" class="weibo">{{$data.weibo}}</a></p>
+            <p>长项：{{$data.changxiang}}  </p>
+            <h1>专家个人档案</h1>
+            {{$data.content}}
+            <h1>服务格言：</h1>
+            <p>{{$data.geyan}}</p>
+            <a  target="_blank" href="tencent://message/?uin={{$data.qq}}&amp;Site=sc.chinaz.com&amp;Menu=yes" class="zixun">立即咨询</a>
+            <a href="javascript:history.back(-1)" class="back">返回上一级</a>
+            <p class="prev">上一留学咨询师：<a href="{{$data.next_url}}">{{$data.next_title}}</a></p>
+            <p class="next">下一留学咨询师：<a href="{{$data.pre_url}}">{{$data.pre_title}}</a></p>
+            <div class="clearfix clear"></div>
+        </div>
+        {{include file="system/right.html"}}
+    </div>
+
+</div>
+
+{{include file="system/footer.html"}}

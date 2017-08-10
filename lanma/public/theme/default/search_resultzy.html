@@ -1,0 +1,95 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+    <div class="yyt-344">
+        <div class="wrapper clearfix">
+                {{ffsql sql="select *from fangfa_atten where user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=g}}
+                {{php}}
+                $data = $this->_tpl_vars['g'];
+                foreach($data as $k=>$v){
+                   $m[$v['id']] = $v['user_id'];
+                }
+                    $this->_tpl_vars['g']=$m;
+                {{/php}}       
+            <div class="part-left">
+                <h1>搜索结果分类</h1>
+                <ul class="nav-zhuanti">
+                    <li ><a href="__ROOT__/findex/searcha?title={{$searchdata.title}}&term=2">资讯攻略</a><b></b></li>
+                    <li><a href="__ROOT__/findex/searcha?title={{$searchdata.title}}&term=1">海外院校</a><b></b></li>
+                    <li class="on"><a href="__ROOT__/findex/searcha?title={{$searchdata.title}}&term=3">院校专业</a><b></b></li>
+                </ul>
+            </div>
+            <div class="part-right">
+                <div class="title"><p>您搜索的“<span>{{$searchdata.title}}</span>”，共有 {{$count}} 条查询结果</p></div>
+                <div class="content-34-3">
+                    {{foreach from=$data.info item=v}}
+                    <div class="card clearfix">
+                        <a class="part1" href="{{$v.url1}}{{$v.url}}">
+                            <h1> {{$v.title}}</h1>
+                            <p>学制：{{$v.xuezhi}}年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;专业方向：{{$v.lingyu}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学位类型：{{$v.leixing}}</p>
+                        </a>
+                        <div class="part2">
+                            <a href="">免费资讯专家</a>
+        <a rel="{{if $v.cid|array_key_exists:$g}}1{{else}}0{{/if}}" href="javascript:;"  del-val="{{$v.cid}}" class="focus-yyt-11"
+        {{if $v.cid|array_key_exists:$g}}style="background-color:#98a5b1;color:#fff;border-color:#fff"{{else}}style="background-color:#fff;color: #015db0;border-color:#015db0"{{/if}}
+        >{{if $v.cid|array_key_exists:$g}}不关注{{else}}加关注{{/if}}</a>  
+                        </div>
+                    </div>
+                    {{/foreach}}
+                    <div class="fenye clearfix">
+                        {{$data.pages}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {{include file="system/footer.html"}}
+    <script>
+        //专业关注
+    $('body').on("click",'.focus-yyt-11',function(){
+        var rel=$(this).attr('rel');
+        if(rel==0){
+            var obj = $(this);
+            var url = "__ROOT__/Findex/atten"; //提交地址
+            var gz=1;
+            var cid=$(this).attr("del-val");
+            var data = {cid:cid,gz:gz};
+            $.post(url, data, function(result){
+                         if(result.gz==1){
+                                    $(obj).css('background-color','#98a5b1');
+                                    $(obj).css('color','#fff');
+                                     $(obj).css('border-color','#fff');
+                                    $(obj).html('不关注');
+                                    $(obj).attr('rel','1');
+                             }else{
+                         alert("请登录后操作");
+                        window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                                 return false;
+                             }
+                       }, 'json');     
+        }if(rel==1){
+            var obj = $(this);
+            var url = "__ROOT__/Findex/atten"; //提交地址
+            var gz=0;
+            var cid=$(this).attr("del-val");
+            var data = {cid:cid,gz:gz};       
+             $.post(url, data, function(result){
+                         if(result.gz==0){
+                                $(obj).css('background-color','#fff');
+                                    $(obj).css('color','#015db0');
+                                     $(obj).css('border-color','#015db0');
+                                    $(obj).html('加关注');
+                                    $(obj).attr('rel','0');
+                             }else{
+                         alert("请登录后操作");
+                        window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                                 return false;
+                             }
+                       }, 'json');                
+        }
+    });  
+    </script>
+</body>
+</html>

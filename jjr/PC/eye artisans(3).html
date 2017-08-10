@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>镜匠人</title>
+<link rel="stylesheet" type="text/css" href="css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script src="js/slides-1.1.1-min.js" type="text/javascript"></script>
+<script language="javascript" src="js/jquery.Sonline.js"></script>
+<script type="text/javascript">
+//图片上下滚动
+$(function() {
+	$('.succesny').olvSlides({
+		thumb: true,
+		thumbPage: true,
+		thumbDirection: "Y",
+		effect: 'fade'
+	});
+});
+//导航
+$("#nav li").hover(function(){
+	$(this).find('ul:first').css({visibility: "visible",display: "none"});
+},function(){
+	$(this).find('ul:first').css({visibility: "hidden"});
+});
+//在线客服
+$(function(){
+	$("body").Sonline({
+		Position:"right",//left或right
+		Top:200,//顶部距离，默认200px
+		Effect:true, //滚动或者固定两种方式，布尔值：true或false
+		DefaultsOpen:true, //默认展开：true,默认收缩：false
+		Qqlist:"1015353206|在线QQ" //多个QQ用','隔开，QQ和客服名用'|'隔开
+	});
+	$(".contentBox").append("<div class='message'><a href='#'>在线留言</a></div>");
+})	
+</script>
+</head>
+<body>
+<div class="eye-wrap"><!--背景-->
+	<div class="header"><!--头部  start-->
+    	<div class="header-box">
+        	<a href="#"><img src="images/logo.png" /></a><!--logo-->
+            <div class="navwrap"><!--导航  start-->
+                <ul id="nav"> 
+                    <li class="page_item">
+                        <a href="#" >Visval life<span></span></a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >镜匠人ATM<span></span></a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >Eye Artisans<span></span></a> 
+                        <ul class='children'> 
+                            <li class="page_item"><a href="#" >Brand introduction /品牌介绍</a></li> 
+                            <li class="page_item"><a href="#/">Series products /系列产品</a> 
+                                <ul class='children'> 
+                                    <li class="page_item"><a href="#" >A系列<span></span></a></li> 
+                                    <li class="page_item"><a href="#" >B系列<span></span></a></li>
+                                    <li class="page_item"><a href="#" >C系列<span></span></a></li>
+                                    <li class="page_item"><a href="#" >其他系列<span></span></a></li> 
+                                </ul> 
+                            </li> 
+                            <li class="page_item"><a href="#" >Brand joined /品牌加盟</a></li> 
+                        </ul> 
+                    </li> 
+                    
+                </ul>                
+            </div> <!--导航  end-->
+        </div>
+    </div><!--头部  end-->
+	<div class="main">
+    	<div class="eye3center"><!--主体内容  start-->
+            <div class="eye-center">
+            	<h1>Product introduction   /   产品介绍</h1>
+                 	    <div class="successlunbo">
+        <div class="succesny">
+            <div class="control">
+                <ul class="change">
+                </ul>
+            </div>
+            <div class="thumbWrap">
+                <div class="thumbCont">
+                    <ul>
+                        <!-- img属性, url=url, text=描述, bigimg=大图, alt=标题  -->
+                        <li>
+                            <div><img src="images/s1.jpg" url="url" alt=" "  bigImg="images/1.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s2.jpg" url="url"  bigImg="images/2.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s3.jpg" url="url"  bigImg="images/3.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s4.jpg" url="url"  bigImg="images/4.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s5.jpg" url="url"  bigImg="images/5.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s1.jpg" url="url" bigImg="images/1.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s2.jpg" url="url"  bigImg="images/2.jpg"/></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s3.jpg" url="url"  bigImg="images/3.jpg"  /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s4.jpg" url="url"  bigImg="images/4.jpg" /></div>
+                        </li>
+                        <li>
+                            <div><img src="images/s5.jpg" url="url"  bigImg="images/5.jpg" /></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+                <table>
+                  <tr>
+                    <td class="tdLeft">上市时间: 2015年春季</td>
+                    <td class="tdCenter">是否商场同款: 是</td>
+                    <td>货号: ms11051</td>
+                  </tr>
+                  <tr>
+                    <td class="tdLeft">风格: 运动 舒适 简约 古典 华丽 前卫 优雅 个性</td>
+                    <td class="tdCenter">品牌: 镜匠人 </td>
+                    <td>型号: ms11051</td>
+                  </tr>
+                  <tr>
+                    <td class="tdLeft">价格: 500元 </td>
+                    <td class="tdCenter">镜片材质: 树脂 </td>
+                    <td>产地: 深圳</td>
+                  </tr>
+                  <tr>
+                    <td class="tdLeft">适合脸型: 圆脸 长脸 方脸 椭圆形脸</td>
+                    <td class="tdCenter">适用性别: 通用</td>
+                    <td>功能: 防UVA 偏光</td>
+                  </tr>
+                </table>
+                <div class="weixin">
+                  <div class="weixin-left">
+                  	<img src="images/weixin-01.jpg" />
+                    <h4>微支付</h4>
+                  </div>
+                  <div class="weixin-right">
+                  	<h4>点击链接购买：</h4>
+                  	<a href="#">http://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.TTnvg6&id=43679870156&skuId
+=94396300071&areaId=510100&cat_id=50023064&rn=1f759f84a92ec50c6e89db6f1181e4e7&user_id
+=2292799735&is_b=1 </a>
+                  </div>
+                </div>
+
+            </div>
+        </div><!--主体内容  end-->
+    </div>
+    <div class="footer"><!--页尾  start-->
+    	<div class="foot-box">
+        	<p class="p-left">2015 版权所有 蜀ICP备12006200号 </p>
+            <p class="p-center">德國鏡匠人國際眼鏡集團有限公司</p>
+            <p class="p-right">FLAT B07 FLOOR23,HOVER IND BLDG NO 26-38 KWAI CHEONG RD,NT</p>
+        </div>
+    </div><!--页尾  end-->
+</div>
+ <!--/*/*tanchu*/*/-->
+<div class="tanceng tan">
+  <span class="Tclose"></span>
+  <i class="ctr prev"></i><i class="ctr next"></i>
+  <div class="tanbox"> 
+    <div class="contain">
+      <ul> 
+      </ul>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	var w=$(window),b=$("body");
+	var zz="<div class='zz' style='position:fixed;z-index:11110;width:100%;height:100%;left:0;top:0;opacity:0.85;filter:Alpha(opacity=85);background:#000'></div>"; 
+	var tat=$(".tanceng"),trt=$(".trigTan");
+	var prev=tat.find(".prev"),next=tat.find(".next"),x,y=trt.length,z=tat.find(".tanbox").width(),t=tat.find("ul"),MinNum=1;
+	tat.addClass("tanchu").css({"display":"none",'z-index':11111,left:(b.width()-$(".tanchu").outerWidth())*0.5}).appendTo("body");  
+	w.resize(function(){$(".zz").css({"width":"100%","height":"100%"}); $(".tanchu").css({top:(w.height()-$(".tanchu").outerHeight())*0.5})	});		
+	trt.live({"click":function(){ x=$(this).index(".trigTan"),z=tat.find(".tanbox").width();
+	  tat.css({"position":"fixed",top:(w.height()-tat.outerHeight())*0.5});
+	        t.html('');t.css({"width":y*z,"left":-x*z}); 
+			trt.each(function(i) {	$(this).find("img").clone().appendTo(t).wrap("<li></li>"); });
+			tat.show(300);b.append(zz) ;}});
+	prev.click(function(){ x=-parseInt(parseInt(t.css("left"))/z);x--;if(x<0){ x=y-MinNum} ;Move(x); });
+	next.click(function(){ x=-parseInt(parseInt(t.css("left"))/z);x++;if(x>y-MinNum){ x=0 }; Move(x);  }); 
+	function Move(A){var B=-A*z+"px"; t.stop(1,1).animate({left:B},333);}	
+	$(".zz,.Tclose").live({"click":function(){ $(".tanchu").hide();$(".zz").remove();}}); 
+});
+</script>
+</body>
+</html>

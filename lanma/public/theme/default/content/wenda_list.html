@@ -1,0 +1,78 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+
+
+<div class="yyt-34">
+    <div class="top-nav"><div class="wrapper">
+            <img src="__PUBLIC__/images/13-1.png" alt=""/>
+            <p><a href="__ROOT__/">首页</a> > <a href="{{$cat.url}}">留学问答</a></p>
+        </div>
+    </div>
+    <div class="wrapper clearfix">
+        <div class="left-part">
+            <div class="sideMenu">
+                {{ffpagelist catid=$cat.catid to=show order="sort asc,cid desc" pagesize=10 field="content"}}
+                {{foreach from=$show.info item=list}}
+                <h3 class="on"><em></em>问：{{$list.title}}</h3>
+                <ul>
+                    <p><span>答：</span>{{$list.content}}</p>
+                </ul>
+                {{/foreach}}
+            </div>
+
+            <div class="fenye clearfix">
+               {{$show.pages}}
+            </div>
+        </div>
+        <div class="right-part">
+            <div class="inBox">
+                <div class="inHd">
+                    <ul><li></li><li></li><li></li></ul>
+                </div>
+                <div class="inBd">
+                    <ul>
+                        <img src="images/13-3.png" alt=""/>
+                        <div class="img-after"><p>澳大利亚悉尼大学1111111111111111111111</p></div>
+                    </ul>
+                    <ul>
+                        <img src="images/13-3.png" alt=""/>
+                        <div class="img-after"><p>澳大利亚墨尔本大学</p></div>
+                    </ul>
+                    <ul>
+                        <img src="images/13-3.png" alt=""/>
+                        <div class="img-after"><p>澳大利亚堪培拉大学</p></div>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="help">
+                <h1><span><img src="images/3-12.png" alt=""/>顾问推荐</span></h1>
+                <div class="person clearfix"><img src="images/3-13.png" alt=""/><h1>孟厚泽老师</h1><p>高级英欧留学规划师</p><a href="">立即咨询</a></div>
+                <div class="person clearfix"><img src="images/3-13.png" alt=""/><h1>孟厚泽老师</h1><p>高级英欧留学规划师</p><a href="">立即咨询</a></div>
+            </div>
+            <img src="images/3-7.png" alt="" class="banner-small"/>
+        </div>
+    </div>
+
+</div>
+
+
+{{include file="system/footer.html"}}
+<script>
+    //手风琴
+    jQuery(".sideMenu").slide({
+        titCell:"h3", //鼠标触发对象
+        targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+        effect:"slideDown", //targetCell下拉效果
+        delayTime:300 , //效果时间
+        triggerTime:150, //鼠标延迟触发时间（默认150）
+        defaultPlay:true,//默认是否执行效果（默认true）
+        trigger:"click",
+        returnDefault:false //鼠标从.sideMen移走后返回默认状态（默认false）
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+/* CSS Document */
+body, h1, h2, h3, h4, h5, h6, p, span, strong, img, form, ul, li, a, table, tr, td { margin: 0; padding: 0; } 
+body{ 
+	font: normal 14px/1.5 '微软雅黑'; 
+	background: #fff; 
+}
+a{ text-decoration: none; border: none; }
+a:focus{ -moz-outline-style: none; outline: none; }
+ul li{ list-style: none; }
+input, textarea{ 
+	outline: 0; 
+	border: none; 
+	background: none;
+	font-family: Arial, "微软雅黑";
+	font-size: 16px;
+	-webkit-appearance: none;
+}
+img{ border: none; }
+
+/*去除点击虚框*/
+/*a { blr: expression(this.onFocus=this.close()); blr: expression(this.onFocus=this.blur()); }*/
+
+h1, h2, h3, h4, h5, p, span, a, strong, li, i, em, input, textarea, button, select { font-family: '微软雅黑'; color: #666; font-size: 14px; }
+p{ line-height: 30px; }
+img{ max-width: 100%; }
+button{outline: none; border: none;}

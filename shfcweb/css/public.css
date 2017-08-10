@@ -1,0 +1,220 @@
+/**************切换图开始**************/
+.banner{width: 100%; max-width:1920px; overflow: hidden; position: relative; margin:0 auto;}
+.banner .banner_bank{ background:url(../images/img_mask.png) repeat; width: 100%; max-width:1920px; position:absolute; top:0; height:100%; z-index:1;}
+.banner .slideBox{width:1920px; overflow:hidden; position:relative; left: 50%;margin-left: -960px;}
+.banner .bd{position:relative; height:100%; z-index:0;width: 100%; margin: 0 auto}
+.banner .bd li{ width: 100%; min-width:1200px; zoom:1;}
+
+/**************浮动头部开始**************/
+.top{ position:absolute; top:0; width:1200px; left:50%; margin-left:-600px; z-index:99;}
+.top .nav{ width:1200px; height:53px; background-color:#0067B1; background-color:rgba(0,103,177,0.6);
+filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);}
+.top .bigtitle h1{ font-size:3em; font-weight:800; text-align:center; color:#FFF; margin:200px auto 60px; letter-spacing:5px;}
+.top .search{ line-height:50px; height:50px; width:750px; margin:0 auto;}
+
+.nav .navlogo{ float:left; position:relative; z-index:1;}
+.nav .navbar{ float:left; height:53px; margin-left:116px;}
+.nav .navbar ul li{ float:left; height:53px;}
+.nav .navbar ul li a{ margin:0 5px; line-height:53px; height:53px; display:block; color:#FFF; position:relative; z-index:1; *margin:0 20px;}
+.nav .navbar ul li a:hover{ color:#EEE; font-weight:400;}
+.navico{ float:right; height:53px; width:140px; position:relative; z-index:1;}
+.nav .navbar ul li a:before,.nav .navbar ul li a:after { display: inline-block; opacity: 0; -webkit-transition: -webkit-transform 0.3s, opacity 0.2s; -moz-transition: -moz-transform 0.3s, opacity 0.2s; transition: transform 0.3s, opacity 0.2s; visibility: hidden\0;}
+.nav .navbar ul li a:before { margin-right: 10px; content: '['; -webkit-transform: translateX(20px); -moz-transform: translateX(20px); transform: translateX(20px);}
+.nav .navbar ul li a:after { margin-left: 10px; content: ']'; -webkit-transform: translateX(-20px); -moz-transform: translateX(-20px); transform: translateX(-20px);}
+.nav .navbar ul li a:hover:before,
+.nav .navbar ul li a:hover:after,
+.nav .navbar ul li a:focus:before,
+.nav .navbar ul li a:focus:after { opacity: 1; -webkit-transform: translateX(0px); -moz-transform: translateX(0px); transform: translateX(0px);}
+
+.navico .navico_l{ float:left; line-height:53px;}
+.navico .navico_l a{ width:20px; height:17px; margin:18px 10px; display:block; float:left;}
+.navico .navico_l_a1{ background:url(../images/phone.png) center left no-repeat;}
+.navico .navico_l_a1:hover{ background:url(../images/phone1.png) center left no-repeat;}
+.navico .navico_l_a2{ background:url(../images/like.png) center left no-repeat;}
+.navico .navico_l_a2:hover{ background:url(../images/like1.png) center left no-repeat;}
+
+.navico .navico_r{ float:right; margin-right:3px; width:35px; text-align:center; height:43px; margin-top:4px;}
+.navico .navico_phone{ position:absolute; top:53px; left:-100px; background:url(../images/navico_phone.png) center left no-repeat; width:240px; height:54px; text-align:center; line-height:62px; display:none;}
+.navico .navico_phone span{ text-align:center; color:#FFF; font-size:1.2em;}
+
+.navico .navico_r hr{ width:35px; height:1px; border:none; border-top:1px solid #DDD; margin:0; *margin:0 0 -14px 0; float:none; *float:left; display:block;}
+.navico .navico_r a{ line-height:21px; height:21px; display:block; color:#FFF; font-size:0.86em;}
+.navico .navico_r a:hover{ color:#DDD;}
+
+.search .search_title{ height:50px; line-height:50px;}
+.search .search_title ul li{ float:left; margin-right:30px; line-height:50px; color:#FFF; cursor:pointer; font-size:1.15em;}
+.search .search_title ul li:hover{ color:#009a44;}
+.search .search_title .active{ background:url(../images/search_up.png) bottom center no-repeat;}
+.search .search_box,.search .search_box form{ height:45px; overflow:hidden; line-height:45px; }
+.search .search_box input{ width:600px; height:45px; line-height:41px; padding:2px; border:none; float:left;}
+.search .search_box button{ width:50px; height:45px; float:left; background:url(../images/search1.png) center no-repeat; background-color:#009a44; border:0;} 
+.search .search_box a{ width:80px; height:45px; background-color:#009a44; color:#FFF; float:left; margin-left:10px; text-align:center;}
+.search .search_real h1{ font-size:1.9em; color:#FFF; letter-spacing:2px; line-height:60px;}
+
+/**************公用底部开始**************/
+footer{ width:100%; height:125px; margin:0 auto; border-top:1px solid #dcdcdc; position:relative;}
+.footer{ width:100%; margin:20px auto; height:84px;}
+.footer ul li{ line-height:28px; text-align:center; font-size:0.86em; height: 28px; color:#999;}
+.footer ul li a{ color:#999;}
+.footer ul li dl{ display: inline-block; *width:602px; *margin:0 auto;}
+
+.footer ul li dl dt{  float:left;}
+.footer ul li dl dt a{ margin:0 17px; font-size:0.86em; color:#222;}
+.footer .foot_one,.footer .foot_one a{ color:#666;}
+.footer .foot_one a:hover,.footer ul li a:hover{ color:#016eb7;}
+
+.bottom_top{ position:fixed; right:0; bottom:60px; width:123px; height:43px; overflow:hidden;}
+.bottom_top .bottom_top_l{ position:absolute; left:0; cursor:pointer;}
+.bottom_top .bottom_top_r{ position:absolute; left:37px; cursor:pointer; display:none;}
+/*****************one内容开始****************/
+.one{ width:100%; height:1760px; margin:0 auto; background:url(../images/bg1.jpg) center bottom no-repeat;}
+.tit_more{ color:#333; float:right; margin-top:12px;}
+
+/*******房产资讯*******/
+.one .property{ width:1200px; height:440px; margin:0 auto;}
+.property .property_tit{ width:1200px; height:70px; line-height:70px; padding-top:35px; margin:0 auto 35px; border-bottom:1px solid #d9e8f3;    overflow: hidden;}
+.property .property_tit h2{ float:left; font-size:1.7em;}
+.property .property_menu{ float:left; margin-left:15px;}
+.property .property_menu ul li{ float:left; height:auto; line-height: 80px; color:#777;}
+.property .property_menu ul li a{ font-size:0.86em; padding-left:8px; margin-right:8px; border-left:1px #666666 solid;}
+.property .property_menu ul li:first-child a{ border-left:none;}
+.property .property_active a{ color:#016eb7;}
+
+.property .property_box{ width:1200px; height:300px; margin:0 auto;}
+.property .property_box_pic{ width:580px; height:300px; float:left; overflow:hidden; position:relative;}
+.property .property_box_pic img{-moz-transition: all 1s ease 0s;-o-transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;transition: all 1s ease 0s;}
+.property .property_box_pic:hover img{-webkit-transform: scale(1.04);-moz-transform: scale(1.04);-ms-transform: scale(1.04);-o-transform: scale(1.04);transform: scale(1.04);}
+
+.property .property_box_list{ width:590px; margin-left:30px; float:left;}
+.property .property_pic_bg{ width:570px; height:80px; background-color:#0067B1; background:rgba(1,110,183,0.6); line-height:30px; padding:5px; position:relative; margin-top:-40px; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);}
+.property .property_pic_bg h3{ width:570px; height:30px;}
+.property .property_pic_bg h3 a{ color:#FFF; float:left;}
+.property .property_pic_bg h3 time{ font-size:0.9em; color:#FFF; float:right;}
+.property .property_pic_bg p{ color:#EEE; line-height:25px; font-size:0.86em;}
+.property .property_pic_bg p a{ float:right; color:#3cd300;}
+
+.property .property_box_list ul li{ width:590px; height:68px; margin-top:49px;}
+.property .property_box_list ul li:first-child{ margin-top:0px;}
+.property .property_box_list ul li time{ width:62px; height:66px; float:left; border:1px solid #CCC; text-align:center; margin-right:14px;}
+.property .property_box_list ul li time b{ display:block; width:62px; line-height:48px; height:38px; font-size:1.9em; color:#666;}
+.property .property_box_list ul li time span{ display:block; width:62px; line-height:20px; height:28px; font-size:0.7em;}
+.property .property_box_list ul li time:hover{ border-color:#016eb7;}
+.property .property_box_list ul li time:hover b,.property .property_box_list ul li time:hover span{ color:#016eb7; cursor:pointer;}
+.property .property_box_list ul li div{ height:24px; line-height:18px;}
+.property .property_box_list ul li div h3{ float:left;}
+.property .property_box_list ul li div h4{ float:right;}
+.property .property_box_list ul li div h4 a{ color:#666; font-size:0.85em;}
+.property .property_box_list ul li div h4 a:hover{ color:#016eb7;}
+
+.property .property_box_list ul li p{ line-height:22px; font-size:0.86em; color:#999;}
+/*******楼盘*******/
+.one .building{ width:1200px; height:655px; margin:0 auto;}
+.building_tit{ width:1200px; height:49px; line-height:49px; margin:45px auto 30px; border-bottom:1px solid #d9e8f3; overflow: hidden;}
+.building_tit h2{ float:left; font-size:1.7em;}
+.building_tit{ color:#016eb7; float:right;}
+.building .building_pic{ width:1200px; height:530px; margin:0 auto; clear: both;}
+.building .building_pic_one{ width:580px; height:530px; float:left;}
+.building .building_pic_two{ width:590px; height:250px; float:right;}
+.building .building_pic_three{ width:590px; height:250px; float:right; margin-top:30px;}
+
+.building_one_title{ width:540px; height:108px; padding:10px 20px; background-color:#016eb7;}
+.building_one_title h2{ line-height:40px; color:#EEE; font-size:1.4em;}
+.building_one_title h2 a,.building_two .building_two_title h2 a{ line-height:40px; color:#EEE;}
+.building_one_title h2 a:hover,.building_two .building_two_title h2 a:hover,.building_one_txt a:hover,.building_two_txt a:hover{ color:#08D863;}
+.building_one_title p{ line-height:25px; color:#EEE; font-size:0.86em;}
+.building_one_txt{ width:540px; height:40px; background-color:#009b44; line-height:40px; padding:0 20px;}
+.building_one_txt span,.building_two_txt span{ color:#EEE; float:left; font-size:1.1em;}
+.building_one_txt a,.building_two_txt a{ color:#EEE; float:right; transition:all ease 0.3s;}
+
+.building_two{ float:right; width:240px; height:250px;} 
+.building_two .building_two_title{ width:220px; height:190px; padding:10px; background-color:#016eb7;}
+.building_two .building_two_title h2{ line-height:40px; color:#EEE; font-size:1.4em;}
+.building_two .building_two_title p{ line-height:25px; color:#EEE; font-size:0.86em; margin-top:25px;}
+.building_two .building_two_txt{ width:220px; height:40px; background-color:#009b44;line-height:40px; padding:0 10px;}
+
+.building_pic_one img{ width:580px; height:360px;}
+.building_pic_two img{ float:left; width:350px; height:250px;}
+.building_pic_three img{ float:right;}
+.building_pic_one img:hover,.building_pic_two img:hover,.building_pic_three img:hover{ opacity:0.9; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);}
+
+/*******横幅*******/
+.one_pic{ width:1200px; height:100px; margin:40px auto;}
+.one_pic img{ width:1200px; height:100px;}
+
+/*******新房*******/
+.one .newhouse{ width:1200px; height:480px; margin:0 auto;}
+.newhouse .newhouse_tit{ width:1200px; height:95px; line-height:95px; overflow:hidden;}
+.newhouse .newhouse_tit h2{ float:left; font-size:1.7em;}
+.newhouse .newhouse_tit span{ color:#999; float:left; margin-left:15px; line-height:102px; font-size:0.9em;}
+.newhouse .newhouse_list ul li{ width:390px; height:265px; float:left; margin-left:15px; overflow:hidden; position:relative;}
+.newhouse .newhouse_list ul li:first-child{ margin-left:0;}
+.newhouse .newhouse_list ul li img{ width:390px; height:265px;}
+.newhouse .newhouse_list_hover{ width:390px; height:265px; background-color:rgb(44,168,98); background-color:rgba(44,168,98,0.9); color:#FFF; text-align:center; position:relative; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);}
+.newhouse .newhouse_list_hover h2{ font-size:34px; color:#FFF; font-weight:800; padding-top:90px; line-height:40px;}
+.newhouse .newhouse_list_hover h3{ font-size:24px; color:#FFF; line-height:40px;}
+
+/*******房价行情*******/
+.two{ background:url(../images/two.jpg) no-repeat center; width:100%; height:548px;}
+.two .houseprice{ width:780px; height:468px; padding-top:80px; margin:0 auto;}
+.two .houseprice h1{ font-size:2.1em; font-weight:600; color:#016eb7; text-align:center; margin-bottom:35px;}
+.two .houseprice_l{ width:300px; height:320px; float:left; text-align:right;}
+.two .houseprice_l b{ font-size:2.8em; font-weight:900; color:#016eb7; display:block; line-height:60px; letter-spacing:6px;}
+.two .houseprice_l sup{ vertical-align: super; font-size:20px; color:#016eb7; font-weight:600;}
+.two .houseprice_l span{ color:#016eb7; line-height:30px; letter-spacing:2px;}
+.two .houseprice_l .houseprice_x{ width:300px; height:150px; background-color:rgb(0,0,0); background-color:rgba(0,0,0,0.6); margin-top:50px; text-align:center; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);}
+.two .houseprice_l .houseprice_x b{ font-size:2em; font-weight:600; color:#FFF; padding-top:25px;}
+.two .houseprice_l .houseprice_x sup{font-size:18px; color:#FFF;}
+.two .houseprice_l .houseprice_x span{ color:#FFF;}
+.two .houseprice_r{ float:right; text-align:left;}
+.two .houseprice_r span{ margin-left:15px;} 
+
+/*****************three内容开始****************/
+.three{ width:100%; height:1885px; margin:0 auto;}
+.three .three_pic{ width:1200px; height:100px; margin:40px auto 0;}
+/*******二手房*******/
+.three .oldhouse{ width:1200px; height:460px; margin:0 auto;}
+.three .oldhouse_tit{ width:1200px; height:49px; line-height:49px; margin-bottom:25px; padding-top:25px; border-bottom:1px solid #d9e8f3; overflow:hidden;}
+.three .oldhouse_tit h2{ float:left; font-size:1.7em;}
+.three .oldhouse_tit span{ float:left; margin-left:15px; line-height:102px; font-size:0.9em;}
+
+.three .oldhouse_list{ width:1200px; height:360px; margin:0 auto;}
+.three .oldhouse_list ul li{ float:left; margin-left:15px; width:390px; height:360px; overflow:hidden; width:388px\9;}
+.three .oldhouse_list ul li:first-child{ margin-left:0;}
+.three .oldhouse_list ul li:hover{ outline:1px solid #11a250;  outline-offset: 1px; border:1px solid #11a250\9;}
+.three .oldhouse_list ul li:hover h2,.three .oldhouse_list ul li:hover span,.three .oldhouse_list ul li:hover b{ font-weight:600;}
+.three .oldhouse_list ul li h2{ line-height:35px; padding-left:8px;}
+.three .oldhouse_list ul li span{ font-size:0.9em; padding-left:8px; line-height:25px;}
+.three .oldhouse_list ul li b{ margin-left:12px; font-size:1.1em; color:#11a250; font-weight:600; line-height:25px;}
+
+/*******租房*******/
+.three .tenement{ width:1200px; height:690px; margin:0 auto;}
+.three .tenement_list{ width:1200px; height:590px; margin:0 auto;}
+.three .tenement_list ul li{ float:left; margin-left:9px; width:293px; height:590px; overflow:hidden;}
+.three .tenement_list ul li:first-child{ margin-left:0;}
+.three .tenement_list ul li img{ width:293px; height:310px;}
+.three .tenement_list ul li img:hover{ opacity:0.8; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);}
+.three .tenement_list_text{ width:263px; height:260px; padding:10px 15px; background-color:#016eb7;}
+.three .tenement_list_text h2{ color:#FFF; line-height:50px; font-size:1.25em; height:50px; overflow:hidden;}
+.three .tenement_list_text p{ color:#DDD; line-height:25px; font-size:0.86em; max-height:100px; overflow:hidden;}
+.three .tenement_list_text div{ width:263px; height:30px; margin:20px auto 10px;}
+.three .tenement_list_text span{ color:#EEE; line-height:25px; font-size:0.88em; float:left;}
+.three .tenement_list_text b{ color:#FFF; line-height:25px; float:right;}
+.three .tenement_list_text a{ display:inline-block; color:#00da72; font-size:0.9em; line-height:50px;}
+.three .tenement_list_text a:hover{ color:#6AFFB8;}
+.three .tenement_list_text h2 a{ color:#FFF; font-size:1em;}
+.three .tenement_list_text h2 a:hover{ color:#00DA72;}
+
+/*******测绘*******/
+.three .mapping{ width:100%; height:400px; margin:0 auto; background:url(../images/bg2.jpg) no-repeat center;}
+.three .mapping_box{ width:1200px; height:212px; padding-top:85px; margin:0 auto;}
+.three .mapping_pic{ float:left; position:relative;}
+.three .mapping_pic .mapping_pic_box{ position:absolute; top:0; left:0;}
+
+.three .mapping_text{ float:right; width:885px; margin-right:35px;} 
+
+.three .mapping_text .mapping_title{ line-height:45px; width:885px; height:47px;}
+.three .mapping_text .mapping_title h2{ float:left; font-size:1.7em; border-bottom:2px solid #016eb7;}
+.three .mapping_text .mapping_title a{ float:right;}
+.three .mapping_text p{ line-height:30px; font-size:0.86em; color:#666; height:90px; overflow:hidden; margin:14px 25px 14px 0;} 
+.three .mapping_text h3{ font-size:1.15em; line-height:30px;}
+

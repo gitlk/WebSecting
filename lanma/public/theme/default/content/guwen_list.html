@@ -1,0 +1,32 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+
+<div class="yyt-32">
+    <div class="top-nav"><div class="wrapper"><img src="__PUBLIC__/images/13-1.png" alt=""/><p>
+                <a href="__ROOT__/">首页</a> > <a href="{{$cat.url}}">知名顾问</a></p></div></div>
+    <div class="wrapper clearfix">
+        <div class="left-part">
+            {{ffpagelist catid=$cat.catid to=show order="sort asc,cid desc" field="qq,changxiang,tel,email,zhiwei" pagesize=4}}
+            {{foreach from=$show.info item=v}}
+            <div class="card clearfix">
+                <a href="{{$v.url}}" class="chakan">
+                    <img src="{{$v.thumb}}" alt="" class="person"/>
+                    <div class="part1"><p>{{$v.title}} <span class="xia"> _ </span><span class="chenghao">{{$v.zhiwei}}</span></p></div>
+                    <div class="part2"><p>电话：<span>{{$v.tel}}</span></p><p>Email：{{$v.email}}</p></div>
+                    <div class="part3"><p>长项：<span>{{$v.changxiang}}</span></p></div>
+                </a>
+                <a target="_blank" href="tencent://message/?uin={{$v.qq}}&amp;Site=sc.chinaz.com&amp;Menu=yes" class="part4">立即咨询</a>
+            </div>
+            {{/foreach}}
+            <div class="clearfix clear"></div>
+            <div class="fenye clearfix">
+                {{$show.pages}}
+            </div>
+        </div>
+{{include file="system/right.html"}}
+    </div>
+
+</div>
+
+{{include file="system/footer.html"}}

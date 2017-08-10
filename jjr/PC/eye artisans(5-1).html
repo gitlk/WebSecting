@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>镜匠人</title>
+<link rel="stylesheet" type="text/css" href="css/public.css"/>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/jquery.Sonline.js"></script>
+<script type='text/javascript'>
+//导航
+$("#nav li").hover(function(){
+	$(this).find('ul:first').css({visibility: "visible",display: "none"});
+},function(){
+	$(this).find('ul:first').css({visibility: "hidden"});
+});
+//在线客服
+$(function(){
+	$("body").Sonline({
+		Position:"right",//left或right
+		Top:200,//顶部距离，默认200px
+		Effect:true, //滚动或者固定两种方式，布尔值：true或false
+		DefaultsOpen:true, //默认展开：true,默认收缩：false
+		Qqlist:"1015353206|在线QQ" //多个QQ用','隔开，QQ和客服名用'|'隔开
+	});
+	$(".contentBox").append("<div class='message'><a href='#'>在线留言</a></div>");
+})	
+</script> 
+</head>
+<body>
+<div class="index-wrap"><!--背景-->
+	<div class="header"><!--头部  start-->
+    	<div class="header-box">
+        	<a href="#"><img src="images/logo.png" /></a><!--logo-->
+            <div class="navwrap"><!--导航  start-->
+                <ul id="nav"> 
+                    <li class="page_item">
+                        <a href="#" >Visval life<span></span></a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >镜匠人ATM<span></span></a> 
+                    </li> 
+                    <li class="page_item">
+                        <a href="#" >Eye Artisans<span></span></a> 
+                        <ul class='children'> 
+                            <li class="page_item"><a href="#" >Brand introduction /品牌介绍</a></li> 
+                            <li class="page_item"><a href="#/">Series products /系列产品</a> 
+                                <ul class='children'> 
+                                    <li class="page_item"><a href="#" >A系列<span></span></a></li> 
+                                    <li class="page_item"><a href="#" >B系列<span></span></a></li>
+                                    <li class="page_item"><a href="#" >C系列<span></span></a></li>
+                                    <li class="page_item"><a href="#" >其他系列<span></span></a></li> 
+                                </ul> 
+                            </li> 
+                            <li class="page_item"><a href="#" >Brand joined /品牌加盟</a></li> 
+                        </ul> 
+                    </li> 
+                    
+                </ul>                
+            </div> <!--导航  end-->
+        </div>
+    </div><!--头部  end-->
+	<div class="eye25Main">
+    	<div class="eye25Center"><!--主体内容  start-->
+           <div class="imgCenter"><!--三排图片滚动-->
+	<div class="imgCenters">
+		
+		  <div id="San_flash">
+			<div class="flashPg">
+				<ul class="Mobile">
+					<li>
+						<a href="#"><img src="images/eye-xy00.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy00.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy00.jpg" /></a>
+                    </li>
+					<li>
+						<a href="#"><img src="images/eye-xy01.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy01.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy01.jpg" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/eye-xy02.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy02.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy02.jpg" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/eye-xy03.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy03.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy03.jpg" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/eye-xy04.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy04.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy04.jpg" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/eye-xy05.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy05.jpg" /></a>
+                        <a href="#"><img src="images/eye-xy05.jpg" /></a>
+					</li>
+                    
+                </ul>
+                
+			</div>
+			<div class="but_left"><img src="images/eye-img-left.png" /></div>
+			<div class="but_right"><img src="images/eye-img-right.png" /></div>
+		  </div>
+		  
+	</div>
+</div>
+        </div><!--主体内容  end-->
+    </div>
+    <div class="footer"><!--页尾  start-->
+    	<div class="foot-box">
+        	<p class="p-left">2015 版权所有 蜀ICP备12006200号 </p>
+            <p class="p-center">德國鏡匠人國際眼鏡集團有限公司</p>
+            <p class="p-right">FLAT B07 FLOOR23,HOVER IND BLDG NO 26-38 KWAI CHEONG RD,NT</p>
+        </div>
+    </div><!--页尾  end-->
+</div>
+<script type="text/javascript">
+//三排图片滚动
+var _index5=0;
+$("#San_flash .but_right img").click(function(){
+	_index5++;
+	var len=$(".flashPg ul.Mobile li").length;
+	if(_index5+5>len){
+		$("#San_flash .flashPg ul.Mobile").stop().append($("ul.Mobile").html());
+	}
+	$("#San_flash .flashPg ul.Mobile").stop().animate({left:-_index5*305},1000);
+	});
+
+	
+$("#San_flash .but_left img").click(function(){
+	if(_index5==0){
+		$("ul.Mobile").prepend($("ul.Mobile").html());
+		$("ul.Mobile").css("left","-1380px");
+		_index5=6
+	}
+	_index5--;
+	$("#San_flash .flashPg ul.Mobile").stop().animate({left:-_index5*305},1000);
+	});
+	</script>	
+</body>
+</html>

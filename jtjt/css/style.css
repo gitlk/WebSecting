@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/*login css*/
+#header{ height: 58px; padding-top: 100px;}
+#logo img{ padding-top: 0; }
+body{ background: none; }
+#login{ width: 100%; height: 418px; padding-top: 70px; background: url(../images/login-bg.png) no-repeat center; }
+.login{ margin-left: 630px; width: 350px; height: 330px; position: relative; }
+.login .bg{ z-index: 9; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: #e9eaeb; opacity: .9; filter:alpha(opacity=90); -moz-opacity:0.9; -khtml-opacity: 0.9; }
+#footer{ height: 228px; background: #fff; padding-top: 24px; }
+.login .wrap{ z-index: 99; position: relative; padding: 32px 24px;}
+.login h2{ font-size: 16px; color: #3c3c3c; padding-bottom: 30px;}
+.login .info{ margin-bottom: 24px; }
+.login .info input{ width: 258px; height: 40px; line-height: 40px; color: #afafaf; padding-left: 42px; }
+.login .info input.username{ background: #fff url(../images/icon2.png) 12px center no-repeat; }
+.login .info input.psw{ background: #fff url(../images/icon3.png) 12px center no-repeat; }
+.login .login-btn{ width: 150px; height: 42px; line-height: 42px; color: #fff; background: #de0011; font-size: 16px; font-weight: bold; }
+.login .forgot{
+	position: absolute;
+	color: #6c6c6c;
+	font-size: 12px;
+	right: 28px;
+	bottom: 40px;
+}
+.login .forgot:hover{ color: #de0011; }

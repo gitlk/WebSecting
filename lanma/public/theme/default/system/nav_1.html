@@ -1,0 +1,268 @@
+<div class="index-header">   
+
+    <div class="nav-up wrapper clearfix">
+
+        <div class="part1">
+
+            <img src="__PUBLIC__/images/index-header-logo.png" alt="" class="logo"/>
+
+        </div>
+
+        <div class="part2">
+
+            <div class="search-group clearfix">
+
+                         <div class="select-search">
+
+                            <span>院校</span><b></b>
+
+                            <ul class="address">
+
+                                <li onclick="tiaojian(1)">院校</li>
+
+                                <li onclick="tiaojian(2)">资讯</li>
+
+                                <li onclick="tiaojian(3)">专业</li>
+
+                            </ul>
+
+                        </div>
+
+                        <form action="__ROOT__/Findex/searcha" id='myform' method="post">
+
+                            <input type="text" class="search-input" name='title' id='search' placeholder="院校关键词"/>
+
+                            <input type="hidden" value="1" id='tiaojian' name='term'/>
+
+                            <a href="javascript:;" class="search-btn" onclick='searcha()'></a>
+
+                        </form>
+
+            </div>
+
+        </div>
+
+        <div class="{{if $smarty.session.fuserdata.user_id}}part4{{else}}part3{{/if}}">
+
+            <div class="top clearfix">
+
+                {{if $smarty.session.fuserdata.user_id}}
+
+
+
+                    {{ffcategory catid=76 to=v}}
+
+                    <a class="fangan" href="javascript:;">{{$v.name}}</a>
+
+                         <span>|</span>
+
+                    {{ffcategory catid=68 to=v}}
+
+                    <a  class="center" href="{{$v.url}}">{{$v.name}}</a>
+
+
+
+                {{else}}
+
+
+
+                    {{ffcategory catid=67 to=v}}
+
+                    <a href="{{$v.url}}">{{$v.name}}</a>
+
+                    <a href="__ROOT__/login.html">登录</a>
+
+                    <img src="__PUBLIC__/images/index-header-person.png" alt="" class="index-header-person"/>
+
+
+
+                {{/if}}
+
+            </div>
+
+            <div class="down">
+
+                <img src="__PUBLIC__/images/index-header-phone.png" alt=""/>
+
+                <p>{{ffset var="companytel"}}</p>
+
+            </div>
+
+           <!--弹窗--> 
+{{if $smarty.session.fuserdata.user_id}}
+            <div class="tanchuang">
+                <h1>最新申请的学校</h1>
+                {{ffsql sql="select t1.* from fangfa_content t1 left join fangfa_apply t2 on t1.cid=t2.cid where t1.status=9 and t2.user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=ay}}
+                {{ffsql sql="select count(*) as num from fangfa_content t1 left join fangfa_apply t2 on t1.cid=t2.cid where t1.status=9 and t2.user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=s}}
+  
+                <div class="show-school">
+                    {{foreach from=$ay item=y key=k}}
+                    {{if $y.title!=''}}
+                            <div class='card clearfix'>
+                                <a href='javascript:;'  class='del' onclick="del({{$y.cid}},{{$y.catid}},this)" id="del_{{$y.cid}}">删除</a>
+                                <img src='__PUBLIC__/uploads/{{$y.thumb}}' alt='' class='tanchuang-img'/>
+                                <p class='' tanchuang-name'>{{$y.title}}</p>
+                            </div> 
+                    {{/if}}
+                    {{/foreach}}
+                </div>
+                <div class="foot clearfix">
+                    <p>共申请 <span id="much" dev="0">{{$s.0.num}}</span>所学校</p>
+                               {{ffcategory catid=81 to=v}}
+                    <a href="{{$v.url}}" class="chakan-school">查看方案</a>
+                </div>
+            </div>
+{{/if}}
+        </div>
+
+    </div>
+
+    <div class="nav">
+
+        <div class="wrapper">
+
+            <ul class="nav-big clearfix">
+
+                <li class="firstLi"><span class="navicon1"></span><a class="nav-big-lis" href="">我要出国</a><span class="navicon2"></span>
+
+                    <div class="nav-left nav-left-no" >
+
+                        <div class="card clearfix">
+
+                            <img src="__PUBLIC__/images/nav-left1.png" alt=""/>
+
+                            <h1>我要去</h1>
+
+                            <a href="" class="nav-left-more">MORE</a>
+
+                            <div class="clearfix clear"></div>
+
+                            <p>澳&nbsp;&nbsp;&nbsp;洲&nbsp;&nbsp;>&nbsp;&nbsp;<a href="">研究生</a><a href="">大学</a><a href="">中学</a></p>
+
+                            <p>英&nbsp;&nbsp;&nbsp;国&nbsp;&nbsp;>&nbsp;&nbsp;<a href="">研究生</a><a href="">大学</a><a href="">中学</a></p>
+
+                            <p>新西兰&nbsp;&nbsp;>&nbsp;&nbsp;<a href="">研究生</a><a href="">大学</a><a href="">中学</a></p>
+
+                        </div>
+
+                        <div class="card clearfix">
+
+                            <img src="__PUBLIC__/images/nav-left2.png" alt=""/>
+
+                            <h1>我要了解</h1>
+
+                            <a href="" class="nav-left-more">MORE</a>
+
+                            <div class="clearfix clear"></div>
+
+                            <div class="a-group">
+
+                                <a href="">院校排名</a>
+
+                                <a href="">热门专业</a>
+
+                                <a href="">申请条件</a>
+
+                                <a href="">签证攻略</a>
+
+                                <a href="">费用规划</a>
+
+                                <a href="">全球院校</a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card clearfix">
+
+                            <img src="__PUBLIC__/images/nav-left3.png" alt=""/>
+
+                            <h1>我要服务</h1>
+
+                            <div class="clearfix clear"></div>
+
+                            <div class="a-group">
+
+                                <a href="34.html">留学问答</a>
+
+                                <a href="">咨询顾问</a>
+
+                                <a href="">DIY指导</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li><a href="__ROOT__/" class="nav-big-lis{{if $cat.topcatid==""}} on{{/if}}">首页</a></li>
+
+                {{ffcategory parentid=0 to=nav}}
+
+                {{foreach from=$nav item=nv key=k}}
+
+                {{if $k==0}}
+
+                <li class="xiala"><a href="{{$nv.url}}" class="nav-big-lis {{if $cat.topcatid==$nv.catid}} on{{/if}}">{{$nv.name}}</a>
+
+                    <div class="nav-xiala">
+
+                        {{foreach from=$nv.childrens item=c}}
+
+                        <a href="{{$c.url}}" class="nav-xiala-li">{{$c.name}}</a>
+
+                        {{/foreach}}
+
+                    </div>
+
+                </li>
+
+                {{elseif $k<6}}
+
+                <li><a href="{{$nv.url}}" class="nav-big-lis{{if $cat.topcatid==$nv.catid}} on{{/if}}">{{$nv.name}}</a></li>
+
+                {{/if}}
+
+               {{/foreach}}
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    function tiaojian(a){
+
+        $("#tiaojian").val(a)
+
+    }
+
+    function searcha(){
+
+        var a=$("#search").val();
+
+        var b=$("#tiaojian").val();
+
+        if(a!=''&&a!=" "){
+
+            $("#myform").submit();
+
+            
+
+        }else{
+
+            alert('请填写搜索条件')
+
+            return false;
+
+        }
+
+    }
+
+</script>

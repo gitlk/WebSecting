@@ -1,0 +1,76 @@
+{{include file="system/header.html"}}
+<body>
+{{include file="system/nav.html"}}
+<div class="yyt-1">
+    <div class="banner" style="background-image: url('__PUBLIC__/uploads/{{$cat.thumb}}')"></div>
+    <div class="article">
+        <div class="wrapper clearfix">
+            <div class="article-left">
+                <div class="part1">
+                    <h1 class="title">教育层次</h1>
+                    {{ffad aid=15 to=jy}}
+                    <a href="{{$jy.setting.link}}" class="card card1" style="background-image: url('__PUBLIC__/uploads/{{$jy.setting.image}}')"></a>
+                    {{ffad aid=16 to=jy}}
+                    <a href="{{$jy.setting.link}}" class="card card1" style="background-image: url('__PUBLIC__/uploads/{{$jy.setting.image}}')"></a>
+                    {{ffad aid=17 to=jy}}
+                    <a href="{{$jy.setting.link}}" class="card card1" style="background-image: url('__PUBLIC__/uploads/{{$jy.setting.image}}')"></a>
+                    {{ffad aid=18 to=jy}}
+                    <a href="{{$jy.setting.link}}" class="card card1" style="background-image: url('__PUBLIC__/uploads/{{$jy.setting.image}}')"></a>
+                </div>
+                <div class="part2">
+                    <h1 class="title">各国院校<span class="in"></span></h1>
+                    {{ffcategory catid = 8 to=g}}
+                    {{ffsql sql="select count(*) a from fangfa_content a left join fangfa_content_xueyuan b on a.cid=b.cid where b.city='英国'" to=num }}
+                    <a href="__ROOT__/findex/choose?term=1&city=英国" class="card"><img src="{{$g.thumb}}" alt=""/><h1>英国</h1><p>{{$num.0.a}}学校</p></a>
+                    {{ffcategory catid = 49 to=g}}
+                  {{ffsql sql="select count(*) a from fangfa_content a left join fangfa_content_xueyuan b on a.cid=b.cid where b.city='澳大利亚'" to=num }}
+                     <a href="__ROOT__/findex/choose?term=1&city=澳大利亚" class="card"><img src="{{$g.thumb}}" alt=""/><h1>澳大利亚</h1><p>{{$num.0.a}}学校</p></a>
+                    {{ffcategory catid = 50 to=g}}
+                  {{ffsql sql="select count(*) a from fangfa_content a left join fangfa_content_xueyuan b on a.cid=b.cid where b.city='新西兰'" to=num }}
+                     <a href="__ROOT__/findex/choose?term=1&city=新西兰" class="card"><img src="{{$g.thumb}}" alt=""/><h1>新西兰</h1><p>{{$num.0.a}}学校</p></a>
+                    {{ffcategory catid = 51 to=g}}
+                  {{ffsql sql="select count(*) a from fangfa_content a left join fangfa_content_xueyuan b on a.cid=b.cid where b.city='加拿大'" to=num }}
+                     <a href="__ROOT__/findex/choose?term=1&city=加拿大" class="card"><img src="{{$g.thumb}}" alt=""/><h1>加拿大</h1><p>{{$num.0.a}}学校</p></a>
+                </div>
+                <!--专业领域查询专业-->
+                <div class="part3">
+                    <h1 class="title">专业分类<span class="in"></span></h1>
+                    {{ffsql sql="select count(b.lingyu) a,b.lingyu from fangfa_content a left join fangfa_content_zhuanye b on a.cid=b.cid group by b.lingyu" to=ly}}
+                    {{foreach from=$ly item=v key=k}}
+                    {{if $v.lingyu!=""&&$k<12}}
+                    <a href="__ROOT__/findex/choose?term=3&lingyu={{$v.lingyu}}" class="card"><h1>{{$v.lingyu}}</h1><p>{{$v.a}}所学校</p></a>
+                    {{/if}}
+                    {{/foreach}}
+
+                </div>
+                <div class="part4">
+                    <h1 class="title">院校排行榜<span class="in"></span></h1>
+                    {{fflist catid=10  pagesize=10  to=school field="guanzhu,etitle" ext_sql=" order by t2.gjsort asc" to=p field="gjsort" pagesize=5}}
+                    {{foreach from=$p item=m}}
+                    <a href="{{$m.url}}" class="card"><img src="{{$m.thumb}}" alt=""/><h1>NO.{{$m.gjsort}}</h1><p>{{$m.title}}</p></a>
+                    {{/foreach}}
+                </div>
+            </div>
+            <div class="article-right">
+                <div class="rank">
+                    <h1 class="title">热门院校</h1>
+                    {{fflist catid=10 order="sort asc,cid desc" pagesize=10  to=school field="guanzhu,etitle" attr="hot"}}
+                    {{foreach from =$school item=v}}
+                    <a href="{{$v.url}}" class="card clearfix">
+                        <div class="left"><p class="p1">{{$v.title}}</p><p class="p2">{{$v.etitle}}</p></div>
+                        <div class="right"><p class="p1">关注</p><p class="p2">{{$v.guanzhu}}</p></div>
+                    </a>
+                    {{/foreach}}
+
+                </div>
+                {{ffad aid=4 to=a}}
+               <a href='{{$a.setting.link}}'> <img src="__PUBLIC__/uploads/{{$a.setting.image}}" alt="" class="banner-small"/></a>
+            </div>
+        </div>
+    </div>
+</div>
+{{include file="system/footer.html"}}
+
+
+
+

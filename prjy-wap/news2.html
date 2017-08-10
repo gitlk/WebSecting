@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="applicable-devive" content="mobile">
+<meta name="keywords" content="方法数码,方法数码,网络建站">
+<meta name="description" content="方法数码,方法数码,网络建站">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<!-- 防止UC浏览器字体放大 -->
+<meta name="wap-font-scale" content="no">
+<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="HandheldFriendly" content="true">
+<!-- 微软的老式浏览器 -->
+<meta name="MobileOptimized" content="320">
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- windows phone 点击无高光 -->
+<meta name="msapplication-tap-highlight" content="no">
+<!-- 适应移动端end -->
+<!-- External CSS -->
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/swiper-3.3.1.min.css">
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>提前面试指导课</title>
+</head>
+<body>
+
+<!-- nav -->
+<nav class="hide">
+  <a class="close" href="javascript:;"></a>
+  <ul>
+    <li><a class="one" href="index.html">首页<span class="more"></span></a></li>
+    <li><a class="two" href="news.html">品睿新闻<span class="more"></span></a></li>
+    <li><a class="three" href="team.html">名师团队<span class="more"></span></a></li>
+    <li><a class="four" href="rules.html">院校简章<span class="more"></span></a></li>
+    <li><a class="five" href="notice.html">院校公告<span class="more"></span></a></li>
+  </ul>
+</nav>
+<div class="mask hide"></div>
+
+<div id="maincon" class="transform">
+  <!-- header -->
+  <header class="clearfix">
+  	<a id="logo" class="fl" href="index.html"><img src="images/logo.png"></a>
+  	<a id="navbtn" class="fr" href="#"><img src="images/navbtn.png"></a>
+  </header>
+  <div class="top"></div>
+
+  
+
+  <div class="subbanner">
+    <img src="temp/subb2.png">
+    <div class="header">
+      <p class="title">提前面试指导课</p>
+      <p class="subtitle">The interview guide in advance</p>
+    </div>
+  </div>
+  
+
+  <!-- content -->
+  <div class="wrapper">
+    <div class="newslist">
+      <ul>
+        <li>
+          <a class="clearfix" href="#">
+            <p class="fl ellipsis">十天突破川大MBA提前面试！免费试听</p>
+            <span class="fr">2016-09-20</span>
+          </a>
+        </li>
+        <li>
+          <a class="clearfix" href="#">
+            <p class="fl ellipsis">十天突破川大MBA提前面试!</p>
+            <span class="fr">2016-09-20</span>
+          </a>
+        </li>
+        <li>
+          <a class="clearfix" href="#">
+            <p class="fl ellipsis">十天突破川大MBA提前面试!</p>
+            <span class="fr">2016-09-20</span>
+          </a>
+        </li>
+        <li>
+          <a class="clearfix" href="#">
+            <p class="fl ellipsis">十天突破川大MBA提前面试!</p>
+            <span class="fr">2016-09-20</span>
+          </a>
+        </li>
+        <li>
+          <a class="clearfix" href="#">
+            <p class="fl ellipsis">十天突破川大MBA提前面试!</p>
+            <span class="fr">2016-09-20</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="pages">
+      <a href="#">首页</a>
+      <a class="prev" href="#"><</a>
+      <a class="active" href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">4</a>
+      <span>…</span>
+      <a class="next" href="#">></a>
+      <a href="#">尾页</a>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="bottom"></div>
+  <footer>
+  	<ul class="footer clearfix">
+  		<li><a class="one active" href="#">了解品睿</a></li>
+  		<li><a class="two" href="#">学校位置</a></li>
+  		<li><a class="three" href="#">微信关注</a></li>
+  		<li><a class="four" href="#">在线咨询</a></li>
+  	</ul>
+  </footer>
+</div>
+</body>
+
+<!-- External Script -->
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/swiper-3.3.1.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $(function(){
+
+    	var h = $('header').height() + 20;
+    	$('.top').css('height',h);
+    	
+    	$('footer ul li a').click(function(){
+    		$(this).addClass('active');
+    	})
+    	// banner 效果
+	    var mySwiper1 = new Swiper ('#banner', {
+	        pagination: '.pagination',
+	        loop: true,
+	        paginationClickable: true,
+	        autoplay: 5000
+	    });
+    })
+</script>
+</html>

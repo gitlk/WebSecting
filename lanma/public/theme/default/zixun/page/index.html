@@ -1,0 +1,214 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="zixun/sys/znav.html"}}
+    <div class="yyt-99">
+        <div class="wrapper">
+            <div class="section1 clearfix slideTxtBox tab3-l">
+                <div class="section-top clearfix hd">
+                    <img src="__PUBLIC__/images/99-7.png" alt=""/>
+                    <h1>{{$cat.name}}留学</h1>
+                    <ul>
+                        {{ffcategory catid=$cat.catid to=d}}
+                        {{foreach from=$d.child.0.child item=x}}
+                        <li>{{$x.name}}</li>
+                        {{/foreach}}
+                    </ul>
+                    <a class="more" href="{{$d.child.0.url}}">MORE</a>
+                </div>
+                <div class="section-down clearfix bd">
+                    {{foreach from=$d.child.0.child item=h}}
+                    <ul>
+                        <div class="part1">
+                            <div class="inBox">
+                                <div class="inHd">
+                                    <ul><li></li><li></li><li></li></ul>
+                                </div>
+                                <div class="inBd">
+                                    {{fflist catid=$h.catid order="sort asc,cid desc" attr="top" to=ls}}
+                                    {{foreach from=$ls item=p key=k}}
+                                    {{if $k<3}}
+                                    <ul><a href='{{$p.url}}'>
+                                            <img src="{{$p.thumb}}" alt=""/>
+                                            <div class="img-after"><p>{{$p.title}}</p></div>
+                                        </a>
+                                    </ul>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </div>
+                            </div>
+                            <ul class="liuxue">
+                                {{foreach from=$ls item=p1 key=k1}}
+                                {{if $k1>=3&&$k1<6}}
+                                <li class="clearfix"><b></b>
+                                    <a href="{{$p1.url}}">{{$p1.title}}</a>
+                                    <span>{{"Y-m-d"|date:$data.create_time}}</span>
+                                </li>
+                                {{/if}}
+                                {{/foreach}}
+                            </ul>
+                        </div>
+                        <div class="part2">
+                            {{foreach from=$ls item=p2 key=k2}}    
+                            {{if $k1>=6&&$k1<9}}
+                            <div class="card clearfix">
+                                <img src="{{$p2.thumb}}" alt=""/>
+                                <h1>{{$p2.title}}</h1>
+                                <a href='{{$p2.url}}'>{{$p2.description}}</a>
+                            </div>
+                            {{/if}}
+                            {{/foreach}}
+                        </div>
+                        <div class="part3">
+                            <img src="{{$ls.9.thumb}}" alt=""/>
+                            <h1><a href="{{$ls.9.url}}">{{$ls.9.title}}</a></h1>
+                            <ul class="liuxue">
+                                {{foreach from=$ls item=p3 key=k3}}  
+                                {{if $k1>=10&&$k1<15}}
+                                <li class="clearfix"><b></b><a href="{{$p3.url}}">{{$p3.title}}</a></li>
+                                {{/if}}
+                                {{/foreach}}
+                            </ul>
+                        </div>
+                    </ul>
+
+                    {{/foreach}}
+                </div>
+            </div>
+            <div class="section2 clearfix slideTxtBox tab3-l">
+                <div class="part1">
+                    <div class="section-top clearfix hd">
+                        <img src="__PUBLIC__/images/99-12.png" alt=""/>
+                        <h1>{{$cat.name}}移民</h1>
+                        <ul>
+                            {{foreach from=$d.child.1.child item=x}}
+                            <li>{{$x.name}}</li>
+                            {{/foreach}}
+                        </ul>
+                        <a class="more" href="{{$d.child.1.url}}">MORE</a>
+                    </div>
+                    <div class="section-down bd">
+                        {{foreach from=$d.child.1.child item=ym}}
+                        {{fflist catid=$ym.catid order="sort asc,cid desc" attr="top" to=ly pagesize=7}}
+                        <ul>
+
+                            <a class="jianjie clearfix" href="{{$ly.0.url}}">
+                                <img src="{{$ly.0.thumb}}" alt=""/>
+                                <h1>{{$ly.0.title}}</h1>
+                                <p class="time">时间：{{"Y-m-d"|date:$ly.0.create_time}}</p>
+                                <p class="txt">{{$ly.0.description}}</p>
+                            </a>
+                            <ul class="liuxue clearfix">
+                                {{foreach from=$ly item=y key=k}}
+                                {{if $k>=1&&$k<=6}}
+                                <li class="clearfix"><b></b>
+                                    <a href="{{$y.url}}">{{$y.title}}</a>
+                                    <span>{{"Y.m.d"|date:$y.create_time}}</span>
+                                </li>
+                                {{/if}}
+                                {{/foreach}}
+
+                            </ul>
+                        </ul>
+                        {{/foreach}}
+                    </div>
+                </div>
+                <div class="part2">
+                    <div class="top clearfix"><h1>新闻</h1><a class="more" href="{{$d.child.3.url}}">MORE</a></div>
+                    {{fflist catid=$d.child.3.catid order="sort asc,cid desc" attr="top" to=ln pagesize=7}}
+                    <a class="jianjie clearfix" href="{{$ln.0.url}}">
+                        <h1>{{$ln.0.title}}</h1>
+                        <p>{{$ln.0.description}}</p>
+                    </a>
+                    <ul class="liuxue">
+                        {{foreach from=$ln item=new key=kk}}
+                        {{if $kk>0}}
+                        <li class="clearfix"><b></b>
+                            <a href="{{$new.url}}">{{$new.title}}</a>
+                        </li>
+                        {{/if}}
+                        {{/foreach}}
+                    </ul>
+                </div>
+            </div>
+            <div class="wrapper">
+                {{ffad aid=5 to=zd}}
+                <div class="banner-small" style="background: url('__PUBLIC__/uploads/{{$zd.setting.image}}')"></div>
+            </div>
+
+
+
+            <div class="section1 clearfix slideTxtBox tab3-l" style="margin-bottom: 60px;">
+                <div class="section-top clearfix hd">
+                    <img src="__PUBLIC__/images/99-7.png" alt=""/>
+                    <h1>{{$cat.name}}生活</h1>
+                    <ul>
+                        {{ffcategory catid=$cat.catid to=d}}
+                        {{foreach from=$d.child.2.child item=x}}
+                        <li>{{$x.name}}</li>
+                        {{/foreach}}
+                    </ul>
+                    <a class="more" href="{{$d.child.2.url}}">MORE</a>
+                </div>
+                <div class="section-down clearfix bd">
+                    {{foreach from=$d.child.2.child item=h}}
+                    <ul>
+                        <div class="part1">
+                            <div class="inBox">
+                                <div class="inHd">
+                                    <ul><li></li><li></li><li></li></ul>
+                                </div>
+                                <div class="inBd">
+                                    {{fflist catid=$h.catid order="sort asc,cid desc" attr="top" to=ls}}
+                                    {{foreach from=$ls item=p key=k}}
+                                    {{if $k<3}}
+                                    <ul>
+                                        <a href='{{$p.url}}'>
+                                            <img src="{{$p.thumb}}" alt=""/>
+                                            <div class="img-after"><p>{{$p.title}}</p></div>
+                                        </a>
+                                    </ul>
+                                    {{/if}}
+                                    {{/foreach}}
+                                </div>
+                            </div>
+                            <ul class="liuxue">
+                                {{foreach from=$ls item=p1 key=k1}}
+                                {{if $k1>=3&&$k1<6}}
+                                <li class="clearfix"><b></b>
+                                    <a href="{{$p1.url}}">{{$p1.title}}</a>
+                                    <span>{{"Y-m-d"|date:$data.create_time}}</span>
+                                </li>
+                                {{/if}}
+                                {{/foreach}}
+                            </ul>
+                        </div>
+                        <div class="part2">
+                            {{foreach from=$ls item=p2 key=k2}}    
+                            {{if $k1>=6&&$k1<9}}
+                            <div class="card clearfix">
+                                <img src="{{$p2.thumb}}" alt=""/>
+                                <h1>{{$p2.title}}</h1>
+                                <a href="{{$p2.url}}">{{$p2.description}}</a>
+                            </div>
+                            {{/if}}
+                            {{/foreach}}
+                        </div>
+                        <div class="part3">
+                            <img src="{{$ls.9.thumb}}" alt=""/>
+                            <h1><a href="{{$ls.9.url}}">{{$ls.9.title}}</a></h1>
+                            <ul class="liuxue">
+                                {{foreach from=$ls item=p3 key=k3}}  
+                                {{if $k1>=10&&$k1<15}}
+                                <li class="clearfix"><b></b><a href="{{$p3.url}}">{{$p3.title}}</a></li>
+                                {{/if}}
+                                {{/foreach}}
+                            </ul>
+                        </div>
+                    </ul>
+
+                    {{/foreach}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{include file="system/footer.html"}}

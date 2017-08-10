@@ -1,0 +1,37 @@
+{{include file="system/header.html"}}
+<body>
+{{include file="system/nav_1.html"}}
+
+<div class="yyt-24">
+    <div class="wrapper clearfix">
+                {{if $smarty.session.apply1}}
+        <p class="title">恭喜，您的选校已生成!</p>
+        {{/if}}
+        {{foreach from=$smarty.session.apply1 item=v key=k}}
+        {{if $smarty.session.apply1}}
+        {{if $v}}
+        <div class="card clearfix {{if $k%2==1}}noRight{{/if}}">
+            <img src="__PUBLIC__/uploads/{{$v.thumb}}" alt=""/>
+            <h1>{{$v.title}}</h1>
+            <p class="en">{{$v.etitle}}</p>
+            <p class="main">{{$v.q_zhuanye}}</p>
+            <p class="main">{{$v.q1_zhuanye}}</p>
+        </div>
+        {{/if}}
+        {{/if}}
+        {{/foreach}}
+
+
+        <div class="clearfix clear"></div>
+        <div class="submit clearfix">
+            <p>重新选择院校</p>
+            {{ffcategory catid=81 to=u}}
+            <a href="{{$u.url}}" class="prev">上一步</a>
+            <a href="__ROOT__/Fguestbook/stemp2?catid=82&temp=2" class="next">下一步</a>
+            <p>填写个人信息</p>
+        </div>
+    </div>
+
+  {{include file="system/footer.html"}}
+</body>
+</html>

@@ -1,0 +1,45 @@
+{{include file="system/header.html"}}
+<body>
+{{include file="zixun/sys/znav2.html"}}
+<div class="yyt-101">
+        {{ffcategory catid=$cat.parentid to=a}}
+      <div class="wrapper">
+        <div class="top-nav"><img src="__PUBLIC__/images/13-1.png" alt=""/>
+            <p><a href="{{$a.url}}">首页</a> > <a href="{{$cat.url}}">{{$cat.name}}</a></p>
+        </div>
+    </div>
+    <div class="wrapper clearfix">
+        <div class="part-left">
+            <div class="content102 clearfix">
+                <h1>{{$data.title}}</h1>
+                <p class="time">{{"Y-m-d"|date:$data.create_time}}   |   发布者: {{$data.resource}}   |   查看: <span>10885</span>   </p>
+                <div class="article">   
+                    {{$data.content}}
+                </div>
+                <a href="javascript:history.back(-1);" class="back">返回上一级</a>
+                 <a href="{{$data.next_url}}?leibie={{$smarty.get.leibie}}" class="fenye-prev">上一篇：<span>{{$data.next_title}}</span></a>
+                <a href="{{$data.pre_url}}?leibie={{$smarty.get.leibie}}" class="fenye-next">下一篇：<span>{{$data.pre_title}}</span></a>
+            </div>
+        </div>
+        <div class="part-right">
+            <div class="inBox">
+                <div class="inHd">
+                    <ul><li></li><li></li><li></li></ul>
+                </div>
+                <div class="inBd">
+                    {{fflist catid=$cat.catid to=y order="sort asc,cid desc" pagesize=3 attr="hot"}}
+                    {{foreach from=$y item=u}}
+                    <ul>
+                        <img src="{{$u.thumb}}" alt=""/>
+                        <div class="img-after"><p>{{$u.title}}</p></div>
+                    </ul>
+                    {{/foreach}}
+
+                </div>
+            </div>
+            <img src="__PUBLIC__/images/3-7.png" alt="" class="banner-small"/>
+        </div>
+    </div>
+
+</div>
+{{include file="system/footer.html"}}

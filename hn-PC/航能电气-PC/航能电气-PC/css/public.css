@@ -1,0 +1,249 @@
+/*浮动*/
+.fl { float: left; }
+.fr { float: right; }
+
+/*清除浮动*/
+.clearfix:after {
+    height: 0;
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+}
+.clearfix { zoom: 1; }
+* html .clearfix { zoom: 1; }
+
+
+
+/* === 头部 header === */
+#header{ 
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%; 
+	height: 76px; 
+	background-color: #fff;
+	z-index: 999;
+}
+.header{ 
+	width: 100%; 
+	margin: 0 auto;
+}
+.logo{
+	position: absolute;
+	top: 20px;
+	left: 50px;
+}
+.nav{ 
+	height: 76px;
+	padding-right: 250px;
+}
+.nav ul li{
+	float: left;
+	height: 76px;
+	line-height: 76px;
+	padding-left: 34px;
+	padding-right: 34px;
+}
+.nav ul li a:hover,
+.nav ul li.on a { color: #007b5a; }
+.search {
+	position: absolute;
+	top: 28px;
+	right: 50px;
+	width: 130px;
+	height: 24px;
+	line-height: 24px;
+	padding-left: 10px;
+	padding-right: 40px;
+	background: url(../images/search-bg.png) no-repeat;
+}
+.search input {
+	width: 140px;
+	color: #666;
+	font-size: 14px;
+	background-color: #fff;
+}
+.search .search-btn {
+	position: absolute;
+	top: 0;
+	right: 8px;
+	display: inline-block;
+	height: 14px;
+	width: 14px;
+	padding: 4px;
+	cursor: pointer;
+	background: url(../images/search.png) no-repeat 4px center;
+}
+
+ 
+/* === 底部 footer === */
+#footer { 
+	width: 100%; 
+	height: 300px;
+	background-color: #007857;
+}
+.footer { 
+	width: 1200px;
+	padding-top: 68px;
+	padding-right: 20px;
+	margin: 0 auto;
+}
+.one h2,
+.two h2,
+.three h2 {
+	color: #fff;
+	font-size: 14px;
+	padding-bottom: 12px;
+}
+.one a {
+	display: block;
+	color: #fff;
+	font-size: 12px;
+}
+.one a+a { padding-top: 12px; }
+.one a:hover,
+.three p a:hover { color: #d0cbcb; }
+.two {
+	padding-left: 120px;
+	padding-right: 100px;
+}
+.two p,
+.two p span,
+.three p,
+.three p a,
+.four span {
+	color: #fff;
+	font-size: 12px;
+}
+.two p+p,
+.three p+p { padding-top: 12px; }
+.four{ 
+	width: 110px; 
+	text-align: center;
+	padding-left: 168px; 
+	padding-top: 12px;
+}
+.four img{
+	width: 110px;
+	height: 110px;
+}
+.five{ padding-top: 50px; }
+
+
+
+/*产品*/
+.product-intro{
+	float: left;
+	width: 240px;
+	height: 356px;
+	background: url(../images/bg0.png) no-repeat center;
+}
+.product-intro:hover{
+	background: url(../images/on.png) no-repeat;
+}
+.pimg-name{ 
+	padding: 10px 12px;
+	text-align: center;
+}
+.pimg-name a{
+	display: inline-block;
+	height: 180px;
+	width: 196px;
+	padding-top: 20px;
+	overflow: hidden;
+	border-bottom: 1px solid #dadada;
+}
+.pimg-name a img{ width: 172px; height: 126px; overflow: hidden;}
+.pimg-name a p{
+	padding-top: 20px;
+	color: #007857;
+	width: 196px;
+	font-weight: bold;
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	text-align: left;
+}
+.product-text{
+	padding: 0 22px;
+}
+.product-text p{ font-weight: bold;}
+.product-text p+p{ padding-top: 6px;}
+.product-text p span{ color: #666; font-weight: normal;}
+
+
+.brand-logo{
+	float: left;
+	width: 180px;
+	height: 113px;
+	padding: 10px;
+	line-height: 113px;
+	text-align: center;
+	background: url(../images/brand-bg.png) no-repeat;
+}
+.brand-logo a{
+	display: inline-block;
+	width: 184px;
+	height: 113px;
+	overflow: hidden;
+}
+.brand-logo a img{
+	width: 140px;
+	height: 116px;
+	vertical-align: middle;
+}
+.brand-logo a:hover{ border: 1px solid #eae9e9; }
+
+/*右侧消息栏*/
+.side-right{
+	position: fixed;
+	right: 20px;
+	top: 500px;
+	width: 68px;
+	text-align: center;
+	z-index: 999;
+}
+.side-right .qq{
+	display: inline-block;
+	width: 68px;
+	height: 68px;
+	margin-bottom: 2px;
+	line-height: 100px;
+	color: #fff;
+	background: #007857 url(../images/qq.png) no-repeat center 12px;
+}
+.side-right .top{
+	display: inline-block;
+	width: 68px;
+	height: 68px;
+	background: #c9c9c9 url(../images/top.png) center center no-repeat;
+}
+
+
+/*page*/
+.page{
+	text-align: center;
+	padding-top: 34px;
+	padding-bottom: 34px;
+	font-size: 0;
+}
+.page a{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	font-size: 14px;
+	background-color: #49c7a4; 
+	margin-right: 2px;
+	margin-left: 2px;
+}
+.page a:hover,
+.page a.on{
+	background-color: #007857;
+}
+
+
+

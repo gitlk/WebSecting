@@ -1,0 +1,180 @@
+
+/*=== 首页及子网站diy.html style ===*/
+
+/*=== banner ===*/
+#banner{
+	width: 100%;
+	min-height: 5.8rem;
+}
+.banner-swiper{ position: relative; overflow: hidden; }
+.banner-swiper ul li{ min-height: 5.8rem; width: 100%; overflow: hidden; }
+.banner-swiper ul li img{
+	width: 100%;
+	height: auto;
+}
+.banner-swiper .pagination{
+	position: absolute;
+	left: 0;
+	bottom: 0.05rem;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	z-index: 9;
+}
+.swiper-pagination-bullet{
+	width: 6px;
+	height: 6px;
+	opacity: 1;
+	background: #fff;
+}
+.swiper-pagination-bullet-active{
+	background: #0061b2;
+	opacity: 1;
+}
+ 
+/*=== index-nav ===*/
+#index-nav{ background: #fff; }
+.indexnav-item{ font-size: 0; }
+.indexnav-item a.item{
+	display: inline-block;
+	width: 25%;
+	height: 3.75rem;
+	padding-top: 2.25rem;
+	text-align: center;
+	color: #666;
+	font-size: 0.6rem;
+}
+.indexnav-item a.n1{ background: url(../images/nicon1.png) no-repeat center 0.9rem; }
+.indexnav-item a.n2{ background: url(../images/nicon2.png) no-repeat center 0.9rem; }
+.indexnav-item a.n3{ background: url(../images/nicon3.png) no-repeat center 0.9rem; }
+.indexnav-item a.n4{ background: url(../images/nicon4.png) no-repeat center 0.9rem; }
+.indexnav-item a.n5{ background: url(../images/nicon5.png) no-repeat center 0.9rem; }
+.indexnav-item a.n6{ background: url(../images/nicon6.png) no-repeat center 0.9rem; }
+.indexnav-item a.n7{ background: url(../images/nicon7.png) no-repeat center 0.9rem; }
+.indexnav-item a.n8{ background: url(../images/nicon8.png) no-repeat center 0.9rem; }
+
+/*热门院校 section1*/
+.section1 .head{ background: url(../images/hotschoolicon.png) no-repeat 0.45rem 1rem; }
+.section1-swiper .swiper-slide ul li{ padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.section1-swiper .swiper-slide ul li+li{ border-top: 1px solid #efefef;  }
+.section1-swiper .swiper-slide ul li a.item{ display: block; width: 100%; padding-left: 5%; }
+.section1-swiper .swiper-slide ul li .item img.schoolimg{ width: 21%; height: auto; }
+.section1-swiper .swiper-slide ul li .item .more{ width: 10%; height: auto; padding-top: 0.25rem;}
+.section1-swiper .swiper-slide ul li .item .info{ padding-left: 3.125%; }
+.section1-swiper .swiper-slide ul li .item .info .schoolname{ color: #69696b; font-size: 0.65rem; padding-top: 0.2rem; padding-bottom: 0.4rem; }
+.section1-swiper .swiper-slide ul li .item .info .peoplenum{ color: #b5b5b5; font-size: 0.45rem; }
+
+
+/*院校排名 section2*/
+.section2 .head{ background: url(../images/rank.png) no-repeat 0.45rem 1rem; }
+.section2-swiper .swiper-slide .silde-con{ width: 100%; margin: 0.75rem auto; }
+.section2-swiper .swiper-slide .silde-con a{
+	width: 100%;
+	height: 2.55rem;
+	display: block;
+	padding-left: 4%;
+	padding-right: 4%;
+}
+.section2-swiper .swiper-slide .silde-con a i{
+	width: 19.5%;
+	display: inline-block;
+	color: #999;
+	font-size: 0.75rem;
+	font-style: normal;
+	padding-top: 0.8rem;
+	background: url(../images/icon1.png) no-repeat right 0.8rem;
+}
+.section2-swiper .swiper-slide .silde-con a .s{
+	width: 78%;
+	height: 3rem;
+	background: url(../images/scbg.png) no-repeat center top;
+	background-size: 100% 88%;
+	margin: 0 auto;
+	padding-left: 11.2%;
+	padding-top: 0.4rem;
+}
+.section2-swiper .swiper-slide .silde-con a .s p{ width: 94%; overflow: hidden;white-space:nowrap; text-overflow:ellipsis; }
+.section2-swiper .swiper-slide .silde-con a .s p.s-ch{ color: #999; font-size: 0.65rem; padding-bottom: 0.25rem; }
+.section2-swiper .swiper-slide .silde-con a .s p.s-en{ color: #999; font-size: 0.45rem; }
+.section2-swiper .swiper-slide .silde-con.active a i{ color: #005fb1; background: url(../images/icon1-on.png) no-repeat right 0.8rem; }
+.section2-swiper .swiper-slide .silde-con.active a .s{ background: url(../images/scbg-on.png) no-repeat right top; background-size: 100% 100%; }
+.section2-swiper .swiper-slide .silde-con.active a .s p.s-ch{ color: #005fb1; }
+.section2-swiper .swiper-slide .silde-con.active a .s p.s-en{ color: #afcbec; }
+
+/*留学专题 section3*/
+.section3 .head{ background: url(../images/zt.png) no-repeat 0.45rem 1rem; }
+.section3  .section3-swiper .slide-con{ padding: 0 1.6%; width: 100%; height: auto; margin-bottom: 0.6rem; font-size: 0; }
+.section3  .section3-swiper .slide-con a.item{
+	float: left;
+	display: block;
+	width: 45.6%;
+	margin: 0 2.2%;
+	text-align: center;
+	padding-bottom: 0.75rem;
+}
+.section3  .section3-swiper .slide-con a.item img{ width: 100%; height: auto; padding-bottom: 0.25rem; }
+.section3  .section3-swiper .slide-con a.item em{ color: #999; font-size: 0.6rem; font-style: normal; }
+
+/*子网站*/
+.diy01 .head{ background: url(../images/diyicon1.png) no-repeat 0.45rem 1rem; padding: 1rem 0.75rem 0.65rem 2rem; }
+.section4 .head{ background: url(../images/diyicon3.png) no-repeat 0.5rem 0.9rem; padding: 1rem 0.75rem 0.65rem 1.8rem; }
+.section5 .head{ background: url(../images/diyicon2.png) no-repeat 0.5rem 0.9rem; padding: 1rem 0.75rem 0.65rem 1.8rem; }
+.section6 .head{ background: url(../images/diyicon4.png) no-repeat 0.5rem 0.9rem; padding: 1rem 0.75rem 0.65rem 2rem; }
+.diy0 .tabs{ width: 100%; padding: 0 0.5rem; height: auto; text-align: left; }
+.diy0 .tabs a{
+	width: 21%;
+	text-align: center;
+	padding: 0;
+	margin: 0 1.7% 0.75rem;
+	height: 1.25rem;
+	line-height: 1.25rem;
+}
+.section .head .more-list{ height: 0.9rem; width: 1.4rem; position: relative; }
+.section .head .more-list .more{
+	display: none;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	font-size: 0.6rem;
+    color: #666;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+.section .head .more-list a.on{display: block;}
+
+/*移民 section5*/
+.section5  .section5-swiper .slide-con a.item{
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 0.75rem 1.2rem;
+	border-top: 1px solid #efefef;
+} 
+.section5  .section5-swiper .slide-con a.item p{ color: #21303e; font-size: 0.6rem; padding-bottom: 0.6rem; width: 92%; }
+.section5  .section5-swiper .slide-con a.item span{ color: #b5c3d0; font-size: 0.5rem;  display: block;}
+.section5  .section5-swiper .slide-con a.item i{ 
+	position: absolute; 
+	right: 1.25rem; 
+	top: 1rem;
+	width: 0.55rem; 
+	height: 0.9rem; 
+	background: url(../images/jiantoux.png) no-repeat center; 
+}
+.section5  .section5-swiper .slide-con a.on i{ background: url(../images/icon5.png) no-repeat center;  }
+
+/*生活 section5*/
+.section4 .section4-swiper .slide-con{ padding: 0 1.6%; width: 100%; height: auto; margin-bottom: 0.6rem; font-size: 0; }
+.section4 .section4-swiper .slide-con a.item{
+	float: left;
+	display: block;
+	width: 45.6%;
+	margin: 0 2.2%;
+	text-align: center;
+	padding-bottom: 0.75rem;
+}
+.section4 .section4-swiper .slide-con a.item img{ width: 100%; height: auto; padding-bottom: 0.25rem; }
+.section4 .section4-swiper .slide-con a.item em{ color: #999; font-size: 0.6rem; font-style: normal; }
+
+/*新闻 section6*/
+.section6 .news{ padding-bottom: 1.4rem; }
+

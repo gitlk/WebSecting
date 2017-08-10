@@ -1,0 +1,361 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+    <div class="yyt-11">
+        <div class="wrapper">
+            <div class="choose clearfix">
+                <div class="title">
+                    <img src="__PUBLIC__/images/11-1.png" alt="" class="title-img"/>
+                </div>
+                <div class="left">
+                    <div class="row clearfix">
+                        <div class="row-left place"><p>所属院系：</p></div>
+                        <div class="row-right place">
+                            <a href="javascript:;" class="on" onclick="yuanxi(0);">全部</a>
+                            {{foreach from=$show.yuanxi item=city}}
+                            <a href="javascript:;" onclick="yuanxi('{{$city.yuanxi}}');">{{$city.yuanxi}}</a> 
+                            {{/foreach}}
+
+                        </div>
+                        <div class="row-right show-place" id="lingyu">
+                            <a href="javascript:;" class="on">全部</a>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="row-left"><p>申请层次：</p></div>
+                        <div class="row-right">
+                            <a href="javascript:;" class="on" onclick="shengqing(0);">全部</a>
+                            <a href="javascript:;" onclick="shengqing(1);">小学</a>
+                            <a href="javascript:;" onclick="shengqing(2);">初中</a>
+                            <a href="javascript:;" onclick="shengqing(3);">高中</a>
+                            <a href="javascript:;" onclick="shengqing(4);">本科</a>
+                            <a href="javascript:;" onclick="shengqing(5);">研究生</a>
+                            <a href="javascript:;" onclick="shengqing(6);">博士</a>
+                            <a href="javascript:;" onclick="shengqing(7);">语言</a>
+                            <a href="javascript:;" onclick="shengqing(8);">专科</a>
+                        </div>
+                    </div>
+                    <!--                <div class="row clearfix">
+                                        <div class="row-left"><p>入学时间：</p></div>
+                                        <div class="row-right">
+                                            <div class="select">
+                                                <span>2017</span><b></b>
+                                                <ul class="address">
+                                                    <li>2016</li>
+                                                    <li>2017</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                    <div class="row clearfix">
+                        <div class="row-left"><p>专业排名：</p></div>
+                        <div class="row-right">
+                            <a href="javascript:;" class="on" onclick="zysort(0)">全部</a> 
+                            <a href="javascript:;" onclick="zysort('1-50')">1-50</a>
+                            <a href="javascript:;" onclick="zysort('50-100')">51-100</a>
+                            <a href="javascript:;" onclick="zysort('101-200')">101-200</a> 
+                            <a href="javascript:;" onclick="zysort('200-1000000')">200以上</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <a class="show-btn" rel="0" href="javascript:;"><img src="__PUBLIC__/images/11-2.png" alt=""/></a>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="shaixuan-bef clearfix">
+                <div class="part1">
+                    <a class="on" href="javascript:;"  id="sort" onclick="sort();">默认</a>
+                    <a rel="2" href="javascript:;" id="sort1">关注数 <span class="upDown"></span></a>
+                    <a rel="2" href="javascript:;" id="sort2">学制 <span class="upDown"></span></a>
+                    <a rel="2" href="javascript:;" id="sort3">学费 <span class="upDown"></span></a>
+                </div>
+                <div class="part2 clearfix">
+                    <input type="text" placeholder="请输入专业名称关键字" id="sea"/>
+                    <a href="javascript:;" onclick="sea();">搜索</a>
+                </div>           
+                <div class="part3">
+                    <p>共 <span class="red" id="count">{{$count}}</span>个相关专业<span class="red" id="curp">{{$a.page}}</span>/<span id="totalp">{{$a.num}}</span></p>
+                    <a href="{{$a.pre}}" class="pagesn" id="prep" data-value=''><img src="__PUBLIC__/images/2-6.png" alt=""/></a>
+                    <a href="{{$a.next}}" class="pagesn" id="nextp"  data-value=''><img src="__PUBLIC__/images/2-7.png" alt=""/></a>
+                </div>
+            </div>
+           {{ffsql sql="select *from fangfa_atten where user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=g}}
+                {{php}}
+                $data = $this->_tpl_vars['g'];
+                foreach($data as $k=>$v){
+                   $m[$v['id']] = $v['user_id'];
+                }
+                    $this->_tpl_vars['g']=$m;
+                {{/php}}         
+            <div class="shaixuan" >
+                {{foreach from=$show.info item=list}}
+                <div class="card clearfix">
+                    <a class="part1" href="{{$list.url}}">
+                        <h1>{{$list.title}}</h1>
+                        <p>学制：{{$list.xuezhi}}年&nbsp;&nbsp;&nbsp;&nbsp;专业方向：{{$list.lingyu}}&nbsp;&nbsp;&nbsp;&nbsp;学位类型：{{$list.leixing}}</p>
+                    </a>
+                    <div class="part2">
+                        <p>排名：<span>{{$list.zysort}}</span></p>
+                    </div>
+                    <div class="part3">
+                        <p>学费：<span>{{$list.xuefei}} 美元/年</span></p>
+                    </div>
+                    <div class="part4">
+        <a rel="{{if $list.cid|array_key_exists:$g}}1{{else}}0{{/if}}" href="javascript:;"  del-val="{{$list.cid}}" class="focus-yyt-11"
+        {{if $list.cid|array_key_exists:$g}}style="background-color:#98a5b1;color:#fff;border-color:#fff"{{else}}style="background-color:#fff;color: #015db0;border-color:#015db0"{{/if}}
+        >{{if $list.cid|array_key_exists:$g}}不关注{{else}}加关注{{/if}}</a>                     
+                        
+                        <a href="">免费资讯专家</a>
+                    </div>
+                </div>
+                {{/foreach}}
+                <div class="clearfix clear"></div>
+                <div class="fenye clearfix">
+                    {{$show.pages}}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    {{include file="system/footer.html"}}
+    <input type="hidden" id="yuanxi" />
+    <input type="hidden" id="lingyu1" />
+    <input type="hidden" id="shengqing" />
+    <input type="hidden" id="zysort" />
+    <input type="hidden" id="search">
+    <script>
+                        function xingzhi(a){
+                        $('#xingzhi').val(a);
+                                ajax();
+                        };
+                        function yuanxi(c){
+                        $('#yuanxi').val(c);
+                                $('#address').val("");
+                                var catid = {{$cat.catid}};
+                                var yuanxi = c;
+                                var url = "__ROOT__/Fcontent/yuanxi"; //提交地址
+                                var data = {catid:catid, yuanxi:yuanxi};
+                                $.post(url, data, function(result){
+                                $("#lingyu").html(result.result);
+                                }, 'json');
+                                ajax();
+                        };
+                        function shengqing(s){
+                        $('#shengqing').val(s);
+                                ajax();
+                        };
+                        function xuefei(x){
+                        $('#xuefei').val(x);
+                                ajax();
+                        };
+                        function zysort(q){
+                        $('#zysort').val(q);
+                                ajax();
+                        };
+                        function lingyu(a, obj){
+                        $('#lingyu1').val(a);
+                                $(obj).siblings().removeClass('on');
+                                $(obj).addClass('on');
+                                ajax();
+                        }
+                /**
+                 * ajax筛选
+                 * author:like 2013/8/24
+                 */
+                function ajax(){
+                //获取当前筛选条件
+                var yuanxi = $("#yuanxi").val();
+                        var lingyu = $("#lingyu1").val();
+                        var cengci = $("#shengqing").val();
+                        var zysort = $("#zysort").val();
+                        var title = $("#search").val();
+                        //获取排序条件
+                        var guanzhu = $('#sort1').attr("rel");
+                        var xuezhi = $('#sort2').attr("rel");
+                        var xuefei = $('#sort3').attr("rel");
+                        var catid = {{$cat.catid}};
+                        var url = "__ROOT__/Fcontent/zhuanye"; //提交地址
+                        var data = {catid:catid, yuanxi:yuanxi, lingyu:lingyu, cengci:cengci, xuefei:xuefei, zysort:zysort, guanzhu:guanzhu,
+                                xuezhi:xuezhi, title:title};
+                        $.post(url, data, function(result){
+                        $(".shaixuan").html(result.str); //学院
+                                $(".fenye").html(result.pages); //翻页
+                                $("#count").html(result.count); //总数
+                                $("#curp").html(result.cur_page); //当前页码
+                                $("#totalp").html(result.total); //总页数
+                                $("#prep").attr({"data-value":result.pre, "href":"javascript:;"});
+                                $("#nextp").attr({"data-value":result.next, "href":"javascript:;"});
+                        }, 'json');
+                }
+                /**
+                 * ajax异步分页
+                 * author:like 2013/8/24
+                 */
+                function ajaxload2(p){
+                //获取当前筛选条件
+                var yuanxi = $("#yuanxi").val();
+                        var lingyu = $("#lingyu1").val();
+                        var cengci = $("#shengqing").val();
+                        var zysort = $("#zysort").val();
+                        var title = $("#search").val();
+                        //获取排序条件
+                        var guanzhu = $('#sort1').attr("rel");
+                        var xuezhi = $('#sort2').attr("rel");
+                        var xuefei = $('#sort3').attr("rel");
+                        var catid = {{$cat.catid}};
+                        var url = "__ROOT__/Fcontent/zhuanye"; //提交地址
+                        var data = {catid:catid, yuanxi:yuanxi, lingyu:lingyu, cengci:cengci, xuefei:xuefei, zysort:zysort, guanzhu:guanzhu,
+                                xuezhi:xuezhi, title:title, page:p};
+                        $.post(url, data, function(result){
+                        $(".shaixuan").html(result.str);
+                                $(".fenye").html(result.pages);
+                                $("#count").html(result.count);
+                                $("#curp").html(result.cur_page);
+                                $("#totalp").html(result.total);
+                                $("#prep").attr({"data-value":result.pre, "href":"javascript:;"});
+                                $("#nextp").attr({"data-value":result.next, "href":"javascript:;"});
+                        }, 'json');
+                }
+                function sea(){
+                var a = $("#sea").val();
+                        $("#search").val(a);
+                        ajax();
+                }
+                $('#nextp').click(function(){
+                var a = $(this).attr("data-value");
+                        if (a != ''){
+                ajaxload2(a);
+                }
+                }); ;
+                        $('#prep').click(function(){
+                var a = $(this).attr("data-value");
+                        if (a != ''){
+                ajaxload2(a);
+                }
+                }); ;  </script>
+
+
+    <script>
+                        //院校查询---------------------------------------------------------------------------------------
+                        //choose选中变色
+                        $('.row-right a').on('click', function () {
+                $(this).siblings().removeClass('on');
+                        $(this).addClass('on');
+                });
+                        //展开/收起
+                        $('.show-btn').click(function(){
+                var rel = $(this).attr('rel');
+                        $('.show-place').toggle();
+                        if (rel == 0){
+                $('.row-left.place').css('height', '73px');
+                        $(this).children('img').attr('src', '__PUBLIC__/images/2.3.png');
+                        $(this).attr('rel', '1');
+                }if (rel == 1){
+                $('.row-left.place').css('height', '110px');
+                        $(this).children('img').attr('src', '__PUBLIC__/images/2.2.png');
+                        $(this).attr('rel', '0');
+                };
+                });
+                        //默认排序
+                                function sort(){
+                                $('#sort1').attr("rel", "2");
+                                        $('#sort1 span').css('backgroundImage', 'url(__PUBLIC__/images/2-4.png)');
+                                        $('#sort2').attr("rel", "2");
+                                        $('#sort2 span').css('backgroundImage', 'url(__PUBLIC__/images/2-4.png)');
+                                        $('#sort3').attr("rel", "2");
+                                        $('#sort3 span').css('backgroundImage', 'url(__PUBLIC__/images/2-4.png)');
+                                        $('#sort4').attr("rel", "2");
+                                        $('#sort4 span').css('backgroundImage', 'url(__PUBLIC__/images/2-4.png)');
+                                        $('#sort5').attr("rel", "2");
+                                        $('#sort5 span').css('backgroundImage', 'url(__PUBLIC__/images/2-4.png)');
+                                        $('#sort6').attr("rel", "2");
+                                        $('#sort6 span').css('backgroundImage', 'url(__PUBLIC__/images/2-4.png)');
+                                        ajax();
+                                }
+                        //shaixuan-bef选中↑↓变换
+                        $('.shaixuan-bef a').click(function () {
+                        var m = $(this).attr("id"); //排除翻页执行ajax
+                                if (m != "nextp" && m != "prep"){
+                        $(this).siblings().removeClass('on');
+                                $(this).addClass('on');
+                                var rel = $(this).attr('rel');
+                                if (rel == 0 || rel == 2){
+                        $(this).children('span').css('backgroundImage', 'url(__PUBLIC__/images/2-5.png)');
+                                $(this).attr('rel', '1');
+                                $(this).siblings().attr("rel", "2");
+                                $(this).siblings().children('span').css('backgroundImage', 'url(__PUBLIC__/images/2-4.png)');
+                        }
+                        if (rel == 1){
+                        $(this).children('span').css('backgroundImage', 'url(__PUBLIC__/images/2-4.png)');
+                                $(this).attr('rel', '0');
+                                $(this).siblings().attr("rel", "2");
+                                $(this).siblings().children('span').css('backgroundImage', 'url(__PUBLIC__/images/2-4.png)');
+                        };
+                                ajax();
+                        }
+                        });
+
+    $('body').on("click",'.focus-yyt-11',function(){
+        var rel=$(this).attr('rel');
+        if(rel==0){
+            var obj = $(this);
+            var url = "__ROOT__/Findex/atten"; //提交地址
+            var gz=1;
+            var cid=$(this).attr("del-val");
+            var data = {cid:cid,gz:gz};
+            $.post(url, data, function(result){
+                         if(result.gz==1){
+                                    $(obj).css('background-color','#98a5b1');
+                                    $(obj).css('color','#fff');
+                                     $(obj).css('border-color','#fff');
+                                    $(obj).html('不关注');
+                                    $(obj).attr('rel','1');
+                             }else{
+                         alert("请登录后操作");
+                        window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                                 return false;
+                             }
+                       }, 'json');     
+        }if(rel==1){
+            var obj = $(this);
+            var url = "__ROOT__/Findex/atten"; //提交地址
+            var gz=0;
+            var cid=$(this).attr("del-val");
+            var data = {cid:cid,gz:gz};       
+             $.post(url, data, function(result){
+                         if(result.gz==0){
+                                $(obj).css('background-color','#fff');
+                                    $(obj).css('color','#015db0');
+                                     $(obj).css('border-color','#015db0');
+                                    $(obj).html('加关注');
+                                    $(obj).attr('rel','0');
+                             }else{
+                         alert("请登录后操作");
+                        window.location.href="__ROOT__/login.html?back="+window.location.href; 
+                                 return false;
+                             }
+                       }, 'json');                
+        }
+    });  
+
+    
+                                //join加申请单
+                                $('.join-btn').click(function(){
+                        var rel = $(this).attr('rel');
+                                if (rel == 0){
+                        $(this).css('background-color', '#98a5b1');
+                                $(this).html('取消');
+                                $(this).attr('rel', '1');
+                        }if (rel == 1){
+                        $(this).css('background-color', '#015db0');
+                                $(this).html('加入申请单');
+                                $(this).attr('rel', '0');
+                        }
+                        });
+    </script>
+</body>
+</html>

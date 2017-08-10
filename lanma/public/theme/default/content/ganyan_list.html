@@ -1,0 +1,71 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+
+
+<div class="yyt-30">
+    <div class="top-nav">
+        <div class="wrapper">
+            <img src="__PUBLIC__/images/13-1.png" alt=""/>
+            <p>
+                <a href="__ROOT__/">首页</a> > <a href="{{$cat.url}}">学员感言</a>
+            </p>
+        </div></div>
+    <div class="wrapper clearfix">
+        <div class="content clearfix">
+            {{ffpagelist catid=$cat.catid order="sort asc,cid desc" pagesize=9 to=show field="luqu,daxue,content"}}
+            <h1 class="title">已有 <span>{{$show.count}}</span>个小伙伴拿到offer！</h1>
+            <div class="card-group">
+                {{foreach from=$show.info item=v}}
+                <a class="card" style="background-image: url('{{$v.thumb}}') !important">
+                    <div class="name"><h1><img src="__PUBLIC__/images/30-2.png" alt=""/>{{$v.title}}<span>{{$v.daxue}}</span></h1>
+                        <p>{{$v.luqu|mb_substr:0:20:'utf8'}}</p>
+                    </div>
+                    <div class="pinlun">
+                        <img src="__PUBLIC__/images/30-3.png" alt=""/>
+                        <p>{{$v.description|mb_substr:0:40:'utf8'}}</p>
+                    </div>
+                        <div class="pop-content" >
+                        <img src="__PUBLIC__/images/30-4.png" alt="" class="pop-close"/>
+                        <div class="part1"><img src="{{$v.thumb}}" alt=""/></div>
+                        <div class="part2 clearfix">
+                            <h1><img src="__PUBLIC__/images/30-2.png" alt=""/>{{$v.title}}</h1>
+                            <h1 class="school"><img src="__PUBLIC__/images/30-6.png" alt=""/>{{$v.daxue}}</h1>
+                            <p><img src="__PUBLIC__/images/30-7.png" alt=""/>{{$v.luqu}}</p>
+                        </div>
+                        <div class="part3 clearfix">
+                            <img src="__PUBLIC__/images/30-7.png" alt=""/>
+                            <p>{{$v.content}}</p>
+                        </div>
+
+                    </div>
+                </a>
+                {{/foreach}}
+                <div class="clearfix clear"></div>
+                <div class="fenye clearfix">
+                    {{$show.pages}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="pop-shadow"></div>
+{{include file="system/footer.html"}}
+<script>
+    $('.card').click(function(){
+        $('.pop-shadow').show();
+        $(this).find('.pop-content').show();
+    });
+    $('.pop-close').click(function(e){
+        e.stopPropagation();
+        $('.pop-shadow').hide();
+        $('.pop-content').hide();
+    })
+
+
+
+
+</script>
+</body>
+</html>

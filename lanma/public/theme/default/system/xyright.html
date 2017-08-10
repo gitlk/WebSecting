@@ -1,0 +1,65 @@
+<div class="right-part">
+         {{ffsql sql="select *from fangfa_apply where user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=aly}}
+                  {{php}}
+
+                $data1 = $this->_tpl_vars['aly'];
+
+                foreach($data1 as $k=>$v){
+
+                   $ms[$v['cid']] = $v['user_id'];
+
+                }
+
+                    $this->_tpl_vars['aly']=$ms;
+
+                {{/php}} 
+    <div class="join">
+        <p>376人申请 &nbsp; &nbsp;| &nbsp; &nbsp;342人拿到offer</p>
+                {{if $xy.cid|array_key_exists:$aly}}
+                    <a href="javascript:;" class="join-btn" dav="{{$xy.cid}}" dal="{{$xy.catid}}" style="background-color:#98a5b1" rtitle="{{$xy.title}}" rthumb="{{$xy.thumb}}" rel="1">取消</a>
+                 
+                    {{else}}
+                   <a href="javascript:;" class="join-btn" dav="{{$xy.cid}}" dal="{{$xy.catid}}" rtitle="{{$xy.title}}" rthumb="{{$xy.thumb}}" rel="0">加入申请单</a>   
+                    {{/if}}
+    </div>
+    {{ffad aid=4 to=a4}}
+    <a href="{{$a4.setting.link}}">
+        <img src="__PUBLIC__/uploads/{{$a4.setting.image}}" alt="" class="banner-small"/>
+    </a>
+    <div class="hot clearfix">
+        <h1><span><img src="__PUBLIC__/images/3-8.png" alt=""/>本校热门专业</span></h1>
+        {{fflist catid=11 ext_sql=" AND xyid="|cat:$xy.cid|cat:" " order="sort asc,cid desc" attr="hot" to=zy}}
+
+        {{foreach from=$zy item=z}}
+        <a href="">{{$z.title}}</a> 
+        {{/foreach}}
+    </div>
+    <div class="week clearfix">
+        <h1><span><img src="__PUBLIC__/images/3-9.png" alt=""/>近一周申请该学校的同学（26人）</span></h1>
+        <div class="row clearfix">
+            <div class="person"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+            <div class="person"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+            <div class="person"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+            <div class="person noRight"><img src="images/3-10.png" alt=""/><p>王同学</p></div>
+        </div>
+        <a target="_blank" href="{{$xy.qurl}}">
+            {{$xy.qtitle}}</a>
+    </div>
+    <div class="and">
+        <h1><span><img src="__PUBLIC__/images/3-11.png" alt=""/>申请该校的同学还申请了</span></h1>
+        <a href="">澳大利亚新南威尔士大学</a>
+        <a href="">澳大利亚新南威尔士大学</a>
+        <a href="">澳大利亚新南威尔士大学</a> 
+        <a href="">澳大利亚新南威尔士大学</a>
+        <a href="">澳大利亚新南威尔士大学</a>
+    </div>
+    <div class="help">
+        <h1><span><img src="__PUBLIC__/images/3-12.png" alt=""/>顾问推荐</span></h1>
+        {{fflist catid=36 to=gw  order="sort asc,cid desc" field="zhiwei,qq" pagesize=2 attr="hot"}}
+        {{foreach from=$gw item=v}}
+        <div class="person clearfix">
+            <img src="{{$v.thumb}}" alt=""/><h1>{{$v.title}}</h1><p>{{$v.zhiwei}}</p><a href="tencent://message/?uin={{$v.qq}}&Site=sc.chinaz.com&Menu=yes">立即咨询</a>
+        </div>
+        {{/foreach}}
+    </div>
+</div>

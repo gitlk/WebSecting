@@ -1,0 +1,405 @@
+<div class="index-header">   
+    <div class="nav-up wrapper clearfix">
+        <div class="part1">
+            <img src="__PUBLIC__/images/index-header-logo.png" alt="" class="logo"/>
+        </div>
+        <div class="part2">
+            <div class="search-group clearfix">
+                <div class="select-search">
+                    <span>院校</span><b></b>
+                    <ul class="address">
+                        <li onclick="tiaojian(1)">院校</li>
+                        <li onclick="tiaojian(2)">资讯</li>
+                        <li onclick="tiaojian(3)">专业</li>
+                    </ul>
+                </div>
+                <form action="__ROOT__/Findex/searcha" id='myform' method="post">
+                    <input type="text" class="search-input" name='title' id='search' placeholder="院校关键词"/>
+                    <input type="hidden" value="1" id='tiaojian' name='term'/>
+                    <a href="javascript:;" class="search-btn" onclick='searcha()'></a>
+                </form>
+            </div>
+        </div>
+        <div class="{{if $smarty.session.fuserdata.user_id}}part4{{else}}part3{{/if}}">
+            <div class="top clearfix" >
+                {{if $smarty.session.fuserdata.user_id}}
+
+                    {{ffcategory catid=76 to=v}}
+                    <a class="fangan" href="javascript:;">{{$v.name}}</a>
+                         <span>|</span>
+                    {{ffcategory catid=68 to=v}}
+                    <a  class="center" href="{{$v.url}}">{{$v.name}}</a>
+
+                {{else}}
+
+                    {{ffcategory catid=67 to=v}}
+                    <a href="{{$v.url}}">{{$v.name}}</a>
+                    <a href="__ROOT__/login.html">登录</a>
+                    <img src="__PUBLIC__/images/index-header-person.png" alt="" class="index-header-person"/>
+
+                {{/if}}
+            </div>
+            <div class="down">
+                <img src="__PUBLIC__/images/index-header-phone.png" alt=""/>
+                <p>{{ffset var="companytel"}}</p>
+            </div>
+              <!--弹窗--> 
+{{if $smarty.session.fuserdata.user_id}}
+            <div class="tanchuang" style="z-index: 999">
+                <h1>最新申请的学校</h1>
+                {{ffsql sql="select t1.* from fangfa_content t1 left join fangfa_apply t2 on t1.cid=t2.cid where t1.status=9 and t2.user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=ay}}
+                {{ffsql sql="select count(*) as num from fangfa_content t1 left join fangfa_apply t2 on t1.cid=t2.cid where t1.status=9 and t2.user_id="|cat:$smarty.session.fuserdata.user_id|cat:' ' to=s}}
+  
+                <div class="show-school">
+                    {{foreach from=$ay item=y key=k}}
+                    {{if $y.title!=''}}
+                            <div class='card clearfix'>
+                                <a href='javascript:;'  class='del' onclick="del({{$y.cid}},{{$y.catid}},this)" id="del_{{$y.cid}}">删除</a>
+                                <img src='__PUBLIC__/uploads/{{$y.thumb}}' alt='' class='tanchuang-img'/>
+                                <p class='' tanchuang-name'>{{$y.title}}</p>
+                            </div> 
+                    {{/if}}
+                    {{/foreach}}
+                </div>
+                <div class="foot clearfix">
+                    <p>共申请 <span id="much" dev="0">{{$s.0.num}}</span>所学校</p>
+                               {{ffcategory catid=81 to=v}}
+                    <a href="{{$v.url}}" class="chakan-school">查看方案</a>
+                </div>
+            </div>
+{{/if}}        
+            
+        </div>
+    </div>
+    <div class="nav">
+        <div class="wrapper">
+            <ul class="nav-big clearfix">
+                <li class="firstLi"><span class="navicon1"></span><a class="nav-big-lis" href="">我要出国</a><span class="navicon2"></span>
+                    <div class="nav-left{{if $cat.topcatid!=""}} nav-left-no{{/if}}" >
+                        <div class="card clearfix">
+                            <img src="__PUBLIC__/images/nav-left1.png" alt=""/>
+                            <h1>我要去</h1>
+                            {{ffcategory catid=3 to=z}}
+                            <a href="{{$z.url}}" class="nav-left-more">MORE</a>
+                            <div class="clearfix clear"></div>
+                            <p>澳&nbsp;&nbsp;&nbsp;洲&nbsp;&nbsp;>&nbsp;&nbsp;<a href="">研究生</a><a href="">大学</a><a href="">中学</a></p>
+                            <p>英&nbsp;&nbsp;&nbsp;国&nbsp;&nbsp;>&nbsp;&nbsp;<a href="">研究生</a><a href="">大学</a><a href="">中学</a></p>
+                            <p>新西兰&nbsp;&nbsp;>&nbsp;&nbsp;<a href="">研究生</a><a href="">大学</a><a href="">中学</a></p>
+                        </div>
+                        <div class="card clearfix">
+                            <img src="__PUBLIC__/images/nav-left2.png" alt=""/>
+                            <h1>我要了解</h1>
+                            {{ffcategory catid=10 to=a}}
+                            <a href="{{$a.url}}" class="nav-left-more">MORE</a>
+                            <div class="clearfix clear"></div>
+                            <div class="a-group">
+                                {{ffcategory catid=20 to=b}}
+                                <a href="{{$b.url}}">院校排名</a>
+                                {{ffcategory catid=11 to=c}}
+                                <a href="{{$c.url}}">热门专业</a>
+                                {{ffcategory catid=37 to=c}}
+                                <a href="{{$c.url}}">申请条件</a>
+                                {{ffcategory catid=38 to=c}}
+                                <a href="{{$c.url}}">签证攻略</a>
+                                {{ffcategory catid=39 to=c}}
+                                <a href="{{$c.url}}">费用规划</a>
+                                {{ffcategory catid=10 to=c}}
+                                <a href="{{$c.url}}">全球院校</a>
+                            </div>
+                        </div>
+                        <div class="card clearfix">
+                            <img src="__PUBLIC__/images/nav-left3.png" alt=""/>
+                            <h1>我要服务</h1>
+                            <div class="clearfix clear"></div>
+                            <div class="a-group">
+                                {{ffcategory catid=35 to=c}}
+                                <a href="{{$c.url}}">留学问答</a>
+                                {{ffcategory catid=36 to=c}}
+                                <a href="{{$c.url}}">咨询顾问</a>
+                                {{ffcategory catid=40 to=c}}
+                                <a href="{{$c.url}}">DIY指导</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    {{if $cat.catid==1}}
+                    <div class="nav-right">
+                        <div class="free-idea">
+                            <p class="top">懒马24小时定制免费留学方案</p>
+                            <div class="choose-group clearfix">
+                                    <form action="__ROOT__/findex/choose" method="post" id="myform0"> 
+                                    <input type="hidden" name="term" value="1">
+                                    <input type="text" placeholder="输入姓名" value="" name="username"/>
+                                    <input type="text" placeholder="输入电话号码" value="" name="telphone"/>
+                                    <input type="text" placeholder="计划出国时间" value="" name="time"/>
+                                    <div class="select choose-big" style="z-index: 3;">
+                                        <span>想去的国家</span><b></b>
+                                        <ul class="address">
+                                                    {{foreach from=$show.city item=v}}
+                                                    <li onclick="city2('{{$v.city}}')">{{$v.city}}</li>
+                                                    {{/foreach}}
+                                        </ul>
+                                        <input type="hidden" value="" name="city" id='city2'>
+                                    </div>
+
+                                    <div class="select choose-big" style="z-index: 1;">
+                                        <span>目前就读年级</span><b></b>
+                                            <ul class="address">
+                                                <li><a href="javascript:;" onclick="shengqing(0);">全部</a>  </li>                                      
+                                                <li><a href="javascript:;" onclick="shengqing(1);">小学</a> </li> 
+                                                <li><a href="javascript:;" onclick="shengqing(2);">初中</a> </li> 
+                                                <li><a href="javascript:;" onclick="shengqing(3);">高中</a> </li> 
+                                                <li><a href="javascript:;" onclick="shengqing(4);">本科</a> </li> 
+                                                <li><a href="javascript:;" onclick="shengqing(5);">研究生</a> </li> 
+                                                <li> <a href="javascript:;" onclick="shengqing(6);">博士</a> </li> 
+                                                <li> <a href="javascript:;" onclick="shengqing(7);">语言</a> </li> 
+                                                <li> <a href="javascript:;" onclick="shengqing(8);">专科</a> </li> 
+                                            </ul>
+                                                <input type="hidden" value="" class="shengq" name="shengqing">
+                                    </div>
+                                    <a href="javascript:$('#myform0').submit()" class="free-btn">免费获取留学方案</a>
+                                </form>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    {{else}}
+                    <div class="nav-right">
+                        <div class="slideTxtBox tab1">
+                            <div class="hd">
+                                <ul><li class="tabLis">按院校选择</li><li class="tabLis">按专业选择</li></ul>
+                            </div>
+                            <div class="clearfix clear"></div>
+                            <div class="bd">
+                                <ul>
+                                    <div class="touming"></div>
+                                    <div class="choose-group clearfix">
+                                        <form action="__ROOT__/findex/choose" method="post" id="myform1"> 
+                                            <input type="hidden" name="term" value="1">
+                                            <div class="select choose-small" style="z-index: 3;">
+                                                <span>留学国家</span><b></b>
+
+                                                <ul class="address">
+                                                    {{foreach from=$show.city item=v}}
+                                                    <li onclick="city1('{{$v.city}}')">{{$v.city}}</li>
+                                                    {{/foreach}}
+                                                </ul>
+                                                <input type="hidden" value="" name="city" id='city1'>
+                                            </div>
+                                            <div class="select choose-small" style="z-index: 3;">
+                                                <span>课程层次</span><b></b>
+                                                <ul class="address">
+                                                    <li><a href="javascript:;" onclick="shengqing(0);">全部</a>  </li>                                      
+                                                    <li><a href="javascript:;" onclick="shengqing(1);">小学</a> </li> 
+                                                    <li><a href="javascript:;" onclick="shengqing(2);">初中</a> </li> 
+                                                    <li><a href="javascript:;" onclick="shengqing(3);">高中</a> </li> 
+                                                    <li><a href="javascript:;" onclick="shengqing(4);">本科</a> </li> 
+                                                    <li><a href="javascript:;" onclick="shengqing(5);">研究生</a> </li> 
+                                                    <li> <a href="javascript:;" onclick="shengqing(6);">博士</a> </li> 
+                                                    <li> <a href="javascript:;" onclick="shengqing(7);">语言</a> </li> 
+                                                    <li> <a href="javascript:;" onclick="shengqing(8);">专科</a> </li> 
+                                                </ul>
+                                                <input type="hidden" value="" class="shengq" name="shengqing">
+                                            </div>
+                                            <div class="select choose-big" style="z-index: 2;">
+                                                <span>所属大学</span><b></b>
+                                                <ul class="address" id='xyy'>
+
+                                                </ul>
+                                                <input type="hidden" value="" id='daxue' name="daxue">
+                                            </div>                                           
+                                            <div class="select choose-big" style="z-index: 1;">
+                                                <span>课程领域</span><b></b>
+                                                <ul class="address" id='xyly'>
+
+                                                </ul>
+                                                <input type="hidden" value="" id='ly2' name="lingyu">
+                                            </div>
+
+                                            <div class="clearfix"></div>
+                                            <a href="javascript:$('#myform1').submit()" class="choose-chakan">查询</a>
+                                        </form>
+                                        <div class="choose-other clearfix">
+                                            {{ffcategory catid=2 to=c}}
+
+                                            <a class="choose-others" href="{{$c.url}}">
+                                                <img src="__PUBLIC__/images/other1.png" alt=""/>
+                                                <p>中介费用</p>
+                                            </a>
+                                            {{ffcategory catid=4 to=c}}   
+                                            <a class="choose-others" href="{{$c.url}}">
+                                                <img src="__PUBLIC__/images/other2.png" alt=""/>
+                                                <p>极速测评</p>
+                                            </a>
+                                            {{ffcategory catid=31 to=c }}                       
+                                            <a class="choose-others last-others" href="{{$c.url}}">
+                                                <img src="__PUBLIC__/images/other3.png" alt=""/>
+                                                <p>智能择校</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </ul>
+                                <ul>
+                                    <div class="touming"></div>
+                                    <div class="choose-group clearfix">
+                                        <form action="__ROOT__/findex/choose" method="post" id="myform2"> 
+                                            <input type="hidden" name="term" value="3">
+                                            <div class="select choose-small">
+                                                <span>留学国家</span><b></b>
+
+                                                <ul class="address">
+                                                    {{foreach from=$show.city item=v}}
+                                                    <li onclick="city('{{$v.city}}')">{{$v.city}}</li>
+                                                    {{/foreach}}
+                                                </ul>
+                                                <input type="hidden" value="" name="city" id='city2'>
+                                            </div>
+                                            <div class="select choose-small">
+                                                <span>课程层次</span><b></b>
+                                                <ul class="address">
+                                                    <li><a href="javascript:;" onclick="shengqing(0);">全部</a>  </li>                                      
+                                                    <li><a href="javascript:;" onclick="shengqing(1);">小学</a> </li> 
+                                                    <li><a href="javascript:;" onclick="shengqing(2);">初中</a> </li> 
+                                                    <li><a href="javascript:;" onclick="shengqing(3);">高中</a> </li> 
+                                                    <li><a href="javascript:;" onclick="shengqing(4);">本科</a> </li> 
+                                                    <li><a href="javascript:;" onclick="shengqing(5);">研究生</a> </li> 
+                                                    <li> <a href="javascript:;" onclick="shengqing(6);">博士</a> </li> 
+                                                    <li> <a href="javascript:;" onclick="shengqing(7);">语言</a> </li> 
+                                                    <li> <a href="javascript:;" onclick="shengqing(8);">专科</a> </li> 
+                                                </ul>
+                                                <input type="hidden" value="" name="shengqing" class="shengq">
+                                            </div>
+                                            <div class="select choose-big">
+                                                <span>课程领域</span><b></b>
+                                                <ul class="address" id='lingyu'>
+
+                                                </ul>
+                                                <input type="hidden" value="" name="lingyu" id='lingyu2'>   
+                                            </div>
+                                            <div class="select choose-big">
+                                                <span>课程专业</span><b></b>
+                                                <ul class="address" id='zhuanye2'>
+
+                                                </ul>
+                                                <input type="hidden" value="" name="zhuanye" id='zhuanye'>        
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <a href="javascript:$('#myform2').submit()" class="choose-chakan">查询</a>
+                                        </form>     
+
+                                        <div class="choose-other clearfix">
+                                            {{ffcategory catid=2 to=c}}
+
+                                            <a class="choose-others" href="{{$c.url}}">
+                                                <img src="__PUBLIC__/images/other1.png" alt=""/>
+                                                <p>中介费用</p>
+                                            </a>
+                                            {{ffcategory catid=4 to=c}}   
+                                            <a class="choose-others" href="{{$c.url}}">
+                                                <img src="__PUBLIC__/images/other2.png" alt=""/>
+                                                <p>极速测评</p>
+                                            </a>
+                                            {{ffcategory catid=31 to=c }}                       
+                                            <a class="choose-others last-others" href="{{$c.url}}">
+                                                <img src="__PUBLIC__/images/other3.png" alt=""/>
+                                                <p>智能择校</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    {{/if}}
+                </li>
+                <li><a href="__ROOT__/" class="nav-big-lis{{if $cat.topcatid==""}} on{{/if}}">首页</a></li>
+                {{ffcategory parentid=0 to=nav}}
+                {{foreach from=$nav item=nv key=k}}
+                {{if $k==0}}
+                <li class="xiala"><a href="{{$nv.url}}" class="nav-big-lis {{if $cat.topcatid==$nv.catid}} on{{/if}}">{{$nv.name}}</a>
+                    <div class="nav-xiala">
+                        {{foreach from=$nv.childrens item=c}}
+                        <a href="{{$c.url}}" class="nav-xiala-li">{{$c.name}}</a>
+                        {{/foreach}}
+                    </div>
+                </li>
+                {{elseif $k<6}}
+                <li><a href="{{$nv.url}}" class="nav-big-lis{{if $cat.topcatid==$nv.catid}} on{{/if}}">{{$nv.name}}</a></li>
+                {{/if}}
+                {{/foreach}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script>
+                            //全站搜索
+                                    function tiaojian(a){
+                                    $("#tiaojian").val(a)
+                                    }
+                            function searcha(){
+                            var a = $("#search").val();
+                                    var b = $("#tiaojian").val();
+                                    if (a != '' && a != " "){
+                            $("#myform").submit();
+                            } else{
+                            alert('请填写搜索条件')
+                                    return false;
+                            }
+                            }
+                            //院校,专业搜索
+                            function xueyuan(c, a){
+                            $("#daxue").val(c);
+                                    var xyid = a;
+                                    var url = "__ROOT__/Fcontent/dxly"; //提交地址
+                                    var data = {xyid:xyid};
+                                    $.post(url, data, function(result){
+                                    $("#xyly").html(result.result);
+                                    }, 'json');
+                            }
+                            function ly2(c){
+                            $("#ly2").val(c);
+                            }
+                            function zhuanye(c){
+                            $('#zhuanye').val(c);
+                            }
+                            function shengqing(c){
+                            $('.shengq').val(c);
+                            }
+                            function city(c){
+                            $('#city2').val(c);
+                                    var lingyu = c;
+                                    var url = "__ROOT__/Fcontent/lingyus"; //提交地址
+                                    var data = {lingyu:lingyu};
+                                    $.post(url, data, function(result){
+                                    $("#lingyu").html(result.result);
+                                    }, 'json');
+                            };
+                                    function city1(c){
+                                    $('#city1').val(c);
+                                            var city = c;
+                                            var url = "__ROOT__/Fcontent/xycx"; //提交地址
+                                            var data = {city:city};
+                                            $.post(url, data, function(result){
+                                            $("#xyy").html(result.result);
+                                            }, 'json');
+                                    };
+                                    function city2(c){
+                                    $('#city2').val(c);
+                                    };
+                                    function lingyu(c, obj){
+                                    $("#lingyu2").val(c);
+                                            var lingyu = c;
+                                            var url = "__ROOT__/Fcontent/zyly"; //提交地址
+                                            var data = {lingyu:lingyu};
+                                            $.post(url, data, function(result){
+                                            $("#zhuanye2").html(result.result);
+                                            }, 'json');
+                                    }
+</script>

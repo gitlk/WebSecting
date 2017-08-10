@@ -1,0 +1,34 @@
+{{include file="system/header.html"}}
+<body>
+    {{include file="system/nav_1.html"}}
+<div class="yyt-344">
+    <div class="wrapper clearfix">
+        <div class="part-left">
+            <h1>搜索结果分类</h1>
+            <ul class="nav-zhuanti">
+                <li class="on"><a href="__ROOT__/findex/searcha?title={{$searchdata.title}}&term=2">资讯攻略</a><b></b></li>
+                <li><a href="__ROOT__/findex/searcha?title={{$searchdata.title}}&term=1">海外院校</a><b></b></li>
+                <li><a href="__ROOT__/findex/searcha?title={{$searchdata.title}}&term=3">院校专业</a><b></b></li>
+            </ul>
+        </div>
+        <div class="part-right">
+           <div class="title"><p>您搜索的“<span>{{$searchdata.title}}</span>”，共有 {{$count}} 条查询结果</p></div>
+            <div class="content-34-1">         
+                {{php}}foreach($this->_tpl_vars['data']['info'] as $key=>$v):{{/php}}
+                <a class="card clearfix" href="__ROOT__/{{php}}echo $v['url1'].$v['url']{{/php}}">
+                    <img src="__PUBLIC__/images/34-2.png" alt="" class="pic"/>
+                    <p class="name">{{php}}echo str_replace($this->_tpl_vars['searchdata']['title'],"<span class='keyWord'>".$this->_tpl_vars['searchdata']['title']."</span>",$v['title']);{{/php}}</p>
+                    <p class="time">发布日期：<span>{{php}}echo date("Y-m-d",$v['create_time']){{/php}}</span></p>
+                </a>
+               {{php}}endforeach;{{/php}}
+                <div class="fenye clearfix">
+                   {{$data.pages}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{{include file="system/footer.html"}}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="applicable-devive" content="mobile">
+<meta name="keywords" content="方法数码,方法数码,网络建站">
+<meta name="description" content="方法数码,方法数码,网络建站">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+<meta name="wap-font-scale" content="no">
+<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+<!-- 启用360浏览器的极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<!-- 避免IE使用兼容模式 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="HandheldFriendly" content="true">
+<!-- 微软的老式浏览器 -->
+<meta name="MobileOptimized" content="320">
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- windows phone 点击无高光 -->
+<meta name="msapplication-tap-highlight" content="no">
+<!-- 适应移动端end -->
+<!-- External CSS -->
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/swiper-3.3.1.min.css">
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>我的方案-懒马留学</title>
+</head>
+
+<body>
+<!-- header -->
+<div id="header" class="header clearfix">
+	<a id="return" class="fl" href="javascript:history.go(-1)"><img src="images/jiantou.png"></a>
+    <a id="head-title" href="javascript:;">我的方案</a>
+</div>
+
+<div class="pushTop"></div>
+
+
+<!-- content -->
+<div id="content">
+	<div class="myproject">
+		<div class="myproject-list">
+			<div class="clearfix">
+				<div class="check fl"><a href="javascript:;"><img class="on" src="images/login-icon3.png"></a></div>
+				<div class="pimg fl"><a href="javascript:;"><img src="images/school.png"></a></div>
+				<div class="info fl ">
+					<p class="a sl">澳大利亚墨尔本大学</p>
+					<p class="b sl">申请费：<span>¥：<i>300</i></span></p>
+				</div>
+			</div>
+			<div class="check c1"><a href="javascript:;"><img src="images/login-icon3.png"></a><span>网络与安全学士</span></div>
+			<div class="check c1"><a href="javascript:;"><img class="on" src="images/login-icon3.png"></a><span>信息技术学学士（信息安全）</span></div>
+			<a class="cancle" href="javascript:;"></a>
+		</div>
+
+		<div class="myproject-list">
+			<div class="clearfix">
+				<div class="check fl"><a href="javascript:;"><img src="images/login-icon3.png"></a></div>
+				<div class="pimg fl"><a href="javascript:;"><img src="images/school.png"></a></div>
+				<div class="info fl ">
+					<p class="a sl">澳大利亚墨尔本大学</p>
+					<p class="b sl">申请费：<span>¥：<i>300</i></span></p>
+				</div>
+			</div>
+			<div class="check c1"><a href="javascript:;"><img src="images/login-icon3.png"></a><span>网络与安全学士</span></div>
+			<div class="check c1"><a href="javascript:;"><img src="images/login-icon3.png"></a><span>信息技术学学士（信息安全）</span></div>
+			<a class="cancle" href="javascript:;"></a>
+		</div>
+
+		<div id="tabbtn">
+    		<p class="prev"><a href="＃">提交申请</a></p>
+    		<p class="next"><a href="#">修改留学申请</a></p>
+    	</div>
+
+	</div>
+</div>
+
+</body>
+<!-- External Script -->
+<script src="script/jquery-1.12.3.min.js"></script>
+<script src="script/swiper-3.3.1.min.js"></script>
+<script>
+	
+$(function(){
+	$(".myproject .check a").each(function(){
+		$(this).click(function(){
+			if($(this).children().hasClass("on")){
+				$(this).children().removeClass("on");
+			}else{
+				$(this).children().addClass("on");
+			}
+		})
+	})
+
+	
+})
+
+</script>
+</html>

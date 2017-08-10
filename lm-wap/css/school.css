@@ -1,0 +1,258 @@
+/*院校查询-头部共用样式*/
+.choosewrap{
+	padding-top: 0.6rem;
+	border-top: 1px solid #d5d5d5;
+	border-bottom: 1px solid #d5d5d5;
+	background-color: #fff;
+	margin-bottom: 0.55rem;
+}
+.bf{ background: #fff; padding: 0.75rem 0.5rem 0.75rem 0.5rem;}
+#search.on{ margin-bottom: 0;}
+#search-state p.l{ background: url(../images/picon.png) no-repeat left center; background-size: 0.65rem 0.45rem;}
+#search-state p.l span{ color: #da251d; }
+#schooltop .school .school-list li .left .name .n2{
+	background: url(../images/addr-on.png) no-repeat left 0.3rem;
+	background-size: 0.5rem 0.7rem;
+	padding-left: 0.75rem;
+}
+#schooltop .school .school-list li{ background: none; }
+#school-data{
+	width: 100%;
+	height: 2.45rem;
+	border-top: 1px solid #d6e8ff;
+	border-bottom: 1px solid #d6e8ff;
+	margin-bottom: 0.5rem;
+}
+#school-data ul li{ float: left; width: 25%; height: 2.4rem; padding-top: 0.2rem; }
+#school-data ul li+li{ border-left: 1px solid #d6e8ff;}
+#school-data ul li p{ text-align: center; width: 100%;}
+#school-data ul li p.one{ color: #da251d; font-size: 0.9rem;}
+#school-data ul li p.two{ color: #999; font-size: 0.5rem;}
+.tabs{ width: 90%; height: 1.85rem; padding-top: 0.5rem; overflow: hidden;}
+.tabs a.swiper-slide{
+	display: inline-block;
+	width: 22.5%;
+	color: #999;
+	font-size: 0.65rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	text-align: center;
+	font-weight: bold;
+}
+.tabs a.swiper-slide+a.swiper-slide{ border-left: 1px solid #cccccc; }
+.tabs a.active{ color: #015daf; }
+.stab{ width: 100%; position: relative; }
+.stab.white{border-bottom: 2px solid #e2e2e2; border-top: 1px solid #d0e2f2;}
+.stab a.next{ 
+	display: block; 
+	width: 0.35rem; 
+	height: 0.6rem; 
+	position: absolute; 
+	right: 0.5rem; 
+	top: 0.1rem; 
+}
+.stab a.next img{ width: 100%; height: auto;}
+.stab .tt{ padding-top: 0.6rem;}
+.stab a.mnext{ top: 0.2rem;}
+body.white{ background: #fff;}
+.stab.white{ background: #fafdff; }
+/*院校介绍*/
+.school-intro{ width: 100%; }
+.topwrap{ padding: 0 0.5rem; }
+.spic-swiper{ width: 100%; min-height: 10rem; position: relative; overflow: hidden;  }
+.spic-swiper .swiper-slide img{ width: 100%; height: auto; }
+.spic-swiper .pagination{
+	position: absolute;
+	left: 0;
+	bottom: 0.05rem;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	z-index: 9;
+}
+.spic-swiper ul li{ min-height: 10rem; width: 100%; overflow: hidden; }
+.swiper-pagination-bullet{ opacity: 1; background: #fff; width: 6px; height: 6px; }
+.swiper-pagination-bullet-active{ background: #da251d; opacity: 1; }
+.school-intro p.scon{
+	color: #666;
+	font-size: 0.55rem;
+	line-height: 1.2rem;
+	padding: 0.5rem 0.5rem 1.3rem 0.5rem;
+}
+.contact1 .ctitle{ position: relative; }
+.contact1 .ctitle span.left{
+	display: inline-block;
+	width: 36.8%;
+	height: 1px;
+	position: absolute;
+	left: 0.5rem;
+	top: 0.5rem;
+	background: url(../images/iconh1.png) no-repeat center;
+	background-size: 100% 100%; 
+}
+.contact1 .ctitle span.right{
+	display: inline-block;
+	width: 36.8%;
+	height: 1px;
+	position: absolute;
+	right: 0.5rem;
+	top: 0.5rem;
+	background: url(../images/iconh2.png) no-repeat center;
+	background-size: 100% 100%; 
+}
+.contact1 .ctitle p{ color: #666; font-size: 0.75rem; text-align: center; }
+.contact1 .contact-detail{ width: 100%; padding: 0.9rem 0.5rem; }
+.contact1 .contact-detail p{ color: #999; font-size: 0.6rem; text-indent: -2.85rem; padding-left: 2.85rem; }
+.contact1 .contact-detail p+p{ padding-top: 0.7rem; }
+.contact1 .contact-detail p span{ color: #666; font-size: 0.6rem; }
+/*最新动态*/
+.school-news{ width: 100%; padding: 0.3rem 0.5rem 0; margin-bottom: 1rem; }
+.school-news ul li{
+	width: 100%;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 14px -5px rgba(51,51,51,0.55);
+       -moz-box-shadow: 0px 0px 14px -5px rgba(51,51,51,0.55);
+            box-shadow: 0px 0px 14px -5px rgba(51,51,51,0.55);
+}
+.school-news ul li+li{ margin-top: 0.25rem; }
+.school-news ul li a{
+	display: block;
+	width: 100%;
+	padding: 0.5rem;
+}
+.school-news ul li a .nimg{ width: 29.3%; }
+.school-news ul li a .nimg img{ width: 100%; height: auto; }
+.school-news ul li a .ntitle{
+	width: 70%;
+	padding-left: 0.5rem;
+}
+.school-news ul li a .ntitle p{ color: #435259; font-size: 0.6rem; }
+.school-news ul li a .ntitle span{ font-size: 0.45rem; color: #7d909e; }
+/*学员评价*/
+.evaluate{}
+.evaluate .evaluate-list{ 
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 0.5rem 0.75rem 0.75rem 2.5rem;
+	border-bottom: 1px solid #d6e8ff; 
+}
+.headpic{
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	width: 1.6rem;
+	height: 1.6rem;
+	background-color: #fff;
+	border-radius: 1.6rem;
+	padding: 0.1rem;
+}
+.headpic img{ width: 100%; height: auto; border-radius: 1.5rem; }
+.headpic span{ display: block; position: absolute; top: 0.2rem; left: 0.05rem; width: 0.2rem; height: 0.2rem; border-radius: 0.2rem; background: #015daf; }
+.evaluate-detail{}
+.evaluate-detail .name-date{ padding-top: 0.5rem; }
+.evaluate-detail .name-date .name{ color: #212b3e; font-size: 0.6rem; }
+.evaluate-detail .name-date .date{ color: #cacfd7; font-size: 0.45rem; }
+.evaluate-detail .name-date .date i, 
+.evaluate-detail .evaluate-con .more i,
+.evaluate-detail .evaluate-con .back i{ font-style: normal; }
+.evaluate-detail .evaluate-con{ position: relative; padding-top: 0.75rem; }
+.evaluate-detail .evaluate-con p{ color: #b3bac7; font-size: 0.55rem; line-height: 0.9rem; }
+.evaluate-detail .evaluate-con .more{
+	display: none;
+	position: absolute;
+	top: 1.75rem;
+	right: 0.15rem;
+	color: #015daf;
+	font-size: 0.55rem;
+	background: #fafdff;
+	z-index: 999;
+}
+.evaluate-detail .evaluate-con .back{
+	display: none;
+	position: absolute;
+	bottom: 0;
+	right: 0.15rem;
+	color: #015daf;
+	font-size: 0.55rem;
+	background: #fafdff;
+	z-index: 999;
+}
+.refresh{
+	display: block;
+	text-align: center;
+	height: 3rem;
+	padding-top: 2.3rem;
+	background: url(../images/jz.png) no-repeat center;
+	color: #d6e9ff;
+	font-size: 0.5rem;
+	margin-bottom: 1rem;
+}
+/*新生手册*/
+.handbook .one{ padding: 1rem 0.8rem 1rem 1.7rem; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+.handbook .one h2{ color: #000; font-size: 0.7rem; padding-bottom: 0.85rem; }
+.handbook .one p{ color: #999; line-height: 1.2rem; font-size: 0.6rem; }
+.handbook .two{ padding: 1rem 0.8rem 1rem 1.7rem; }
+.handbook .two h2{ color: #000; font-size: 0.7rem; padding-bottom: 0.25rem; }
+.handbook .two h3{ color: #212b3e; font-size: 0.6rem; font-weight: normal; padding-bottom: 0.4rem; padding-top: 0.8rem; }
+.handbook .two p{ color: #999; font-size: 0.6rem; line-height: 1.2rem; }
+/*常见问题*/
+.problem{ width: 100%; padding: 0 0.5rem; }
+.problem .p-list{ width: 100%; border-bottom: 1px dashed #ccc; }
+.problem .p-list a{
+	position: relative;
+	display: block;
+	padding: 1.5rem 0.8rem 1rem 0.5rem;
+}
+.problem .p-list a .list{ color: #ccd5de; font-size: 0.55rem; padding-bottom: 0.4rem; }
+.problem .p-list a .question{ color: #212b3e; font-size: 0.6rem; width: 80%; }
+.problem .p-list a .answerbtn{
+	position: absolute;
+	top: 0.9rem;
+	right: 0.85rem;
+	display: block;
+	width: 2.4rem;
+	height: 2.4rem;
+	background: url(../images/da.png) no-repeat center;
+	color: #fff;
+	line-height: 2.4rem;
+	text-align: center;
+	font-size: 0.6rem;
+}
+
+
+/*专业信息*/
+#subjecttop{ padding-top: 1.3rem; padding-bottom: 0.9rem; }
+.subject-info .chname{ font-size: 1.2rem; color: #333; text-align: center; padding-bottom: 0.2rem; font-weight: bold; }
+.subject-info .enname{ text-align: center; color: #666; font-size: 0.45rem; }
+.subject-info .slist{ text-align: center; padding: 0.8rem 1rem 0 1rem;}
+.subject-info .slist span{ color: #666; font-size: 0.6rem; }
+.subject-info .slist span+span{ margin-left: 2.25rem; }
+.subject-info .slist span i{ 
+	display: inline-block; 
+	width: 3px; 
+	height: 3px; 
+	border-radius: 3px; 
+	background-color: #015daf; 
+	margin-right: 0.3rem;
+	vertical-align: middle;  
+}
+/*专业介绍*/
+.subject-intro .intro-list{ padding-top: 0.3rem; }
+.subject-intro .intro-list ul li.w{ width: 100%; }
+/*录取要求*/
+.request{ padding: 0.6rem 1.5rem;}
+.request h2{ color: #212b3e; font-size: 0.65rem; padding-top: 1.2rem; padding-bottom: 0.55rem; }
+.request p{ color: #666; font-size: 0.55rem; line-height: 1.2rem;}
+
+
+
+
+
+
+
+
+
+
+
+
